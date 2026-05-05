@@ -50,6 +50,7 @@ class _FlutterDsPreviewAppState extends State<FlutterDsPreviewApp> {
         DsThemeExtension.light,
         DsButtonTheme.defaults,
         DsBadgeTheme.light,
+        DsAvatarTheme.light,
       ],
     );
   }
@@ -70,6 +71,7 @@ class _FlutterDsPreviewAppState extends State<FlutterDsPreviewApp> {
         DsThemeExtension.dark,
         DsButtonTheme.defaults,
         DsBadgeTheme.dark,
+        DsAvatarTheme.dark,
       ],
     );
   }
@@ -200,6 +202,66 @@ class ButtonPreviewPage extends StatelessWidget {
               fullWidth: true,
               onPressed: () {},
             ),
+          ),
+
+          // ── Avatar ───────────────────────────────────────────────────────
+          const SizedBox(height: 32),
+          Text('Avatar', style: titleStyle),
+          const SizedBox(height: 12),
+
+          Text('Sizes', style: labelStyle),
+          const SizedBox(height: 8),
+          Wrap(
+            spacing: 12,
+            runSpacing: 12,
+            crossAxisAlignment: WrapCrossAlignment.end,
+            children: [
+              for (final s in DsAvatarSize.values)
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    DsAvatar(
+                      initials: 'DS',
+                      size: s,
+                    ),
+                    const SizedBox(height: 6),
+                    Text(
+                      s.name,
+                      style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                            color: ds?.colorTextSecondary,
+                          ),
+                    ),
+                  ],
+                ),
+            ],
+          ),
+
+          const SizedBox(height: 20),
+          Text('Shapes', style: labelStyle),
+          const SizedBox(height: 8),
+          Wrap(
+            spacing: 16,
+            runSpacing: 12,
+            children: [
+              DsAvatar(initials: 'CI', shape: DsAvatarShape.circle),
+              DsAvatar(initials: 'SQ', shape: DsAvatarShape.square),
+            ],
+          ),
+
+          const SizedBox(height: 20),
+          Text('Photo', style: labelStyle),
+          const SizedBox(height: 8),
+          const DsAvatar(
+            src: 'https://picsum.photos/seed/flutter-ds-avatar/128/128',
+            alt: 'Sample profile photo',
+            size: DsAvatarSize.md,
+          ),
+
+          const SizedBox(height: 20),
+          Text('Fallback', style: labelStyle),
+          const SizedBox(height: 8),
+          const DsAvatar(
+            size: DsAvatarSize.md,
           ),
 
           // ── Badge ───────────────────────────────────────────────────────

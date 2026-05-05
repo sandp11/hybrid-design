@@ -8,6 +8,7 @@
 |---------|--------|----------------|----------------|------------|---------|
 | button  | stable | @acko/button   | DsButton       | —          | —       |
 | badge   | draft  | @acko/badge    | DsBadge        | —          | —       |
+| avatar  | draft  | @acko/avatar   | DsAvatar       | —          | —       |
 
 ---
 
@@ -75,4 +76,34 @@ tokens-used:
 depends-on:      —
 used-by:         —
 last-modified:   2026-05-05
+modified-by:     migrate-agent
+
+---
+
+## avatar
+
+status:          draft
+path:            specs/components/avatar/
+react-package:   @acko/avatar
+flutter-export:  DsAvatar
+sizes:           xs (24px), sm (32px), md (40px), lg (48px), xl (64px)
+shapes:          circle (radius-full), square (radius-lg)
+tokens-used:
+  color:
+    - color-primary
+    - color-primary-subtle
+  radius:
+    - radius-full
+    - radius-lg
+  typography:
+    - font-label-sm (10px) — xs initials
+    - font-label-md (12px) — sm initials
+    - font-body-sm (14px)  — md initials
+    - font-body-md (16px)  — lg initials
+    - font-heading-md (20px) — xl initials + md icon
+  motion:
+    - opacity 200ms ease — image load fade (image-load-fade equivalence entry)
+depends-on:      —
+used-by:         —
+last-modified:   2026-05-06
 modified-by:     migrate-agent

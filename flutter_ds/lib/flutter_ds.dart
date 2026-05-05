@@ -13,3 +13,5 @@ export 'src/components/button/ds_button.dart';
 export 'src/components/button/ds_button_theme.dart';
 export 'src/components/badge/ds_badge.dart';
 export 'src/components/badge/ds_badge_theme.dart';
+export 'src/components/avatar/ds_avatar.dart';
+export 'src/components/avatar/ds_avatar_theme.dart';

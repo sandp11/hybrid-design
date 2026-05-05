@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
 import { Badge, CounterBadge } from "@acko/badge";
 
 const colors = [
@@ -59,7 +58,7 @@ export const SentenceCase: Story = {
 export const Removable: Story = {
   args: {
     removable: true,
-    onRemove: fn(),
+    onRemove: () => {},
   },
 };
 

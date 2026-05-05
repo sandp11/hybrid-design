@@ -29,11 +29,11 @@
   
   /* --- Sizes --- */
   
-  .acko-btn-xs { @apply h-32 px-16 text-xs rounded-full; line-height: 1rem; }
-  .acko-btn-sm { @apply h-40 px-16 text-sm rounded-full; line-height: 1.125rem; }
+  .acko-btn-xs { @apply h-32 px-16 text-xs leading-16 rounded-full; }
+  .acko-btn-sm { @apply h-40 px-16 text-sm leading-18 rounded-full; }
   .acko-btn-md { @apply h-48 px-16 text-base leading-24 rounded-full; }
-  .acko-btn-lg { @apply h-56 px-24 text-lg rounded-full; line-height: 1.75rem; }
-  .acko-btn-xl { @apply h-64 px-32 text-xl rounded-full; line-height: 2rem; }
+  .acko-btn-lg { @apply h-56 px-24 text-lg leading-28 rounded-full; }
+  .acko-btn-xl { @apply h-64 px-32 text-xl leading-32 rounded-full; }
   
   /* --- Icon sizing per size --- */
   
@@ -88,10 +88,8 @@
   }
   
   .acko-btn-link {
-    @apply bg-transparent;
+    @apply bg-transparent px-0;
     color: var(--color-btn-link-color);
-    padding-left: 0;
-    padding-right: 0;
   }
   
   .acko-btn-danger {
@@ -259,8 +257,7 @@
   }
   
   .acko-btn-dot {
-    @apply w-6 h-6;
-    border-radius: 50%;
+    @apply w-6 h-6 rounded-full;
     background-color: currentColor;
     animation: acko-dot-wave 1.2s ease-in-out infinite;
   }

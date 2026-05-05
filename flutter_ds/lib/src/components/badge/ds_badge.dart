@@ -97,8 +97,8 @@ class DsBadge extends StatelessWidget {
           child: GestureDetector(
             onTap: onRemove,
             child: SizedBox(
-              width:  fontSize * 0.65,
-              height: fontSize * 0.65,
+              width:  theme.removeIconSize,
+              height: theme.removeIconSize,
               child: CustomPaint(
                 painter: _XIconPainter(color: fg),
               ),

@@ -174,3 +174,4 @@ None. Badge is a leaf component.
 - CounterBadge max-overflow: when `count > max`, render `${max}+` (e.g. count=150, max=99 → "99+").
 - Badge has no hover, focus, disabled, or loading states. It is purely presentational.
 - Dark theme is automatic via `[data-theme="dark"]` scoped CSS; no prop needed.
+- CSS sizing rule: ALL dimensions in badge.css must use Tailwind `@apply` utilities. Never write raw `width: Npx`, `height: Npx`, `padding: Npx`, or `min-width: Npx`. Use `@apply w-N h-N py-N px-N min-w-N` etc. The only exceptions are CSS custom-property references (`var(--color-*)`, `var(--font-*-size)`, `box-shadow`, `border`) and `line-height: 0` (no Tailwind equivalent for exactly zero).

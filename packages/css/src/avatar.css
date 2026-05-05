@@ -1,0 +1,58 @@
+/* ============================================================
+   Avatar — @acko/css/avatar.css
+   Import per-component:  @import "@acko/css/avatar.css"
+   ============================================================ */
+
+/* --- Base --- */
+
+.acko-avatar {
+  @apply inline-flex items-center justify-center overflow-hidden shrink-0;
+}
+
+/* --- Sizes --- */
+
+.acko-avatar-xs { @apply h-24 w-24; }
+.acko-avatar-sm { @apply h-32 w-32; }
+.acko-avatar-md { @apply h-40 w-40; }
+.acko-avatar-lg { @apply h-48 w-48; }
+.acko-avatar-xl { @apply h-64 w-64; }
+
+/* --- Shapes --- */
+
+.acko-avatar-circle { @apply rounded-full; }
+.acko-avatar-square { @apply rounded-lg; }
+
+/* --- Image layer --- */
+
+.acko-avatar-img {
+  @apply w-full h-full object-cover;
+  transition: opacity 200ms ease;
+}
+
+/* --- Initials layer --- */
+
+.acko-avatar-initials {
+  @apply flex items-center justify-center w-full h-full font-medium;
+  background-color: var(--color-primary-subtle);
+  color: var(--color-primary);
+}
+
+.acko-avatar-initials-xs { font-size: var(--font-10-size, 10px); }
+.acko-avatar-initials-sm { font-size: var(--font-12-size, 12px); }
+.acko-avatar-initials-md { font-size: var(--font-14-size, 14px); }
+.acko-avatar-initials-lg { font-size: var(--font-16-size, 16px); }
+.acko-avatar-initials-xl { font-size: var(--font-20-size, 20px); }
+
+/* --- Fallback icon layer --- */
+
+.acko-avatar-fallback {
+  @apply flex items-center justify-center w-full h-full;
+  background-color: var(--color-primary-subtle);
+  color: var(--color-primary);
+}
+
+.acko-avatar-fallback-xs svg { @apply w-12 h-12; }
+.acko-avatar-fallback-sm svg { @apply w-16 h-16; }
+.acko-avatar-fallback-md svg { @apply w-20 h-20; }
+.acko-avatar-fallback-lg svg { @apply w-24 h-24; }
+.acko-avatar-fallback-xl svg { @apply w-32 h-32; }
