@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../foundation/tokens.dart';
@@ -35,7 +34,6 @@ class DsButton extends StatefulWidget {
 }
 
 class _DsButtonState extends State<DsButton> {
-  bool _isHovered  = false;
   bool _isPressed  = false;
   bool _isFocused  = false;
   late final FocusNode _focusNode;
@@ -55,20 +53,9 @@ class _DsButtonState extends State<DsButton> {
     super.dispose();
   }
 
-  bool get _isDesktopOrWeb =>
-      kIsWeb ||
-      defaultTargetPlatform == TargetPlatform.macOS ||
-      defaultTargetPlatform == TargetPlatform.windows ||
-      defaultTargetPlatform == TargetPlatform.linux;
-
-  bool get _isMobile =>
-      !kIsWeb &&
-      (defaultTargetPlatform == TargetPlatform.iOS ||
-          defaultTargetPlatform == TargetPlatform.android);
-
   void _handlePressed() {
     if (widget._isDisabled) return;
-    if (_isMobile) HapticFeedback.lightImpact();
+    HapticFeedback.lightImpact();
     widget.onPressed?.call();
   }
 
@@ -96,34 +83,30 @@ class _DsButtonState extends State<DsButton> {
     } else {
       switch (widget.variant) {
         case DsButtonVariant.primary:
-          bg = _isHovered ? theme.primaryHoverBg : theme.primaryBg;
+          bg = theme.primaryBg;
           fg = theme.primaryFg;
-          shadows = _isHovered
-              ? [theme.primaryShadowInner, theme.primaryHoverShadow]
-              : [theme.primaryShadowInner];
+          shadows = [theme.primaryShadowInner];
         case DsButtonVariant.secondary:
-          bg = _isHovered
-              ? Color.alphaBlend(const Color(0x0A000000), theme.secondaryBg)
-              : theme.secondaryBg;
+          bg = theme.secondaryBg;
           fg = theme.secondaryFg;
           variantBorder =
               Border.all(color: theme.secondaryBorderColor, width: 1);
         case DsButtonVariant.inverted:
-          bg = _isHovered
-              ? Color.alphaBlend(const Color(0x0A000000), theme.invertedBg)
-              : theme.invertedBg;
+          bg = theme.invertedBg;
           fg = theme.invertedFg;
         case DsButtonVariant.ghost:
-          bg = _isHovered ? theme.ghostHoverBg : Colors.transparent;
+          bg = Colors.transparent;
           fg = theme.ghostFg;
         case DsButtonVariant.link:
           bg = Colors.transparent;
           fg = theme.linkFg;
         case DsButtonVariant.danger:
-          bg = _isHovered
-              ? Color.alphaBlend(const Color(0x0A000000), theme.dangerBg)
-              : theme.dangerBg;
+          bg = theme.dangerBg;
           fg = theme.dangerFg;
+      }
+
+      if (_isPressed) {
+        bg = Color.alphaBlend(const Color(0x1A000000), bg);
       }
     }
 
@@ -149,7 +132,6 @@ class _DsButtonState extends State<DsButton> {
 
     // ─── Label ───────────────────────────────────────────────────────────
     final showUnderline = widget.variant == DsButtonVariant.link &&
-        (_isHovered || _isMobile) &&
         !widget._isDisabled;
 
     final labelWidget = widget.iconOnly
@@ -165,20 +147,26 @@ class _DsButtonState extends State<DsButton> {
           );
 
     // ─── Content row ─────────────────────────────────────────────────────
-    final contentRow = Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        if (widget.iconLeft != null) ...[
-          SizedBox(width: iconSize, height: iconSize, child: widget.iconLeft),
-          SizedBox(width: theme.iconGap),
-        ],
-        labelWidget,
-        if (widget.iconRight != null) ...[
-          SizedBox(width: theme.iconGap),
-          SizedBox(width: iconSize, height: iconSize, child: widget.iconRight),
-        ],
-      ],
-    );
+    final contentRow = widget.iconOnly
+        ? SizedBox(
+            width: iconSize,
+            height: iconSize,
+            child: widget.iconLeft ?? widget.iconRight,
+          )
+        : Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              if (widget.iconLeft != null) ...[
+                SizedBox(width: iconSize, height: iconSize, child: widget.iconLeft),
+                SizedBox(width: theme.iconGap),
+              ],
+              labelWidget,
+              if (widget.iconRight != null) ...[
+                SizedBox(width: theme.iconGap),
+                SizedBox(width: iconSize, height: iconSize, child: widget.iconRight),
+              ],
+            ],
+          );
 
     // ─── Loading / content switcher ──────────────────────────────────────
     final bodyContent = AnimatedSwitcher(
@@ -186,6 +174,7 @@ class _DsButtonState extends State<DsButton> {
       child: widget.isLoading
           ? SizedBox(
               key: const ValueKey('dots'),
+              width: widget.iconOnly ? height : null,
               height: height,
               child: Center(
                 child: _DotWave(
@@ -197,6 +186,7 @@ class _DsButtonState extends State<DsButton> {
             )
           : SizedBox(
               key: const ValueKey('content'),
+              width: widget.iconOnly ? height : null,
               height: height,
               child: Center(child: contentRow),
             ),
@@ -224,34 +214,27 @@ class _DsButtonState extends State<DsButton> {
             border: activeBorder,
             boxShadow: shadows.isEmpty ? null : shadows,
           ),
-          child: Material(
-            color: Colors.transparent,
-            shape: const StadiumBorder(),
-            child: InkWell(
-              onTap: widget._isDisabled ? null : _handlePressed,
-              onHighlightChanged: (h) {
-                if (!widget._isDisabled) setState(() => _isPressed = h);
-              },
-              customBorder: const StadiumBorder(),
-              splashColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-              child: Center(child: bodyContent),
+          child: GestureDetector(
+            onTap: widget._isDisabled ? null : _handlePressed,
+            onTapDown: (_) {
+              if (!widget._isDisabled) setState(() => _isPressed = true);
+            },
+            onTapUp: (_) => setState(() => _isPressed = false),
+            onTapCancel: () => setState(() => _isPressed = false),
+            child: IconTheme(
+              data: IconThemeData(color: fg, size: iconSize),
+              child: widget.iconOnly
+                  ? Center(
+                      child: widget.isLoading
+                          ? _DotWave(color: fg, dotSize: theme.dotSize, gap: theme.dotsGap)
+                          : widget.iconLeft ?? widget.iconRight,
+                    )
+                  : Center(child: bodyContent),
             ),
           ),
         ),
       ),
     );
-
-    // UX REVIEW: high parity-risk — hover only on desktop Flutter, verify against React.
-    if (_isDesktopOrWeb) {
-      button = MouseRegion(
-        onEnter: (_) {
-          if (!widget._isDisabled) setState(() => _isHovered = true);
-        },
-        onExit: (_) => setState(() => _isHovered = false),
-        child: button,
-      );
-    }
 
     // ─── Disabled: no Opacity widget — explicit colors already applied.
     // IgnorePointer blocks gesture detection while keeping focus accessible.

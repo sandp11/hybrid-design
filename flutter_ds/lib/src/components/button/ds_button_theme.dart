@@ -9,11 +9,9 @@ class DsButtonTheme extends ThemeExtension<DsButtonTheme> {
   const DsButtonTheme({
     // backgrounds
     required this.primaryBg,
-    required this.primaryHoverBg,
     required this.secondaryBg,
     required this.secondaryBorderColor,
     required this.invertedBg,
-    required this.ghostHoverBg,
     required this.dangerBg,
     required this.disabledBg,
     // foregrounds
@@ -26,7 +24,6 @@ class DsButtonTheme extends ThemeExtension<DsButtonTheme> {
     required this.disabledFg,
     // shadows
     required this.primaryShadowInner,
-    required this.primaryHoverShadow,
     required this.focusRingColor,
     required this.dangerFocusRingColor,
     // dimensions — heights
@@ -63,11 +60,9 @@ class DsButtonTheme extends ThemeExtension<DsButtonTheme> {
 
   // backgrounds
   final Color primaryBg;
-  final Color primaryHoverBg;
   final Color secondaryBg;
   final Color secondaryBorderColor;
   final Color invertedBg;
-  final Color ghostHoverBg;
   final Color dangerBg;
   final Color disabledBg;
 
@@ -82,7 +77,6 @@ class DsButtonTheme extends ThemeExtension<DsButtonTheme> {
 
   // shadows
   final BoxShadow primaryShadowInner;
-  final BoxShadow primaryHoverShadow;
   final Color focusRingColor;
   final Color dangerFocusRingColor;
 
@@ -125,11 +119,9 @@ class DsButtonTheme extends ThemeExtension<DsButtonTheme> {
   // ─── Defaults (light theme) ────────────────────────────────────────────
   static final defaults = DsButtonTheme(
     primaryBg:            DsTokens.colorPrimary,
-    primaryHoverBg:       DsTokens.colorPrimaryHover,
     secondaryBg:          DsTokens.colorBtnSecondaryBg,
     secondaryBorderColor: DsTokens.colorBtnSecondaryBorder,
     invertedBg:           DsTokens.colorBtnInvertedBg,
-    ghostHoverBg:         DsTokens.colorBtnGhostHoverBg,
     dangerBg:             DsTokens.colorBtnDangerBg,
     disabledBg:           DsTokens.colorBtnDisabledBg,
 
@@ -147,11 +139,6 @@ class DsButtonTheme extends ThemeExtension<DsButtonTheme> {
       spreadRadius: 1,
       offset: Offset(0, 1),
       blurStyle: BlurStyle.inner,
-    ),
-    primaryHoverShadow: const BoxShadow(
-      color: Color(0x14000000),
-      blurRadius: 8,
-      offset: Offset(0, 4),
     ),
     focusRingColor:       DsTokens.colorPrimaryRing,
     dangerFocusRingColor: DsTokens.colorError,
@@ -229,11 +216,9 @@ class DsButtonTheme extends ThemeExtension<DsButtonTheme> {
   @override
   DsButtonTheme copyWith({
     Color? primaryBg,
-    Color? primaryHoverBg,
     Color? secondaryBg,
     Color? secondaryBorderColor,
     Color? invertedBg,
-    Color? ghostHoverBg,
     Color? dangerBg,
     Color? disabledBg,
     Color? primaryFg,
@@ -244,7 +229,6 @@ class DsButtonTheme extends ThemeExtension<DsButtonTheme> {
     Color? dangerFg,
     Color? disabledFg,
     BoxShadow? primaryShadowInner,
-    BoxShadow? primaryHoverShadow,
     Color? focusRingColor,
     Color? dangerFocusRingColor,
     double? xsHeight,
@@ -274,11 +258,9 @@ class DsButtonTheme extends ThemeExtension<DsButtonTheme> {
   }) {
     return DsButtonTheme(
       primaryBg:             primaryBg            ?? this.primaryBg,
-      primaryHoverBg:        primaryHoverBg       ?? this.primaryHoverBg,
       secondaryBg:           secondaryBg          ?? this.secondaryBg,
       secondaryBorderColor:  secondaryBorderColor ?? this.secondaryBorderColor,
       invertedBg:            invertedBg           ?? this.invertedBg,
-      ghostHoverBg:          ghostHoverBg         ?? this.ghostHoverBg,
       dangerBg:              dangerBg             ?? this.dangerBg,
       disabledBg:            disabledBg           ?? this.disabledBg,
       primaryFg:             primaryFg            ?? this.primaryFg,
@@ -289,7 +271,6 @@ class DsButtonTheme extends ThemeExtension<DsButtonTheme> {
       dangerFg:              dangerFg             ?? this.dangerFg,
       disabledFg:            disabledFg           ?? this.disabledFg,
       primaryShadowInner:    primaryShadowInner   ?? this.primaryShadowInner,
-      primaryHoverShadow:    primaryHoverShadow   ?? this.primaryHoverShadow,
       focusRingColor:        focusRingColor       ?? this.focusRingColor,
       dangerFocusRingColor:  dangerFocusRingColor ?? this.dangerFocusRingColor,
       xsHeight:              xsHeight             ?? this.xsHeight,
@@ -324,11 +305,9 @@ class DsButtonTheme extends ThemeExtension<DsButtonTheme> {
     if (other == null) return this;
     return DsButtonTheme(
       primaryBg:            Color.lerp(primaryBg, other.primaryBg, t)!,
-      primaryHoverBg:       Color.lerp(primaryHoverBg, other.primaryHoverBg, t)!,
       secondaryBg:          Color.lerp(secondaryBg, other.secondaryBg, t)!,
       secondaryBorderColor: Color.lerp(secondaryBorderColor, other.secondaryBorderColor, t)!,
       invertedBg:           Color.lerp(invertedBg, other.invertedBg, t)!,
-      ghostHoverBg:         Color.lerp(ghostHoverBg, other.ghostHoverBg, t)!,
       dangerBg:             Color.lerp(dangerBg, other.dangerBg, t)!,
       disabledBg:           Color.lerp(disabledBg, other.disabledBg, t)!,
       primaryFg:            Color.lerp(primaryFg, other.primaryFg, t)!,
@@ -339,7 +318,6 @@ class DsButtonTheme extends ThemeExtension<DsButtonTheme> {
       dangerFg:             Color.lerp(dangerFg, other.dangerFg, t)!,
       disabledFg:           Color.lerp(disabledFg, other.disabledFg, t)!,
       primaryShadowInner:   other.primaryShadowInner,
-      primaryHoverShadow:   other.primaryHoverShadow,
       focusRingColor:       Color.lerp(focusRingColor, other.focusRingColor, t)!,
       dangerFocusRingColor: Color.lerp(dangerFocusRingColor, other.dangerFocusRingColor, t)!,
       xsHeight:             lerpDouble(xsHeight, other.xsHeight, t)!,

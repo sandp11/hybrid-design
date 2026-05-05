@@ -18,8 +18,8 @@ theme-file: lib/src/components/button/ds_button_theme.dart
 | variant    | DsButtonVariant  | primary   | no       | visual variant                                                       |
 | size       | DsButtonSize     | md        | no       | size variant                                                         |
 | isLoading  | bool             | false     | no       | shows loading dots, blocks interaction                               |
-| iconLeft   | Widget?          | null      | no       | widget rendered before label; sized by SizedBox to icon size         |
-| iconRight  | Widget?          | null      | no       | widget rendered after label; sized by SizedBox to icon size          |
+| iconLeft   | Widget?          | null      | no       | widget rendered before label; wrapped in SizedBox(iconSize) in normal mode; centered directly in iconOnly mode |
+| iconRight  | Widget?          | null      | no       | widget rendered after label; wrapped in SizedBox(iconSize) in normal mode; centered directly in iconOnly mode |
 | iconOnly   | bool             | false     | no       | square button; label passed to Semantics but visually hidden         |
 | fullWidth  | bool             | false     | no       | stretches button to fill parent width                                |
 
@@ -34,11 +34,9 @@ DsButtonTheme extends ThemeExtension<DsButtonTheme>. All defaults reference DsTo
 
 ### backgrounds
 primaryBg:                DsTokens.colorPrimary
-primaryHoverBg:           DsTokens.colorPrimaryHover
 secondaryBg:              DsTokens.colorBtnSecondaryBg
 secondaryBorderColor:     DsTokens.colorBtnSecondaryBorder
 invertedBg:               DsTokens.colorBtnInvertedBg
-ghostHoverBg:             DsTokens.colorBtnGhostHoverBg
 dangerBg:                 DsTokens.colorBtnDangerBg
 disabledBg:               DsTokens.colorBtnDisabledBg
 linkBg:                   Colors.transparent
@@ -55,7 +53,6 @@ disabledFg:               DsTokens.colorBtnDisabledText
 
 ### shadows
 primaryShadowInner:       BoxShadow(color: Color(0x47FFFFFF), blurRadius: 2, offset: Offset(0,1), blurStyle: BlurStyle.inner)
-primaryHoverShadow:       BoxShadow(color: Color(0x14000000), blurRadius: 8, offset: Offset(0,4))
 focusRingColor:           DsTokens.colorPrimaryRing
 dangerFocusRingColor:     DsTokens.colorError  (applied at 0.20 opacity)
 
@@ -114,32 +111,27 @@ pressAnimationDuration:   Duration(milliseconds: 100)
 
 ## platform-notes
 
+- **target platforms**: mobile (iOS, Android) and tablet only. No web or desktop support. Hover states, `MouseRegion`, and `kIsWeb` checks are not used.
+
 - **disabled state**: derive `_isDisabled = onPressed == null || isLoading`. Do NOT use Opacity widget. Use explicit `disabledBg` and `disabledFg` color values — opacity stays 1.0. Wrap the entire button in `IgnorePointer(ignoring: _isDisabled)` to block gesture detection while keeping focus accessible.
 
-- **hover**: wrap with `MouseRegion` on desktop/web Flutter targets only. Detect via `kIsWeb` or `defaultTargetPlatform`. On mobile builds omit entirely.
-  - primary hover: swap background from `primaryBg` → `primaryHoverBg` + add `primaryHoverShadow`
-  - secondary hover: overlay `Colors.black.withOpacity(0.04)` (light) / `Colors.white.withOpacity(0.04)` (dark)
-  - inverted hover: overlay `Colors.black.withOpacity(0.04)` (light) / `Colors.white.withOpacity(0.10)` (dark)
-  - ghost hover: swap to `ghostHoverBg`
-  - link hover: no background change (underline handled by TextStyle decoration)
-  - danger hover: overlay `Colors.black.withOpacity(0.04)` (light) / `Colors.white.withOpacity(0.04)` (dark)
-  - // UX REVIEW: high parity-risk — hover only on desktop Flutter, verify against React.
+- **haptic**: always call `HapticFeedback.lightImpact()` on every press (no platform guard needed — target is always mobile/tablet).
 
-- **haptic**: call `HapticFeedback.lightImpact()` inside `onPressed` wrapper on iOS/Android.
+- **active-press**: use `GestureDetector` (`onTapDown` / `onTapUp` / `onTapCancel`) + `AnimatedScale(scale: _isPressed ? 0.97 : 1.0)` with `pressAnimationDuration`. Visual press feedback: blend `Color(0x1A000000)` (10% black) over the resolved `bg` color when `_isPressed` is true.
 
-- **active-press**: use `GestureDetector` `onTapDown` / `onTapUp` + `AnimatedScale(scale: _isPressed ? 0.97 : 1.0)` with `pressAnimationDuration`.
+- **loading-dots**: use `AnimatedSwitcher` with `duration: Duration(milliseconds: 100)` to swap between content row and dots row. Dots row: three `Container` widgets cycling vertical translation via `Transform.translate` using staggered `AnimationController` with `repeat()`. Constrain dots row to same height as content row using `SizedBox` to prevent layout shift.
 
-- **loading-dots**: use `AnimatedSwitcher` with `duration: Duration(milliseconds: 100)` to swap between content row and dots row. Dots row: three `AnimatedContainer` widgets cycling vertical translation (translateY equivalent via `Transform.translate`) using staggered `AnimationController` with `repeat()`. Constrain dots row to same height as content row using `SizedBox` to prevent layout shift.
+- **focus-ring**: `FocusNode` listener toggles a `BoxDecoration` `boxShadow` of `blurRadius: 0, spreadRadius: 3`, color `focusRingColor`. Danger variant uses `dangerFocusRingColor.withOpacity(0.20)`.
 
-- **focus-ring**: `FocusNode` listener toggles a `BoxDecoration` border of width 3px, color `focusRingColor`, `borderRadius: borderRadius`. Danger variant uses `dangerFocusRingColor.withOpacity(0.20)`.
+- **animation-widget**: `AnimatedContainer` for background color transitions (duration: `animationDuration`, curve: `animationCurve`). Use `GestureDetector` directly — no `InkWell` or `Material` wrapper.
 
-- **animation-widget**: `AnimatedContainer` for background color transitions (duration: `animationDuration`, curve: `animationCurve`). `InkWell` inside `Material(color: Colors.transparent, shape: StadiumBorder())` for ripple effect on mobile. `Material` must use `StadiumBorder` to match radius-full container.
+- **link underline**: always render label with `TextDecoration.underline` when not disabled (mobile always shows underline).
 
-- **link underline**: render label with `TextStyle(decoration: TextDecoration.underline)` only in hover state (desktop); always underline for accessibility on mobile.
+- **icon color**: wrap `GestureDetector`'s child with `IconTheme(data: IconThemeData(color: fg, size: iconSize))` so any `Icon` widget passed as `iconLeft`/`iconRight` inherits the correct foreground color automatically.
 
-- **icon sizing**: icon widgets passed as `iconLeft` / `iconRight` must be wrapped in `SizedBox(width: iconSize, height: iconSize)` for the corresponding `DsButtonSize`.
+- **icon sizing (normal buttons)**: `iconLeft` / `iconRight` are wrapped in `SizedBox(width: iconSize, height: iconSize)` for the corresponding `DsButtonSize`. The gap between icon and label uses `iconGap`.
 
-- **icon-only**: label still passed to `Semantics(label: label)`; visually render no label text. Replace label widget with `SizedBox.shrink()`.
+- **icon-only**: label still passed to `Semantics(label: label)`; visually hidden. Do NOT wrap icon in `SizedBox` — render the icon widget directly inside `Center` so it uses its own size (from explicit `size:` param or `IconTheme`). No Row or gap is used.
 
 ## notes
 
