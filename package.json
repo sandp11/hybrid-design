@@ -1,0 +1,7 @@
+{
+  "name": "@acko/design-system",
+  "private": true,
+  "scripts": {
+    "build": "pnpm -r run build"
+  }
+}

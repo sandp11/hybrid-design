@@ -1,0 +1,891 @@
+/* ============================================================
+   ACKO Design System — Design Tokens
+   Import once in your app root:  @import "@acko/tokens/tokens.css"
+   ============================================================ */
+
+/* --- Font Face: Euclid Circular B --- */
+
+@font-face {
+  font-family: 'Euclid Circular B';
+  src: url('https://pub-c050457d48794d5bb9ffc2b4649de2c1.r2.dev/Euclid%20Font/EuclidCircularB-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Euclid Circular B';
+  src: url('https://pub-c050457d48794d5bb9ffc2b4649de2c1.r2.dev/Euclid%20Font/EuclidCircularB-LightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Euclid Circular B';
+  src: url('https://pub-c050457d48794d5bb9ffc2b4649de2c1.r2.dev/Euclid%20Font/EuclidCircularB-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Euclid Circular B';
+  src: url('https://pub-c050457d48794d5bb9ffc2b4649de2c1.r2.dev/Euclid%20Font/EuclidCircularB-RegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Euclid Circular B';
+  src: url('https://pub-c050457d48794d5bb9ffc2b4649de2c1.r2.dev/Euclid%20Font/EuclidCircularB-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Euclid Circular B';
+  src: url('https://pub-c050457d48794d5bb9ffc2b4649de2c1.r2.dev/Euclid%20Font/EuclidCircularB-MediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Euclid Circular B';
+  src: url('https://pub-c050457d48794d5bb9ffc2b4649de2c1.r2.dev/Euclid%20Font/EuclidCircularB-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Euclid Circular B';
+  src: url('https://pub-c050457d48794d5bb9ffc2b4649de2c1.r2.dev/Euclid%20Font/EuclidCircularB-SemiboldItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Euclid Circular B';
+  src: url('https://pub-c050457d48794d5bb9ffc2b4649de2c1.r2.dev/Euclid%20Font/EuclidCircularB-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Euclid Circular B';
+  src: url('https://pub-c050457d48794d5bb9ffc2b4649de2c1.r2.dev/Euclid%20Font/EuclidCircularB-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ============================================================
+   PRIMITIVE TOKENS
+   ============================================================ */
+
+:root {
+  /* --- Color Primitives --- */
+
+  /* Purple (Brand Primary) */
+  --purple-50: #F5F3FF; --purple-100: #EAEAFD; --purple-200: #D9D8FC;
+  --purple-300: #BDB8FA; --purple-400: #9B8FF6; --purple-500: #7A62F0;
+  --purple-600: #6841E6; --purple-700: #582FD2; --purple-800: #4E29BB;
+  --purple-900: #3E2290; --purple-950: #241362;
+
+  /* Grey (Extended Neutral) */
+  --grey-white: #FFFFFF;
+  --grey-50: #FBFBFB; --grey-100: #F5F5F5; --grey-150: #EBEBEB;
+  --grey-200: #E0E0E1; --grey-250: #CCCCCD; --grey-300: #B7B7B8;
+  --grey-350: #8F8E92; --grey-400: #7A7B7D; --grey-450: #605F63;
+  --grey-500: #474649; --grey-550: #333333; --grey-600: #242324;
+  --grey-650: #19191A; --grey-700: #141414; --grey-750: #0F0F10;
+  --grey-800: #0A0A0A; --grey-black: #000000;
+
+  /* Red */
+  --red-50: #FEF2F2; --red-100: #FEE2E2; --red-200: #FECACA;
+  --red-300: #FCA5A5; --red-400: #F87171; --red-500: #EF4444;
+  --red-600: #DC2626; --red-700: #B91C1C; --red-800: #991B1B;
+  --red-900: #7F1D1D; --red-950: #450A0A;
+
+  /* Cerise (Error / Highlights — mapped to Pink) */
+  --cerise-800: #9D174D; --cerise-700: #BE185D; --cerise-600: #DB2777;
+  --cerise-500: #EC4899; --cerise-400: #F472B6; --cerise-300: #F9ABD4;
+  --cerise-200: #FBCFE8; --cerise-100: #FDF2F8;
+
+  /* Blue */
+  --blue-50: #EFF6FF; --blue-100: #DBEAFE; --blue-200: #BFDBFE;
+  --blue-300: #93C5FD; --blue-400: #60A5FA; --blue-500: #3B82F6;
+  --blue-600: #2563EB; --blue-700: #1D4ED8; --blue-800: #1E40AF;
+  --blue-900: #1E3A8A; --blue-950: #172554;
+
+  /* Green */
+  --green-50: #F0FDF4; --green-100: #DCFCE7; --green-200: #BBF7D0;
+  --green-300: #86EFAC; --green-400: #4ADE80; --green-500: #22C55E;
+  --green-600: #16A34A; --green-700: #15803D; --green-800: #166534;
+  --green-900: #14532D; --green-950: #052E16;
+
+  /* Orange */
+  --orange-50: #FFF3E5; --orange-100: #FFE5CC; --orange-200: #FFCB9E;
+  --orange-300: #FFB56B; --orange-400: #FFA85C; --orange-500: #FF8D28;
+  --orange-600: #EB740A; --orange-700: #B65C0C; --orange-800: #8D4301;
+  --orange-900: #521F00; --orange-950: #300212;
+
+  /* Yellow */
+  --yellow-50: #FEFAE8; --yellow-100: #FEF9C3; --yellow-200: #FEF08A;
+  --yellow-300: #FDE047; --yellow-400: #FACC15; --yellow-500: #EAB308;
+  --yellow-600: #D18C0A; --yellow-700: #A76406; --yellow-800: #875008;
+  --yellow-900: #62360F; --yellow-950: #302012;
+
+  /* Teal */
+  --teal-50: #EDFDFE; --teal-100: #D1FBFC; --teal-200: #A9EFFB;
+  --teal-300: #6FE2F1; --teal-400: #29CEE7; --teal-500: #17B6D3;
+  --teal-600: #0891B2; --teal-700: #0E7490; --teal-800: #155E75;
+  --teal-900: #164E63; --teal-950: #083344;
+
+  /* Lime */
+  --lime-50: #F4FDF0; --lime-100: #E7FCDC; --lime-200: #CFF7BB;
+  --lime-300: #A9EF86; --lime-400: #7BDE4A; --lime-500: #58C522;
+  --lime-600: #45A316; --lime-700: #398015; --lime-800: #306516;
+  --lime-900: #214210; --lime-950: #132E05;
+
+  /* Pink */
+  --pink-50: #FDF2F8; --pink-100: #FCE7F3; --pink-200: #FBCFE8;
+  --pink-300: #F9ABD4; --pink-400: #F472B6; --pink-500: #EC4899;
+  --pink-600: #DB2777; --pink-700: #BE185D; --pink-800: #9D174D;
+  --pink-900: #831843; --pink-950: #500724;
+
+  /* --- Opacity Scale --- */
+  --opacity-0: 0;
+  --opacity-2: 0.02; --opacity-4: 0.04;
+  --opacity-6: 0.06; --opacity-8: 0.08;
+  --opacity-10: 0.10; --opacity-12: 0.12;
+  --opacity-16: 0.16; --opacity-20: 0.20;
+  --opacity-24: 0.24; --opacity-28: 0.28;
+  --opacity-32: 0.32; --opacity-36: 0.36;
+  --opacity-40: 0.40; --opacity-44: 0.44;
+  --opacity-48: 0.48; --opacity-52: 0.52;
+  --opacity-56: 0.56; --opacity-64: 0.64;
+  --opacity-72: 0.72; --opacity-80: 0.80;
+  --opacity-88: 0.88; --opacity-96: 0.96;
+  --opacity-100: 1;
+
+  /* --- Border Radius --- */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+  --radius-2xl: 12px;
+  --radius-3xl: 16px;
+  --radius-4xl: 20px;
+  --radius-5xl: 24px;
+  --radius-full: 9999px;
+
+  /* Nested radius — inner = outer (--radius-4xl: 20px) minus padding */
+  --radius-inset-sm: var(--radius-lg);   /* pad-sm (12px) → 20 - 12 = 8px */
+  --radius-inset-md: var(--radius-sm);   /* pad-md (16px) → 20 - 16 = 4px */
+  --radius-inset-lg: 0px;                /* pad-lg (24px) → 20 - 24 = 0px */
+
+  /* --- Shadows (tiered) --- */
+  --shadow-xs:  0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-sm:  0 1px 4px rgba(0, 0, 0, 0.06);
+  --shadow-md:  0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-lg:  0px 2px 16px 4px rgba(0, 0, 0, 0.04);
+  --shadow-xl:  0 4px 24px rgba(0, 0, 0, 0.10);
+  --shadow-2xl: 0 8px 32px rgba(0, 0, 0, 0.14);
+  --shadow-border: 0 0 0 1px rgba(0, 0, 0, 0.08);
+
+  /* Semantic shadow aliases */
+  --shadow-card: var(--shadow-lg);
+  --shadow-dropdown: var(--shadow-lg);
+  --shadow-modal: var(--shadow-xl);
+  --shadow-subtle: var(--shadow-xs);
+
+  /* Component shadows */
+  --shadow-btn-inner: inset 0px 1px 2px 1px rgba(255, 255, 255, 0.28);
+  --shadow-btn-hover: 0px 4px 8px 0px rgba(0, 0, 0, 0.08);
+  --shadow-btn-secondary-hover: inset 0px 2px 4px rgba(255, 255, 255, 0.48);
+  --shadow-focus-ring: 0 0 0 3px var(--color-primary-ring);
+
+  /* --- Z-Index --- */
+  --z-dropdown: 100;
+  --z-sticky: 150;
+  --z-modal: 200;
+  --z-tooltip: 300;
+  --z-toast: 400;
+
+  /* --- Animation / Easing --- */
+  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+
+  /* --- Hairline Border --- */
+  --border-hairline: 1px;
+
+  /* --- Slider thumb diameter (layout; theme-agnostic) — used by packages/css/slider.css --- */
+  --slider-thumb-size-sm: 16px;
+  --slider-thumb-size-md: 20px;
+  --slider-thumb-size-lg: 24px;
+}
+
+@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  :root {
+    --border-hairline: 0.5px;
+  }
+}
+
+/* ============================================================
+   SEMANTIC TOKENS — ACKO Light Theme
+   ============================================================ */
+
+[data-theme="light"],
+:root {
+  /* Primary */
+  --color-primary: var(--purple-600);
+  --color-primary-hover: var(--purple-700);
+  --color-primary-active: var(--purple-800);
+  --color-primary-subtle: var(--purple-100);
+  --color-primary-muted: var(--purple-400);
+  --color-primary-ring: var(--purple-200);
+  --color-on-primary: #FFFFFF;
+
+  /* Surfaces */
+  --color-surface: var(--grey-100);
+  --color-surface-raised: var(--grey-100);
+  --color-surface-raised-hover: var(--grey-200);
+  --color-surface-raised-active: var(--grey-300);
+  --color-surface-overlay: rgba(10, 10, 10, 0.5);
+  --color-surface-ghost-hover: rgba(0, 0, 0, 0.04);
+
+  /* Cards */
+  --color-card-bg: var(--grey-50);
+  --color-card-border: var(--grey-white);
+  --color-card-elevated-bg: var(--grey-white);
+  --color-card-demoted-bg: var(--grey-150);
+  --color-card-demoted-border: var(--grey-200);
+  --color-card-outline-border: var(--grey-200);
+
+  /* Text */
+  --color-text-primary: var(--grey-800);
+  --color-text-default: var(--grey-700);
+  --color-text-supporting: var(--grey-550);
+  --color-text-secondary: var(--grey-450);
+  --color-text-disabled: var(--grey-300);
+  --color-text-invert: var(--color-on-primary);
+  --color-text-brand: var(--color-primary);
+  --color-text-error: var(--color-error-text);
+  --color-text-success: var(--color-success-text);
+  --color-text-static: var(--grey-white);
+
+  /* Borders */
+  --color-border: var(--grey-300);
+  --color-border-strong: var(--grey-450);
+  --color-border-subtle: var(--grey-200);
+
+  /* Disabled */
+  --color-disabled-bg: var(--grey-150);
+  --color-disabled-text: var(--grey-350);
+  --color-disabled-border: var(--grey-200);
+
+  /* Success */
+  --color-success: var(--green-600);
+  --color-success-subtle: var(--green-100);
+  --color-success-text: var(--green-700);
+  --color-success-badge-bg: var(--green-200);
+
+  /* Error */
+  --color-error: var(--red-600);
+  --color-error-subtle: var(--red-100);
+  --color-error-text: var(--red-700);
+  --color-error-badge-bg: var(--red-100);
+
+  /* Warning */
+  --color-warning: var(--orange-600);
+  --color-warning-subtle: var(--orange-50);
+  --color-warning-text: var(--orange-700);
+  --color-warning-badge-bg: var(--orange-200);
+
+  /* Info */
+  --color-info: var(--purple-600);
+  --color-info-subtle: var(--purple-100);
+  --color-info-text: var(--purple-700);
+  --color-info-badge-bg: var(--purple-200);
+
+  /* Alert borders */
+  --color-success-border: var(--green-200);
+  --color-error-border: var(--red-200);
+  --color-warning-border: var(--orange-100);
+  --color-info-border: var(--purple-200);
+
+  /* Tooltip */
+  --color-tooltip-bg: var(--grey-700);
+  --color-tooltip-text: var(--grey-white);
+
+  /* Tabs — pill container + inner tab */
+  --color-tab-pill-bg: var(--grey-50);
+  --color-tab-pill-outer-border: var(--grey-white);
+  --color-tab-pill-active-bg: var(--purple-100);
+  --color-tab-pill-active-text: var(--purple-600);
+  --color-tab-text-inactive: var(--grey-400);
+  --color-tab-text-disabled: var(--grey-300);
+
+  /* OTP cell (distinct from generic TextInput filled state) */
+  --color-otp-filled-bg: var(--grey-white);
+  --color-otp-filled-border: var(--grey-100);
+  --color-otp-filled-text: var(--grey-800);
+  --color-otp-focus-bg: var(--grey-white);
+  --color-otp-focus-border: var(--grey-200);
+  --color-otp-focus-ring: var(--grey-150);
+  --color-otp-error-fill: var(--grey-white);
+  --color-otp-error-gradient-from: var(--grey-150);
+  --color-otp-error-gradient-to: var(--red-100);
+
+  /* Toggle */
+  --color-toggle-bg: var(--grey-150);
+  --color-toggle-bg-hover: var(--grey-200);
+  --color-toggle-active-bg: var(--purple-100);
+  --color-toggle-active-text: var(--purple-700);
+  --color-toggle-text: var(--grey-450);
+
+  /* Input */
+  --color-input-bg: var(--grey-white);
+  --color-input-border: var(--grey-150);
+  --color-input-hover-border: var(--grey-200);
+  --color-input-filled-border: var(--grey-200);
+  --color-input-focus-border: var(--grey-200);
+  --color-input-focus-ring: var(--grey-150);
+  --color-input-disabled-bg: var(--grey-100);
+  --color-input-disabled-border: var(--grey-150);
+  --color-input-option-hover: var(--purple-50);
+  --color-input-option-selected-bg: var(--purple-100);
+  --color-input-option-selected-text: var(--purple-700);
+
+  /* Error gradient (input error borders) */
+  --color-error-gradient-from: var(--red-200);
+  --color-error-gradient-to: var(--grey-150);
+
+  /* Track / tick unfinished area */
+  --color-track-inactive: var(--grey-200);
+
+  /* Slider — track/fill gradients + thumb (fill + vertical stroke) + drop shadow. Thumb diameter: --slider-thumb-size-* (:root). */
+  --color-slider-track-active-from: var(--purple-300);
+  --color-slider-track-active-to: var(--purple-700);
+  --color-slider-track-inactive-from: var(--grey-150);
+  --color-slider-track-inactive-to: var(--grey-200);
+  --color-slider-thumb-bg: var(--purple-50);
+  --color-slider-thumb-stroke-from: var(--purple-500);
+  --color-slider-thumb-stroke-to: var(--purple-700);
+  --shadow-slider-thumb: 0 2px 6px rgba(88, 47, 210, 0.2);
+
+  /* Switch thumb */
+  --color-switch-thumb: var(--grey-white);
+
+  /* Accordion */
+  --color-accordion-border: var(--grey-200);
+  --color-accordion-header-hover: var(--grey-50);
+  --color-accordion-icon: var(--grey-400);
+
+  /* Breadcrumb */
+  --color-breadcrumb-text: var(--grey-400);
+  --color-breadcrumb-link: var(--grey-500);
+  --color-breadcrumb-link-hover: var(--purple-600);
+  --color-breadcrumb-current: var(--grey-700);
+  --color-breadcrumb-separator: var(--grey-300);
+
+  /* Table */
+  --color-table-header-bg: var(--grey-100);
+  --color-table-header-text: var(--grey-500);
+  --color-table-border: var(--grey-200);
+  --color-table-row-hover: var(--grey-50);
+  --color-table-stripe: var(--grey-50);
+
+  /* Form Controls */
+  --color-control-border-selector: var(--grey-200);
+
+  /* Button */
+  --color-btn-secondary-bg: var(--purple-50);
+  --color-btn-secondary-border: var(--purple-300);
+  --color-btn-secondary-text: var(--purple-700);
+  --color-btn-inverted-bg: var(--grey-100);
+  --color-btn-inverted-text: var(--purple-700);
+  --color-btn-ghost-hover-bg: var(--purple-50);
+  --color-btn-ghost-color: var(--purple-600);
+  --color-btn-link-color: var(--blue-600);
+  --color-btn-danger-bg: var(--red-100);
+  --color-btn-danger-text: var(--red-500);
+  --color-btn-disabled-bg: var(--grey-150);
+  --color-btn-disabled-text: var(--grey-350);
+
+  /* Radio */
+  --color-radio-card-hover-border: var(--purple-200);
+  --color-radio-card-hover-bg: var(--purple-50);
+  --color-radio-card-active-border: var(--purple-300);
+  --color-radio-card-active-bg: var(--purple-100);
+
+  /* Calendar */
+  --color-cal-selected-bg: var(--purple-600);
+  --color-cal-selected-text: var(--grey-white);
+  --color-cal-range-bg: var(--purple-50);
+  --color-cal-range-text: var(--purple-700);
+  --color-cal-hover-bg: var(--purple-50);
+  --color-cal-today-text: var(--purple-600);
+  --color-cal-cell-hover-bg: var(--grey-100);
+
+  /* Badge — solid (gradient from→to + border) */
+  --color-badge-purple-gradient-from: var(--purple-200);
+  --color-badge-purple-gradient-to: var(--purple-100);
+  --color-badge-purple-border: var(--purple-200);
+  --color-badge-purple-text: var(--purple-800);
+
+  --color-badge-green-gradient-from: var(--lime-200);
+  --color-badge-green-gradient-to: var(--lime-100);
+  --color-badge-green-border: var(--lime-200);
+  --color-badge-green-text: var(--green-800);
+
+  --color-badge-blue-gradient-from: var(--blue-200);
+  --color-badge-blue-gradient-to: var(--blue-100);
+  --color-badge-blue-border: var(--blue-200);
+  --color-badge-blue-text: var(--blue-800);
+
+  --color-badge-orange-gradient-from: var(--orange-200);
+  --color-badge-orange-gradient-to: var(--orange-100);
+  --color-badge-orange-border: var(--orange-200);
+  --color-badge-orange-text: var(--orange-800);
+
+  --color-badge-pink-gradient-from: var(--red-200);
+  --color-badge-pink-gradient-to: var(--red-100);
+  --color-badge-pink-border: var(--red-200);
+  --color-badge-pink-text: var(--red-800);
+
+  --color-badge-gray-gradient-from: var(--grey-200);
+  --color-badge-gray-gradient-to: var(--grey-100);
+  --color-badge-gray-border: var(--grey-200);
+  --color-badge-gray-text: var(--grey-600);
+
+  /* Badge outline */
+  --color-badge-purple-outline-color: var(--purple-600);
+  --color-badge-green-outline-color: var(--lime-600);
+  --color-badge-blue-outline-color: var(--blue-600);
+  --color-badge-orange-outline-color: var(--orange-600);
+  --color-badge-pink-outline-color: var(--red-600);
+  --color-badge-gray-outline-color: var(--grey-600);
+
+  /* Counter badge (gradient from→to + border) */
+  --color-counter-pink-gradient-from: var(--red-500);
+  --color-counter-pink-gradient-to: var(--red-400);
+  --color-counter-pink-border: var(--red-500);
+
+  --color-counter-purple-gradient-from: var(--purple-500);
+  --color-counter-purple-gradient-to: var(--purple-400);
+  --color-counter-purple-border: var(--purple-500);
+
+  --color-counter-blue-gradient-from: var(--blue-500);
+  --color-counter-blue-gradient-to: var(--blue-400);
+  --color-counter-blue-border: var(--blue-500);
+
+  /* Wizard */
+  --color-wizard-active-bg: var(--purple-500);
+  --color-wizard-active-text: var(--grey-50);
+  --color-wizard-active-shadow-top: var(--purple-400);
+  --color-wizard-active-shadow-bottom: var(--purple-700);
+  --color-wizard-done-bg: var(--purple-200);
+  --color-wizard-done-text: var(--purple-600);
+  --color-wizard-upcoming-border: var(--grey-250);
+  --color-wizard-upcoming-text: var(--grey-350);
+  --color-wizard-connector-done: var(--purple-200);
+  --color-wizard-connector-upcoming: var(--grey-250);
+}
+
+
+/* ============================================================
+   SEMANTIC TOKENS — DARK THEME
+   ============================================================ */
+
+[data-theme="dark"] {
+  /* Shadows (tiered) */
+  --shadow-xs:  0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-sm:  0 1px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md:  0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-lg:  0px 2px 16px 4px rgba(0, 0, 0, 0.2);
+  --shadow-xl:  0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-2xl: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-border: 0 0 0 1px rgba(255, 255, 255, 0.06);
+  --shadow-card: var(--shadow-lg);
+  --shadow-dropdown: var(--shadow-lg);
+  --shadow-modal: var(--shadow-xl);
+  --shadow-subtle: var(--shadow-xs);
+
+  /* Component shadows */
+  --shadow-btn-inner: inset 0px 1px 2px 1px rgba(255, 255, 255, 0.15);
+  --shadow-btn-hover: 0px 4px 8px 0px rgba(0, 0, 0, 0.3);
+  --shadow-btn-secondary-hover: inset 0px 2px 4px rgba(0, 0, 0, 0.2);
+
+  /* Primary */
+  --color-primary: var(--purple-500);
+  --color-primary-hover: var(--purple-400);
+  --color-primary-active: var(--purple-300);
+  --color-primary-subtle: var(--purple-900);
+  --color-primary-muted: var(--purple-600);
+  --color-primary-ring: var(--purple-800);
+  --color-on-primary: var(--grey-white);
+
+  /* Surfaces */
+  --color-surface: var(--grey-750);
+  --color-surface-raised: var(--grey-700);
+  --color-surface-raised-hover: var(--grey-650);
+  --color-surface-raised-active: var(--grey-600);
+  --color-surface-overlay: rgba(0, 0, 0, 0.7);
+  --color-surface-ghost-hover: rgba(255, 255, 255, 0.05);
+
+  /* Cards */
+  --color-card-bg: var(--grey-650);
+  --color-card-border: var(--grey-600);
+  --color-card-elevated-bg: var(--grey-650);
+  --color-card-demoted-bg: var(--grey-750);
+  --color-card-demoted-border: var(--grey-600);
+  --color-card-outline-border: var(--grey-600);
+
+  /* Text */
+  --color-text-primary: var(--grey-50);
+  --color-text-default: var(--grey-100);
+  --color-text-supporting: var(--grey-200);
+  --color-text-secondary: var(--grey-350);
+  --color-text-disabled: var(--grey-450);
+  --color-text-invert: var(--color-on-primary);
+  --color-text-brand: var(--color-primary);
+  --color-text-error: var(--color-error-text);
+  --color-text-success: var(--color-success-text);
+  --color-text-static: var(--grey-white);
+
+  /* Borders */
+  --color-border: var(--grey-600);
+  --color-border-strong: var(--grey-550);
+  --color-border-subtle: var(--grey-650);
+
+  /* Disabled */
+  --color-disabled-bg: var(--grey-600);
+  --color-disabled-text: var(--grey-450);
+  --color-disabled-border: var(--grey-600);
+
+  /* Success */
+  --color-success: var(--green-500);
+  --color-success-subtle: var(--green-950);
+  --color-success-text: var(--green-400);
+  --color-success-badge-bg: var(--green-900);
+
+  /* Error */
+  --color-error: var(--red-600);
+  --color-error-subtle: var(--red-950);
+  --color-error-text: var(--red-400);
+  --color-error-badge-bg: var(--red-900);
+
+  /* Warning */
+  --color-warning: var(--orange-500);
+  --color-warning-subtle: var(--orange-950);
+  --color-warning-text: var(--orange-400);
+  --color-warning-badge-bg: var(--orange-900);
+
+  /* Info */
+  --color-info: var(--purple-500);
+  --color-info-subtle: var(--purple-950);
+  --color-info-text: var(--purple-400);
+  --color-info-badge-bg: var(--purple-900);
+
+  /* Alert borders */
+  --color-success-border: var(--green-800);
+  --color-error-border: var(--red-800);
+  --color-warning-border: var(--orange-800);
+  --color-info-border: var(--purple-800);
+
+  /* Tooltip */
+  --color-tooltip-bg: var(--grey-200);
+  --color-tooltip-text: var(--grey-750);
+
+  /* Tabs — pill container + inner tab */
+  --color-tab-pill-bg: var(--grey-650);
+  --color-tab-pill-outer-border: var(--grey-600);
+  --color-tab-pill-active-bg: var(--purple-900);
+  --color-tab-pill-active-text: var(--grey-white);
+  --color-tab-text-inactive: var(--grey-400);
+  --color-tab-text-disabled: var(--grey-500);
+
+  /* OTP cell */
+  --color-otp-filled-bg: var(--grey-750);
+  --color-otp-filled-border: var(--grey-600);
+  --color-otp-filled-text: var(--grey-100);
+  --color-otp-focus-bg: var(--grey-700);
+  --color-otp-focus-border: var(--grey-550);
+  --color-otp-focus-ring: var(--grey-600);
+  --color-otp-error-fill: var(--grey-700);
+  --color-otp-error-gradient-from: var(--grey-600);
+  --color-otp-error-gradient-to: var(--red-900);
+
+  /* Toggle */
+  --color-toggle-bg: var(--grey-650);
+  --color-toggle-bg-hover: var(--grey-600);
+  --color-toggle-active-bg: var(--purple-900);
+  --color-toggle-active-text: var(--purple-300);
+  --color-toggle-text: var(--grey-350);
+
+  /* Input */
+  --color-input-bg: var(--grey-750);
+  --color-input-border: var(--grey-600);
+  --color-input-hover-border: var(--grey-550);
+  --color-input-filled-border: var(--grey-550);
+  --color-input-focus-border: var(--grey-550);
+  --color-input-focus-ring: var(--grey-600);
+  --color-input-disabled-bg: var(--grey-700);
+  --color-input-disabled-border: var(--grey-600);
+  --color-input-option-hover: var(--grey-650);
+  --color-input-option-selected-bg: var(--purple-900);
+  --color-input-option-selected-text: var(--purple-300);
+
+  /* Error gradient (input error borders) */
+  --color-error-gradient-from: var(--red-800);
+  --color-error-gradient-to: var(--grey-600);
+
+  /* Track / tick unfinished area */
+  --color-track-inactive: var(--grey-600);
+
+  /* Slider — dark theme (same thumb stroke + --slider-thumb-size-* as light) */
+  --color-slider-track-active-from: var(--purple-800);
+  --color-slider-track-active-to: var(--purple-500);
+  --color-slider-track-inactive-from: var(--grey-500);
+  --color-slider-track-inactive-to: var(--grey-550);
+  --color-slider-thumb-bg: var(--purple-50);
+  --color-slider-thumb-stroke-from: var(--purple-500);
+  --color-slider-thumb-stroke-to: var(--purple-700);
+  --shadow-slider-thumb: 0 2px 6px rgba(62, 34, 144, 0.55);
+
+  /* Switch thumb */
+  --color-switch-thumb: var(--grey-white);
+
+  /* Accordion */
+  --color-accordion-border: var(--grey-600);
+  --color-accordion-header-hover: var(--grey-650);
+  --color-accordion-icon: var(--grey-400);
+
+  /* Breadcrumb */
+  --color-breadcrumb-text: var(--grey-400);
+  --color-breadcrumb-link: var(--grey-350);
+  --color-breadcrumb-link-hover: var(--purple-400);
+  --color-breadcrumb-current: var(--grey-100);
+  --color-breadcrumb-separator: var(--grey-550);
+
+  /* Table */
+  --color-table-header-bg: var(--grey-700);
+  --color-table-header-text: var(--grey-350);
+  --color-table-border: var(--grey-600);
+  --color-table-row-hover: var(--grey-650);
+  --color-table-stripe: rgba(255, 255, 255, 0.02);
+
+  /* Form Controls */
+  --color-control-border-selector: var(--grey-500);
+
+  /* Button */
+  --color-btn-secondary-bg: var(--grey-650);
+  --color-btn-secondary-border: var(--purple-600);
+  --color-btn-secondary-text: var(--grey-50);
+  --color-btn-inverted-bg: var(--grey-100);
+  --color-btn-inverted-text: var(--purple-700);
+  --color-btn-ghost-hover-bg: var(--grey-600);
+  --color-btn-primary-hover-bg: var(--purple-600);
+  --color-btn-ghost-color: var(--purple-500);
+  --color-btn-link-color: var(--blue-500);
+  --color-btn-danger-bg: var(--red-900);
+  --color-btn-danger-text: var(--red-200);
+  --color-btn-disabled-bg: var(--grey-600);
+  --color-btn-disabled-text: var(--grey-450);
+
+  /* Radio */
+  --color-radio-card-hover-border: var(--purple-700);
+  --color-radio-card-hover-bg: var(--purple-950);
+  --color-radio-card-active-border: var(--purple-600);
+  --color-radio-card-active-bg: var(--purple-900);
+
+  /* Calendar */
+  --color-cal-selected-bg: var(--purple-500);
+  --color-cal-selected-text: var(--grey-white);
+  --color-cal-range-bg: var(--purple-950);
+  --color-cal-range-text: var(--purple-300);
+  --color-cal-hover-bg: var(--purple-950);
+  --color-cal-today-text: var(--purple-400);
+  --color-cal-cell-hover-bg: var(--grey-650);
+
+  /* Badge — solid + dot + counter (dark only: muted 90% fill, 900-tier border) */
+  --color-badge-purple-gradient-from: color-mix(in srgb, var(--purple-950) 90%, transparent);
+  --color-badge-purple-gradient-to: color-mix(in srgb, var(--purple-900) 90%, transparent);
+  --color-badge-purple-border: var(--purple-900);
+  --color-badge-purple-text: var(--purple-200);
+
+  --color-badge-green-gradient-from: color-mix(in srgb, var(--lime-950) 90%, transparent);
+  --color-badge-green-gradient-to: color-mix(in srgb, var(--lime-900) 90%, transparent);
+  --color-badge-green-border: var(--lime-900);
+  --color-badge-green-text: var(--green-200);
+
+  --color-badge-blue-gradient-from: color-mix(in srgb, var(--blue-950) 90%, transparent);
+  --color-badge-blue-gradient-to: color-mix(in srgb, var(--blue-900) 90%, transparent);
+  --color-badge-blue-border: var(--blue-900);
+  --color-badge-blue-text: var(--blue-200);
+
+  --color-badge-orange-gradient-from: color-mix(in srgb, var(--orange-950) 90%, transparent);
+  --color-badge-orange-gradient-to: color-mix(in srgb, var(--orange-900) 90%, transparent);
+  --color-badge-orange-border: var(--orange-900);
+  --color-badge-orange-text: var(--orange-200);
+
+  --color-badge-pink-gradient-from: color-mix(in srgb, var(--red-950) 90%, transparent);
+  --color-badge-pink-gradient-to: color-mix(in srgb, var(--red-900) 90%, transparent);
+  --color-badge-pink-border: var(--red-900);
+  --color-badge-pink-text: var(--red-200);
+
+  --color-badge-gray-gradient-from: color-mix(in srgb, var(--grey-800) 90%, transparent);
+  --color-badge-gray-gradient-to: color-mix(in srgb, var(--grey-700) 90%, transparent);
+  --color-badge-gray-border: var(--grey-600);
+  --color-badge-gray-text: var(--grey-200);
+
+  /* Badge outline */
+  --color-badge-purple-outline-color: var(--purple-400);
+  --color-badge-green-outline-color: var(--lime-600);
+  --color-badge-blue-outline-color: var(--blue-600);
+  --color-badge-orange-outline-color: var(--orange-600);
+  --color-badge-pink-outline-color: var(--red-600);
+  --color-badge-gray-outline-color: var(--grey-500);
+
+  /* Counter badge — dark: muted fill, 900-tier border */
+  --color-counter-pink-gradient-from: color-mix(in srgb, var(--red-950) 90%, transparent);
+  --color-counter-pink-gradient-to: color-mix(in srgb, var(--red-900) 90%, transparent);
+  --color-counter-pink-border: var(--red-900);
+
+  --color-counter-purple-gradient-from: color-mix(in srgb, var(--purple-950) 90%, transparent);
+  --color-counter-purple-gradient-to: color-mix(in srgb, var(--purple-900) 90%, transparent);
+  --color-counter-purple-border: var(--purple-900);
+
+  --color-counter-blue-gradient-from: color-mix(in srgb, var(--blue-950) 90%, transparent);
+  --color-counter-blue-gradient-to: color-mix(in srgb, var(--blue-900) 90%, transparent);
+  --color-counter-blue-border: var(--blue-900);
+
+  /* Wizard */
+  --color-wizard-active-bg: var(--purple-600);
+  --color-wizard-active-text: var(--grey-white);
+  --color-wizard-active-shadow-top: var(--purple-500);
+  --color-wizard-active-shadow-bottom: var(--purple-800);
+  --color-wizard-done-bg: var(--purple-700);
+  --color-wizard-done-text: var(--purple-300);
+  --color-wizard-upcoming-border: var(--grey-500);
+  --color-wizard-upcoming-text: var(--grey-450);
+  --color-wizard-connector-done: var(--purple-700);
+  --color-wizard-connector-upcoming: var(--grey-500);
+}
+
+/* ============================================================
+   TYPOGRAPHY TOKENS
+   ============================================================ */
+
+:root {
+  /* Display */
+  --font-display-xl-size: 72px;
+  --font-display-xl-line: 80px;
+  --font-display-xl-spacing: -2px;
+  --font-display-xl-weight: 700;
+
+  --font-display-lg-size: 56px;
+  --font-display-lg-line: 64px;
+  --font-display-lg-spacing: -1.5px;
+  --font-display-lg-weight: 700;
+
+  --font-display-md-size: 48px;
+  --font-display-md-line: 56px;
+  --font-display-md-spacing: -1px;
+  --font-display-md-weight: 700;
+
+  --font-display-sm-size: 40px;
+  --font-display-sm-line: 48px;
+  --font-display-sm-spacing: -0.5px;
+  --font-display-sm-weight: 600;
+
+  /* Headings */
+  --font-heading-xl-size: 32px;
+  --font-heading-xl-line: 40px;
+  --font-heading-xl-spacing: -0.5px;
+  --font-heading-xl-weight: 600;
+
+  --font-heading-lg-size: 24px;
+  --font-heading-lg-line: 32px;
+  --font-heading-lg-spacing: -0.3px;
+  --font-heading-lg-weight: 600;
+
+  --font-heading-md-size: 20px;
+  --font-heading-md-line: 28px;
+  --font-heading-md-spacing: -0.2px;
+  --font-heading-md-weight: 600;
+
+  --font-heading-sm-size: 18px;
+  --font-heading-sm-line: 24px;
+  --font-heading-sm-spacing: 0px;
+  --font-heading-sm-weight: 600;
+
+  /* Body */
+  --font-body-lg-size: 18px;
+  --font-body-lg-line: 28px;
+  --font-body-lg-spacing: 0px;
+  --font-body-lg-weight: 400;
+
+  --font-body-md-size: 16px;
+  --font-body-md-line: 24px;
+  --font-body-md-spacing: 0px;
+  --font-body-md-weight: 400;
+
+  --font-body-sm-size: 14px;
+  --font-body-sm-line: 20px;
+  --font-body-sm-spacing: 0px;
+  --font-body-sm-weight: 400;
+
+  /* Labels & Captions */
+  --font-label-lg-size: 14px;
+  --font-label-lg-line: 20px;
+  --font-label-lg-spacing: 0.1px;
+  --font-label-lg-weight: 500;
+
+  --font-label-md-size: 12px;
+  --font-label-md-line: 16px;
+  --font-label-md-spacing: 0.2px;
+  --font-label-md-weight: 500;
+
+  --font-label-sm-size: 11px;
+  --font-label-sm-line: 14px;
+  --font-label-sm-spacing: 0.3px;
+  --font-label-sm-weight: 500;
+
+  --font-caption-size: 12px;
+  --font-caption-line: 16px;
+  --font-caption-spacing: 0px;
+  --font-caption-weight: 400;
+
+  --font-overline-size: 11px;
+  --font-overline-line: 16px;
+  --font-overline-spacing: 0.5px;
+  --font-overline-weight: 600;
+}
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

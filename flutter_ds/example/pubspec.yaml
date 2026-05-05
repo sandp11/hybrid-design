@@ -1,0 +1,20 @@
+name: flutter_ds_example
+description: Preview app for the flutter_ds design system package.
+publish_to: none
+version: 0.1.0
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.10.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_ds:
+    path: ..
+
+dev_dependencies:
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true

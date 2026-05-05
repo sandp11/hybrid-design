@@ -1,0 +1,163 @@
+/* ============================================================
+   ACKO Design System — Tailwind v4 Theme Mapping
+   Import after tokens.css:  @import "@acko/tokens/theme.css"
+
+   @theme inline creates utility classes WITHOUT generating
+   CSS custom properties, avoiding namespace collisions with
+   tokens.css which already defines them on :root.
+   ============================================================ */
+
+@theme inline {
+  /* --- Spacing base (1px at 16px root — utility numbers = pixel values) --- */
+  --spacing: 0.0625rem;
+
+  /* --- Colors (semantic) --- */
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-primary-active: var(--color-primary-active);
+  --color-primary-subtle: var(--color-primary-subtle);
+  --color-primary-muted: var(--color-primary-muted);
+  --color-primary-ring: var(--color-primary-ring);
+  --color-on-primary: var(--color-on-primary);
+
+  --color-surface: var(--color-surface);
+  --color-surface-raised: var(--color-surface-raised);
+  --color-surface-raised-hover: var(--color-surface-raised-hover);
+  --color-surface-raised-active: var(--color-surface-raised-active);
+  --color-surface-overlay: var(--color-surface-overlay);
+  --color-surface-ghost-hover: var(--color-surface-ghost-hover);
+
+  --color-text-primary: var(--color-text-primary);
+  --color-text-default: var(--color-text-default);
+  --color-text-supporting: var(--color-text-supporting);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-disabled: var(--color-text-disabled);
+  --color-text-invert: var(--color-text-invert);
+  --color-text-brand: var(--color-text-brand);
+  --color-text-error: var(--color-text-error);
+  --color-text-success: var(--color-text-success);
+  --color-text-static: var(--color-text-static);
+
+  --color-border: var(--color-border);
+  --color-border-strong: var(--color-border-strong);
+  --color-border-subtle: var(--color-border-subtle);
+
+  --color-disabled-bg: var(--color-disabled-bg);
+  --color-disabled-text: var(--color-disabled-text);
+  --color-disabled-border: var(--color-disabled-border);
+
+  --color-error: var(--color-error);
+  --color-error-text: var(--color-error-text);
+  --color-error-subtle: var(--color-error-subtle);
+  --color-error-border: var(--color-error-border);
+
+  --color-success: var(--color-success);
+  --color-success-text: var(--color-success-text);
+  --color-success-subtle: var(--color-success-subtle);
+  --color-success-border: var(--color-success-border);
+
+  --color-warning: var(--color-warning);
+  --color-warning-text: var(--color-warning-text);
+  --color-warning-subtle: var(--color-warning-subtle);
+  --color-warning-border: var(--color-warning-border);
+
+  --color-info: var(--color-info);
+  --color-info-text: var(--color-info-text);
+  --color-info-subtle: var(--color-info-subtle);
+  --color-info-border: var(--color-info-border);
+
+  --color-card-bg: var(--color-card-bg);
+  --color-card-border: var(--color-card-border);
+  --color-card-elevated-bg: var(--color-card-elevated-bg);
+  --color-card-demoted-bg: var(--color-card-demoted-bg);
+  --color-card-demoted-border: var(--color-card-demoted-border);
+  --color-card-outline-border: var(--color-card-outline-border);
+
+  --color-btn-secondary-bg: var(--color-btn-secondary-bg);
+  --color-btn-secondary-border: var(--color-btn-secondary-border);
+  --color-btn-secondary-text: var(--color-btn-secondary-text);
+  --color-btn-inverted-bg: var(--color-btn-inverted-bg);
+  --color-btn-inverted-text: var(--color-btn-inverted-text);
+  --color-btn-ghost-color: var(--color-btn-ghost-color);
+  --color-btn-ghost-hover-bg: var(--color-btn-ghost-hover-bg);
+  --color-btn-link-color: var(--color-btn-link-color);
+  --color-btn-danger-bg: var(--color-btn-danger-bg);
+  --color-btn-danger-text: var(--color-btn-danger-text);
+  --color-btn-disabled-bg: var(--color-btn-disabled-bg);
+  --color-btn-disabled-text: var(--color-btn-disabled-text);
+
+  --color-input-bg: var(--color-input-bg);
+  --color-input-border: var(--color-input-border);
+  --color-input-hover-border: var(--color-input-hover-border);
+  --color-input-filled-border: var(--color-input-filled-border);
+  --color-input-focus-border: var(--color-input-focus-border);
+  --color-input-focus-ring: var(--color-input-focus-ring);
+  --color-input-disabled-bg: var(--color-input-disabled-bg);
+  --color-input-disabled-border: var(--color-input-disabled-border);
+
+  --color-tab-pill-bg: var(--color-tab-pill-bg);
+  --color-tab-pill-outer-border: var(--color-tab-pill-outer-border);
+  --color-tab-pill-active-bg: var(--color-tab-pill-active-bg);
+  --color-tab-pill-active-text: var(--color-tab-pill-active-text);
+  --color-tab-text-inactive: var(--color-tab-text-inactive);
+  --color-tab-text-disabled: var(--color-tab-text-disabled);
+
+  --color-otp-filled-bg: var(--color-otp-filled-bg);
+  --color-otp-filled-border: var(--color-otp-filled-border);
+  --color-otp-filled-text: var(--color-otp-filled-text);
+  --color-otp-focus-bg: var(--color-otp-focus-bg);
+  --color-otp-focus-border: var(--color-otp-focus-border);
+  --color-otp-focus-ring: var(--color-otp-focus-ring);
+  --color-otp-error-fill: var(--color-otp-error-fill);
+  --color-otp-error-gradient-from: var(--color-otp-error-gradient-from);
+  --color-otp-error-gradient-to: var(--color-otp-error-gradient-to);
+
+  --color-error-gradient-from: var(--color-error-gradient-from);
+  --color-error-gradient-to: var(--color-error-gradient-to);
+  --color-track-inactive: var(--color-track-inactive);
+  --color-slider-track-active-from: var(--color-slider-track-active-from);
+  --color-slider-track-active-to: var(--color-slider-track-active-to);
+  --color-slider-track-inactive-from: var(--color-slider-track-inactive-from);
+  --color-slider-track-inactive-to: var(--color-slider-track-inactive-to);
+  --color-slider-thumb-bg: var(--color-slider-thumb-bg);
+  --color-slider-thumb-stroke-from: var(--color-slider-thumb-stroke-from);
+  --color-slider-thumb-stroke-to: var(--color-slider-thumb-stroke-to);
+  --color-switch-thumb: var(--color-switch-thumb);
+
+  --color-tooltip-bg: var(--color-tooltip-bg);
+  --color-tooltip-text: var(--color-tooltip-text);
+
+  /* --- Shadows (tiered) --- */
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
+  --shadow-border: var(--shadow-border);
+  --shadow-card: var(--shadow-card);
+  --shadow-dropdown: var(--shadow-dropdown);
+  --shadow-modal: var(--shadow-modal);
+  --shadow-subtle: var(--shadow-subtle);
+  --shadow-btn-inner: var(--shadow-btn-inner);
+  --shadow-btn-hover: var(--shadow-btn-hover);
+  --shadow-btn-secondary-hover: var(--shadow-btn-secondary-hover);
+  --shadow-focus-ring: var(--shadow-focus-ring);
+  --shadow-slider-thumb: var(--shadow-slider-thumb);
+
+  /* --- Slider layout (thumb diameter) --- */
+  --slider-thumb-size-sm: var(--slider-thumb-size-sm);
+  --slider-thumb-size-md: var(--slider-thumb-size-md);
+  --slider-thumb-size-lg: var(--slider-thumb-size-lg);
+
+  /* --- Border Radius --- */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-2xl: var(--radius-2xl);
+  --radius-3xl: var(--radius-3xl);
+  --radius-4xl: var(--radius-4xl);
+  --radius-full: var(--radius-full);
+
+}

@@ -1,0 +1,282 @@
+/* ============================================================
+   Button — @acko/css/button.css
+   Import per-component:  @import "@acko/css/button.css"
+   ============================================================ */
+
+/* --- Base --- */
+
+.acko-btn {
+    @apply inline-flex items-center justify-center font-medium
+           leading-none border-none cursor-pointer select-none
+           whitespace-nowrap no-underline relative gap-8;
+    font-family: inherit;
+    transition:
+      background-color 150ms ease,
+      color 150ms ease,
+      border-color 150ms ease,
+      transform 100ms ease,
+      box-shadow 150ms ease;
+  }
+  
+  .acko-btn:focus-visible {
+    outline: none;
+    box-shadow: var(--shadow-focus-ring);
+  }
+  
+  .acko-btn:active:not(:disabled) {
+    transform: scale(0.97);
+  }
+  
+  /* --- Sizes --- */
+  
+  .acko-btn-xs { @apply h-32 px-16 text-xs rounded-full; line-height: 1rem; }
+  .acko-btn-sm { @apply h-40 px-16 text-sm rounded-full; line-height: 1.125rem; }
+  .acko-btn-md { @apply h-48 px-16 text-base leading-24 rounded-full; }
+  .acko-btn-lg { @apply h-56 px-24 text-lg rounded-full; line-height: 1.75rem; }
+  .acko-btn-xl { @apply h-64 px-32 text-xl rounded-full; line-height: 2rem; }
+  
+  /* --- Icon sizing per size --- */
+  
+  .acko-btn-icon { @apply inline-flex items-center justify-center shrink-0; }
+  
+  .acko-btn-xs .acko-btn-icon { @apply w-12 h-12; }
+  .acko-btn-sm .acko-btn-icon { @apply w-16 h-16; }
+  .acko-btn-md .acko-btn-icon { @apply w-16 h-16; }
+  .acko-btn-lg .acko-btn-icon { @apply w-24 h-24; }
+  .acko-btn-xl .acko-btn-icon { @apply w-32 h-32; }
+  
+  /* --- Icon-only (square) --- */
+  
+  .acko-btn-icon-only.acko-btn-xs { @apply w-32 p-0; }
+  .acko-btn-icon-only.acko-btn-sm { @apply w-40 p-0; }
+  .acko-btn-icon-only.acko-btn-md { @apply w-48 p-0; }
+  .acko-btn-icon-only.acko-btn-lg { @apply w-56 p-0; }
+  .acko-btn-icon-only.acko-btn-xl { @apply w-64 p-0; }
+  
+  /* --- Full width --- */
+  
+  .acko-btn-full-width { @apply w-full; }
+  
+  /* --- Variants --- */
+  
+  .acko-btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    box-shadow: var(--shadow-btn-inner);
+  }
+  
+  .acko-btn-secondary {
+    background-color: var(--color-btn-secondary-bg);
+    color: var(--color-btn-secondary-text);
+    box-shadow: inset 0 0 0 1px var(--color-btn-secondary-border);
+  }
+  
+  .acko-btn-secondary:focus-visible {
+    box-shadow:
+      inset 0 0 0 1px var(--color-btn-secondary-border),
+      var(--shadow-focus-ring);
+  }
+  
+  .acko-btn-inverted {
+    background-color: var(--color-btn-inverted-bg);
+    color: var(--color-btn-inverted-text);
+  }
+  
+  .acko-btn-ghost {
+    @apply bg-transparent;
+    color: var(--color-btn-ghost-color);
+  }
+  
+  .acko-btn-link {
+    @apply bg-transparent;
+    color: var(--color-btn-link-color);
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .acko-btn-danger {
+    background-color: var(--color-btn-danger-bg);
+    color: var(--color-btn-danger-text);
+  }
+  
+  .acko-btn-danger:focus-visible {
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-error) 20%, transparent);
+  }
+  
+  /* --- Hover (pointer devices only) --- */
+  
+  @media (hover: hover) and (pointer: fine) {
+    .acko-btn-primary:hover:not(:disabled) {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08));
+      background-color: var(--color-primary);
+      box-shadow:
+        var(--shadow-btn-inner),
+        var(--shadow-btn-hover);
+    }
+  
+    .acko-btn-secondary:hover:not(:disabled) {
+      background-color: var(--color-btn-secondary-bg);
+      filter: brightness(0.96);
+      box-shadow: inset 0 0 0 1px var(--color-btn-secondary-border);
+    }
+  
+    .acko-btn-inverted:hover:not(:disabled) {
+      filter: brightness(0.96);
+    }
+  
+    .acko-btn-ghost:hover:not(:disabled) {
+      background-color: var(--color-btn-ghost-hover-bg);
+    }
+  
+    .acko-btn-link:hover:not(:disabled) {
+      text-decoration: underline;
+    }
+  
+    .acko-btn-danger:hover:not(:disabled) {
+      filter: brightness(0.96);
+    }
+  }
+  
+  /* --- Disabled --- */
+  
+  .acko-btn-disabled,
+  .acko-btn:disabled {
+    @apply cursor-not-allowed;
+    background-color: var(--color-btn-disabled-bg) !important;
+    color: var(--color-btn-disabled-text) !important;
+    box-shadow: none !important;
+    opacity: 1;
+    filter: none;
+  }
+  
+  .acko-btn-disabled:active,
+  .acko-btn:disabled:active {
+    transform: none;
+  }
+  
+  .acko-btn-link:disabled,
+  .acko-btn-link.acko-btn-disabled {
+    background-color: transparent !important;
+  }
+  
+  /* ============================================================
+     Dark theme overrides
+     ============================================================ */
+  
+  [data-theme="dark"] .acko-btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    box-shadow: var(--shadow-btn-inner);
+  }
+  
+  [data-theme="dark"] .acko-btn-secondary {
+    background-color: var(--color-btn-secondary-bg);
+    color: var(--color-btn-secondary-text);
+    box-shadow: inset 0 0 0 1px var(--color-btn-secondary-border);
+  }
+  
+  [data-theme="dark"] .acko-btn-inverted {
+    background-color: var(--color-btn-inverted-bg);
+    color: var(--color-btn-inverted-text);
+  }
+  
+  [data-theme="dark"] .acko-btn-ghost {
+    @apply bg-transparent;
+    color: var(--color-btn-ghost-color);
+  }
+  
+  [data-theme="dark"] .acko-btn-link {
+    @apply bg-transparent;
+    color: var(--color-btn-link-color);
+  }
+  
+  [data-theme="dark"] .acko-btn-danger {
+    background-color: var(--color-btn-danger-bg);
+    color: var(--color-btn-danger-text);
+  }
+  
+  [data-theme="dark"] .acko-btn:disabled {
+    background-color: var(--color-btn-disabled-bg) !important;
+    color: var(--color-btn-disabled-text) !important;
+    box-shadow: none !important;
+    cursor: not-allowed;
+    opacity: 1;
+    filter: none;
+  }
+  
+  @media (hover: hover) and (pointer: fine) {
+    [data-theme="dark"] .acko-btn-primary:hover:not(:disabled) {
+      background-color: var(--color-btn-primary-hover-bg);
+      background-image: none;
+      box-shadow:
+        var(--shadow-btn-inner),
+        var(--shadow-btn-hover);
+    }
+  
+    [data-theme="dark"] .acko-btn-secondary:hover:not(:disabled) {
+      filter: brightness(1.1);
+    }
+  
+    [data-theme="dark"] .acko-btn-inverted:hover:not(:disabled) {
+      filter: brightness(0.9);
+    }
+  
+    [data-theme="dark"] .acko-btn-ghost:hover:not(:disabled) {
+      background-color: var(--color-btn-ghost-hover-bg);
+    }
+  
+    [data-theme="dark"] .acko-btn-link:hover:not(:disabled) {
+      text-decoration: underline;
+    }
+  
+    [data-theme="dark"] .acko-btn-danger:hover:not(:disabled) {
+      filter: brightness(1.1);
+    }
+  }
+  
+  /* --- Content wrapper --- */
+  
+  .acko-btn-content {
+    @apply inline-flex items-center justify-center gap-8;
+  }
+  
+  .acko-btn-label {
+    @apply leading-none;
+  }
+  
+  /* --- Loading — 3 dot wave --- */
+  
+  .acko-btn-loading {
+    @apply pointer-events-none;
+  }
+  
+  .acko-btn-loading .acko-btn-content {
+    visibility: hidden;
+  }
+  
+  .acko-btn-dots {
+    @apply absolute inline-flex items-center justify-center gap-4;
+  }
+  
+  .acko-btn-dot {
+    @apply w-6 h-6;
+    border-radius: 50%;
+    background-color: currentColor;
+    animation: acko-dot-wave 1.2s ease-in-out infinite;
+  }
+  
+  .acko-btn-dot:nth-child(2) { animation-delay: 0.15s; }
+  .acko-btn-dot:nth-child(3) { animation-delay: 0.3s; }
+  
+  .acko-btn-primary .acko-btn-dots { color: var(--color-on-primary); }
+  .acko-btn-secondary .acko-btn-dots { color: var(--color-btn-secondary-text); }
+  .acko-btn-inverted .acko-btn-dots { color: var(--color-btn-inverted-text); }
+  .acko-btn-ghost .acko-btn-dots { color: var(--color-btn-ghost-color); }
+  .acko-btn-link .acko-btn-dots { color: var(--color-btn-link-color); }
+  .acko-btn-danger .acko-btn-dots { color: var(--color-btn-danger-text); }
+  
+  @keyframes acko-dot-wave {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+    30% { transform: translateY(-0.375rem); opacity: 1; }
+  }
+  

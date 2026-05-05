@@ -1,0 +1,58 @@
+# Dependencies
+node_modules/
+
+# Package managers
+.pnpm-store/
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# TypeScript / JS build outputs
+dist/
+*.tsbuildinfo
+
+# Storybook
+storybook-static/
+
+# Logs & diagnostics
+logs/
+*.log
+coverage/
+.nyc_output/
+
+# Environment & local overrides
+.env
+.env.*
+!.env.example
+*.local
+
+# IDE & editors
+.idea/
+*.iml
+*.ipr
+*.iws
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Flutter / Dart
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+**/doc/api/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Flutter build output (packages, example apps, future platform folders)
+**/build/
+
+# Certificates / keystores (never commit)
+*.pem
+*.jks
+*.p12
+*.mobileprovision
