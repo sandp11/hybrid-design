@@ -11,3 +11,5 @@ export 'src/foundation/typography.dart';
 // Components — append new exports below this line
 export 'src/components/button/ds_button.dart';
 export 'src/components/button/ds_button_theme.dart';
+export 'src/components/badge/ds_badge.dart';
+export 'src/components/badge/ds_badge_theme.dart';

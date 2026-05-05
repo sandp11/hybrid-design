@@ -7,6 +7,7 @@
 | name    | status | react-package  | flutter-export | depends-on | used-by |
 |---------|--------|----------------|----------------|------------|---------|
 | button  | stable | @acko/button   | DsButton       | —          | —       |
+| badge   | draft  | @acko/badge    | DsBadge        | —          | —       |
 
 ---
 
@@ -38,6 +39,39 @@ tokens-used:
   typography:
     - 12px/16px weight-500 (xs), 14px/18px weight-500 (sm), 16px/24px weight-500 (md)
     - 18px/28px weight-500 (lg), 20px/32px weight-500 (xl)
+depends-on:      —
+used-by:         —
+last-modified:   2026-05-05
+modified-by:     migrate-agent
+
+---
+
+## badge
+
+status:          draft
+path:            specs/components/badge/
+react-package:   @acko/badge
+flutter-export:  DsBadge, DsCounterBadge
+variants:        solid, outline, dot (Badge) | counter (CounterBadge)
+colors:          purple, green, blue, orange, pink, gray (Badge) | purple, pink, blue (CounterBadge)
+sizes:           responsive only — 12px mobile / 14px desktop (no size prop)
+tokens-used:
+  color:
+    - color-badge-purple-gradient-from, color-badge-purple-gradient-to, color-badge-purple-border, color-badge-purple-text, color-badge-purple-outline-color
+    - color-badge-green-gradient-from, color-badge-green-gradient-to, color-badge-green-border, color-badge-green-text, color-badge-green-outline-color
+    - color-badge-blue-gradient-from, color-badge-blue-gradient-to, color-badge-blue-border, color-badge-blue-text, color-badge-blue-outline-color
+    - color-badge-orange-gradient-from, color-badge-orange-gradient-to, color-badge-orange-border, color-badge-orange-text, color-badge-orange-outline-color
+    - color-badge-pink-gradient-from, color-badge-pink-gradient-to, color-badge-pink-border, color-badge-pink-text, color-badge-pink-outline-color
+    - color-badge-gray-gradient-from, color-badge-gray-gradient-to, color-badge-gray-border, color-badge-gray-text, color-badge-gray-outline-color
+    - color-counter-purple-gradient-from, color-counter-purple-gradient-to, color-counter-purple-border
+    - color-counter-pink-gradient-from, color-counter-pink-gradient-to, color-counter-pink-border
+    - color-counter-blue-gradient-from, color-counter-blue-gradient-to, color-counter-blue-border
+    - color-on-primary
+  radius:
+    - radius-full
+  typography:
+    - font-caption (12px) — mobile badge + counter
+    - font-body-sm (14px) — desktop badge
 depends-on:      —
 used-by:         —
 last-modified:   2026-05-05

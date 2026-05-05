@@ -1,0 +1,203 @@
+/* ============================================================
+   Badge — @acko/css/badge.css
+   Import per-component:  @import "@acko/css/badge.css"
+   ============================================================ */
+
+/* --- Base --- */
+
+.acko-badge {
+  @apply inline-flex items-center font-medium whitespace-nowrap rounded-full leading-none gap-4;
+  font-family: inherit;
+  padding: 6px 8px;
+  font-size: var(--font-caption-size, 12px);
+}
+
+@media (min-width: 768px) {
+  .acko-badge {
+    font-size: var(--font-body-sm-size, 14px);
+  }
+}
+
+/* --- Text case --- */
+
+.acko-badge-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.acko-badge-sentence-case {
+  text-transform: none;
+}
+
+/* --- Dot child indicator --- */
+
+.acko-badge-dot {
+  @apply shrink-0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+/* --- Remove button --- */
+
+.acko-badge-remove {
+  @apply inline-flex items-center justify-center;
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+  line-height: 0;
+}
+
+/* ============================================================
+   Solid variant
+   ============================================================ */
+
+.acko-badge-solid-purple {
+  background: linear-gradient(0deg, var(--color-badge-purple-gradient-from), var(--color-badge-purple-gradient-to));
+  border: 1px solid var(--color-badge-purple-border);
+  color: var(--color-badge-purple-text);
+}
+
+.acko-badge-solid-green {
+  background: linear-gradient(0deg, var(--color-badge-green-gradient-from), var(--color-badge-green-gradient-to));
+  border: 1px solid var(--color-badge-green-border);
+  color: var(--color-badge-green-text);
+}
+
+.acko-badge-solid-blue {
+  background: linear-gradient(0deg, var(--color-badge-blue-gradient-from), var(--color-badge-blue-gradient-to));
+  border: 1px solid var(--color-badge-blue-border);
+  color: var(--color-badge-blue-text);
+}
+
+.acko-badge-solid-orange {
+  background: linear-gradient(0deg, var(--color-badge-orange-gradient-from), var(--color-badge-orange-gradient-to));
+  border: 1px solid var(--color-badge-orange-border);
+  color: var(--color-badge-orange-text);
+}
+
+.acko-badge-solid-pink {
+  background: linear-gradient(0deg, var(--color-badge-pink-gradient-from), var(--color-badge-pink-gradient-to));
+  border: 1px solid var(--color-badge-pink-border);
+  color: var(--color-badge-pink-text);
+}
+
+.acko-badge-solid-gray {
+  background: linear-gradient(0deg, var(--color-badge-gray-gradient-from), var(--color-badge-gray-gradient-to));
+  border: 1px solid var(--color-badge-gray-border);
+  color: var(--color-badge-gray-text);
+}
+
+/* ============================================================
+   Outline variant
+   ============================================================ */
+
+.acko-badge-outline-purple {
+  background: transparent;
+  border: 1px solid var(--color-badge-purple-outline-color);
+  color: var(--color-badge-purple-outline-color);
+}
+
+.acko-badge-outline-green {
+  background: transparent;
+  border: 1px solid var(--color-badge-green-outline-color);
+  color: var(--color-badge-green-outline-color);
+}
+
+.acko-badge-outline-blue {
+  background: transparent;
+  border: 1px solid var(--color-badge-blue-outline-color);
+  color: var(--color-badge-blue-outline-color);
+}
+
+.acko-badge-outline-orange {
+  background: transparent;
+  border: 1px solid var(--color-badge-orange-outline-color);
+  color: var(--color-badge-orange-outline-color);
+}
+
+.acko-badge-outline-pink {
+  background: transparent;
+  border: 1px solid var(--color-badge-pink-outline-color);
+  color: var(--color-badge-pink-outline-color);
+}
+
+.acko-badge-outline-gray {
+  background: transparent;
+  border: 1px solid var(--color-badge-gray-outline-color);
+  color: var(--color-badge-gray-outline-color);
+}
+
+/* ============================================================
+   Dot variant (same fill as solid; .acko-badge-dot child added in DOM)
+   ============================================================ */
+
+.acko-badge-dot-purple {
+  background: linear-gradient(0deg, var(--color-badge-purple-gradient-from), var(--color-badge-purple-gradient-to));
+  border: 1px solid var(--color-badge-purple-border);
+  color: var(--color-badge-purple-text);
+}
+
+.acko-badge-dot-green {
+  background: linear-gradient(0deg, var(--color-badge-green-gradient-from), var(--color-badge-green-gradient-to));
+  border: 1px solid var(--color-badge-green-border);
+  color: var(--color-badge-green-text);
+}
+
+.acko-badge-dot-blue {
+  background: linear-gradient(0deg, var(--color-badge-blue-gradient-from), var(--color-badge-blue-gradient-to));
+  border: 1px solid var(--color-badge-blue-border);
+  color: var(--color-badge-blue-text);
+}
+
+.acko-badge-dot-orange {
+  background: linear-gradient(0deg, var(--color-badge-orange-gradient-from), var(--color-badge-orange-gradient-to));
+  border: 1px solid var(--color-badge-orange-border);
+  color: var(--color-badge-orange-text);
+}
+
+.acko-badge-dot-pink {
+  background: linear-gradient(0deg, var(--color-badge-pink-gradient-from), var(--color-badge-pink-gradient-to));
+  border: 1px solid var(--color-badge-pink-border);
+  color: var(--color-badge-pink-text);
+}
+
+.acko-badge-dot-gray {
+  background: linear-gradient(0deg, var(--color-badge-gray-gradient-from), var(--color-badge-gray-gradient-to));
+  border: 1px solid var(--color-badge-gray-border);
+  color: var(--color-badge-gray-text);
+}
+
+/* ============================================================
+   Counter badge
+   ============================================================ */
+
+.acko-counter-badge {
+  @apply inline-flex items-center justify-center font-medium whitespace-nowrap rounded-full leading-none;
+  font-variant-numeric: tabular-nums;
+  font-family: inherit;
+  padding: 2px 6px;
+  min-width: 20px;
+  font-size: var(--font-caption-size, 12px);
+  color: var(--color-on-primary);
+}
+
+.acko-counter-badge-purple {
+  background: linear-gradient(0deg, var(--color-counter-purple-gradient-from), var(--color-counter-purple-gradient-to));
+  border: 1px solid var(--color-counter-purple-border);
+}
+
+.acko-counter-badge-pink {
+  background: linear-gradient(0deg, var(--color-counter-pink-gradient-from), var(--color-counter-pink-gradient-to));
+  border: 1px solid var(--color-counter-pink-border);
+}
+
+.acko-counter-badge-blue {
+  background: linear-gradient(0deg, var(--color-counter-blue-gradient-from), var(--color-counter-blue-gradient-to));
+  border: 1px solid var(--color-counter-blue-border);
+}

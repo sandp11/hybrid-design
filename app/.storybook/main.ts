@@ -21,6 +21,7 @@ const config: StorybookConfig = {
       plugins: [tailwindcss()],
       resolve: {
         alias: {
+          "@acko/badge": resolve(configDir, "../../packages/badge/src"),
           "@acko/button": resolve(configDir, "../../packages/button/src"),
         },
       },

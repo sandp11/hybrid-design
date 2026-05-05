@@ -258,6 +258,57 @@ Components use ONLY these tokens. See `themes/acko-light.md` and `themes/acko-da
 | color-btn-disabled-bg      | grey-100 #F5F5F5     | grey-600 #242324     |
 | color-btn-disabled-text    | grey-350 #8F8E92     | grey-450 #605F63     |
 
+### Badge-specific (solid + dot variants)
+
+Dark gradient values use `color-mix(in srgb, <hue> 90%, transparent)` = hue at 90% opacity.
+
+| token                              | light                    | dark                            |
+|------------------------------------|--------------------------|-------------------------------|
+| color-badge-purple-gradient-from   | purple-200 #D9D8FC       | purple-950 @ 90% opacity       |
+| color-badge-purple-gradient-to     | purple-100 #EAEAFD       | purple-900 @ 90% opacity       |
+| color-badge-purple-border          | purple-200 #D9D8FC       | purple-900 #3E2290             |
+| color-badge-purple-text            | purple-800 #4E29BB       | purple-200 #D9D8FC             |
+| color-badge-purple-outline-color   | purple-600 #6841E6       | purple-400 #9B8FF6             |
+| color-badge-green-gradient-from    | lime-200 #CFF7BB         | lime-950 @ 90% opacity         |
+| color-badge-green-gradient-to      | lime-100 #E7FCDC         | lime-900 @ 90% opacity         |
+| color-badge-green-border           | lime-200 #CFF7BB         | lime-900 #214210               |
+| color-badge-green-text             | green-800 #166534        | green-200 #BBF7D0              |
+| color-badge-green-outline-color    | lime-600 #45A316         | lime-600 #45A316               |
+| color-badge-blue-gradient-from     | blue-200 #BFDBFE         | blue-950 @ 90% opacity         |
+| color-badge-blue-gradient-to       | blue-100 #DBEAFE         | blue-900 @ 90% opacity         |
+| color-badge-blue-border            | blue-200 #BFDBFE         | blue-900 #1E3A8A               |
+| color-badge-blue-text              | blue-800 #1E40AF         | blue-200 #BFDBFE               |
+| color-badge-blue-outline-color     | blue-600 #2563EB         | blue-600 #2563EB               |
+| color-badge-orange-gradient-from   | orange-200 #FFCB9E       | orange-950 @ 90% opacity       |
+| color-badge-orange-gradient-to     | orange-100 #FFE5CC       | orange-900 @ 90% opacity       |
+| color-badge-orange-border          | orange-200 #FFCB9E       | orange-900 #521F00             |
+| color-badge-orange-text            | orange-800 #8D4301       | orange-200 #FFCB9E             |
+| color-badge-orange-outline-color   | orange-600 #EB740A       | orange-600 #EB740A             |
+| color-badge-pink-gradient-from     | red-200 #FECACA          | red-950 @ 90% opacity          |
+| color-badge-pink-gradient-to       | red-100 #FEE2E2          | red-900 @ 90% opacity          |
+| color-badge-pink-border            | red-200 #FECACA          | red-900 #7F1D1D                |
+| color-badge-pink-text              | red-800 #991B1B          | red-200 #FECACA                |
+| color-badge-pink-outline-color     | red-600 #DC2626          | red-600 #DC2626                |
+| color-badge-gray-gradient-from     | grey-200 #E0E0E1         | grey-800 @ 90% opacity         |
+| color-badge-gray-gradient-to       | grey-100 #F5F5F5         | grey-700 @ 90% opacity         |
+| color-badge-gray-border            | grey-200 #E0E0E1         | grey-600 #242324               |
+| color-badge-gray-text              | grey-600 #242324         | grey-200 #E0E0E1               |
+| color-badge-gray-outline-color     | grey-600 #242324         | grey-500 #474649               |
+
+### Counter badge-specific
+
+| token                              | light                    | dark                            |
+|------------------------------------|--------------------------|-------------------------------|
+| color-counter-purple-gradient-from | purple-500 #7A62F0       | purple-950 @ 90% opacity       |
+| color-counter-purple-gradient-to   | purple-400 #9B8FF6       | purple-900 @ 90% opacity       |
+| color-counter-purple-border        | purple-500 #7A62F0       | purple-900 #3E2290             |
+| color-counter-pink-gradient-from   | red-500 #EF4444          | red-950 @ 90% opacity          |
+| color-counter-pink-gradient-to     | red-400 #F87171          | red-900 @ 90% opacity          |
+| color-counter-pink-border          | red-500 #EF4444          | red-900 #7F1D1D                |
+| color-counter-blue-gradient-from   | blue-500 #3B82F6         | blue-950 @ 90% opacity         |
+| color-counter-blue-gradient-to     | blue-400 #60A5FA         | blue-900 @ 90% opacity         |
+| color-counter-blue-border          | blue-500 #3B82F6         | blue-900 #1E3A8A               |
+
 ---
 
 ## Z-Index
