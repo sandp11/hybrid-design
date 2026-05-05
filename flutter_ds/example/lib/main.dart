@@ -18,7 +18,7 @@ class _FlutterDsPreviewAppState extends State<FlutterDsPreviewApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'flutter_ds — Button',
+      title: 'flutter_ds — Components',
       debugShowCheckedModeBanner: false,
       themeMode: _mode,
       theme: _lightTheme(),
@@ -49,6 +49,7 @@ class _FlutterDsPreviewAppState extends State<FlutterDsPreviewApp> {
       extensions: [
         DsThemeExtension.light,
         DsButtonTheme.defaults,
+        DsBadgeTheme.light,
       ],
     );
   }
@@ -68,6 +69,7 @@ class _FlutterDsPreviewAppState extends State<FlutterDsPreviewApp> {
       extensions: [
         DsThemeExtension.dark,
         DsButtonTheme.defaults,
+        DsBadgeTheme.dark,
       ],
     );
   }
@@ -100,7 +102,7 @@ class ButtonPreviewPage extends StatelessWidget {
         backgroundColor: ds?.colorSurfaceRaised,
         foregroundColor: ds?.colorTextPrimary,
         elevation: 0,
-        title: const Text('Button'),
+        title: const Text('Components'),
         actions: [
           IconButton(
             tooltip: themeMode == ThemeMode.light ? 'Dark theme' : 'Light theme',
@@ -114,7 +116,10 @@ class ButtonPreviewPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
         children: [
-          Text('Variants', style: titleStyle),
+          // ── Button ──────────────────────────────────────────────────────
+          Text('Button', style: titleStyle),
+          const SizedBox(height: 4),
+          Text('Variants', style: labelStyle),
           const SizedBox(height: 12),
           Wrap(
             spacing: 12,
@@ -196,6 +201,86 @@ class ButtonPreviewPage extends StatelessWidget {
               onPressed: () {},
             ),
           ),
+
+          // ── Badge ───────────────────────────────────────────────────────
+          const SizedBox(height: 32),
+          Text('Badge', style: titleStyle),
+          const SizedBox(height: 12),
+
+          Text('Colors — Solid', style: labelStyle),
+          const SizedBox(height: 8),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              for (final c in DsBadgeColor.values)
+                DsBadge(label: c.name, color: c),
+            ],
+          ),
+
+          const SizedBox(height: 20),
+          Text('Colors — Outline', style: labelStyle),
+          const SizedBox(height: 8),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              for (final c in DsBadgeColor.values)
+                DsBadge(label: c.name, color: c, variant: DsBadgeVariant.outline),
+            ],
+          ),
+
+          const SizedBox(height: 20),
+          Text('Dot variant', style: labelStyle),
+          const SizedBox(height: 8),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              for (final c in DsBadgeColor.values)
+                DsBadge(label: c.name, color: c, variant: DsBadgeVariant.dot),
+            ],
+          ),
+
+          const SizedBox(height: 20),
+          Text('Sentence case', style: labelStyle),
+          const SizedBox(height: 8),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              for (final c in DsBadgeColor.values)
+                DsBadge(label: c.name, color: c, textCase: DsBadgeTextCase.sentence),
+            ],
+          ),
+
+          const SizedBox(height: 20),
+          Text('Removable', style: labelStyle),
+          const SizedBox(height: 8),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              for (final c in DsBadgeColor.values)
+                DsBadge(label: c.name, color: c, removable: true, onRemove: () {}),
+            ],
+          ),
+
+          const SizedBox(height: 20),
+          Text('Counter Badge', style: labelStyle),
+          const SizedBox(height: 8),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              DsCounterBadge(count: 1,   color: DsCounterBadgeColor.purple),
+              DsCounterBadge(count: 9,   color: DsCounterBadgeColor.pink),
+              DsCounterBadge(count: 42,  color: DsCounterBadgeColor.blue),
+              DsCounterBadge(count: 999, max: 99, color: DsCounterBadgeColor.purple),
+            ],
+          ),
+
+          const SizedBox(height: 24),
         ],
       ),
     );
