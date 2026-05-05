@@ -251,17 +251,23 @@ class ButtonPreviewPage extends StatelessWidget {
           const SizedBox(height: 20),
           Text('Photo', style: labelStyle),
           const SizedBox(height: 8),
-          const DsAvatar(
-            src: 'https://picsum.photos/seed/flutter-ds-avatar/128/128',
-            alt: 'Sample profile photo',
-            size: DsAvatarSize.md,
+          const Align(
+            alignment: Alignment.centerLeft,
+            child: DsAvatar(
+              src: 'https://picsum.photos/seed/flutter-ds-avatar/128/128',
+              alt: 'Sample profile photo',
+              size: DsAvatarSize.md,
+            ),
           ),
 
           const SizedBox(height: 20),
           Text('Fallback', style: labelStyle),
           const SizedBox(height: 8),
-          const DsAvatar(
-            size: DsAvatarSize.md,
+          const Align(
+            alignment: Alignment.centerLeft,
+            child: DsAvatar(
+              size: DsAvatarSize.md,
+            ),
           ),
 
           // ── Badge ───────────────────────────────────────────────────────
