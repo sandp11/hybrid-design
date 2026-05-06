@@ -18,7 +18,7 @@ Parity risk levels: low = near-identical result / medium = close but reviewable 
 | focus-ring         | keyboard focus indicator               | outline: 2px solid color-primary, offset: 2px   | custom FocusDecoration overlay or Container border   | medium      |
 | disabled-overlay   | reduced opacity, no interaction        | opacity: 0.4 + pointer-events: none              | Opacity(opacity:0.4) + IgnorePointer()               | low         |
 | skeleton-shimmer   | loading placeholder shimmer            | CSS keyframe on background-position              | shimmer package or AnimationController               | medium      |
-| image-load-fade    | image fades in as network load completes | transition: opacity 200ms ease on <img>        | Image.network frameBuilder + AnimatedOpacity(duration:200ms, curve:Curves.ease); opacity 0.0 when frame==null, 1.0 on first frame | medium |
+| accordion-expand   | collapsible panel height                    | max-height transition + measured inner height    | AnimatedAlign heightFactor or AnimatedSize + alignment top | medium     |
 
 ## Rules for agents
 1. For any visual property in style.md, look up intent-token here first.

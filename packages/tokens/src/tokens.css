@@ -184,6 +184,7 @@
   --radius-3xl: 16px;
   --radius-4xl: 20px;
   --radius-5xl: 24px;
+  --radius-6xl: 32px;
   --radius-full: 9999px;
 
   /* Nested radius — inner = outer (--radius-4xl: 20px) minus padding */
@@ -233,6 +234,19 @@
   --slider-thumb-size-sm: 16px;
   --slider-thumb-size-md: 20px;
   --slider-thumb-size-lg: 24px;
+
+  /* Card responsive geometry — breakpoint matches card design spec (769px) */
+  --radius-card-outer: var(--radius-5xl);
+  --radius-card-nested: var(--radius-2xl);
+  --card-content-gutter: 12px;
+}
+
+@media (min-width: 769px) {
+  :root {
+    --radius-card-outer: var(--radius-6xl);
+    --radius-card-nested: var(--radius-3xl);
+    --card-content-gutter: 16px;
+  }
 }
 
 @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
@@ -267,6 +281,8 @@
   /* Cards */
   --color-card-bg: var(--grey-50);
   --color-card-border: var(--grey-white);
+  --color-card-secondary-bg: var(--grey-100);
+  --color-card-secondary-border: var(--grey-150);
   --color-card-elevated-bg: var(--grey-white);
   --color-card-demoted-bg: var(--grey-150);
   --color-card-demoted-border: var(--grey-200);
@@ -547,9 +563,11 @@
   /* Cards */
   --color-card-bg: var(--grey-650);
   --color-card-border: var(--grey-600);
-  --color-card-elevated-bg: var(--grey-650);
+  --color-card-secondary-bg: var(--grey-700);
+  --color-card-secondary-border: var(--grey-600);
+  --color-card-elevated-bg: var(--grey-600);
   --color-card-demoted-bg: var(--grey-750);
-  --color-card-demoted-border: var(--grey-600);
+  --color-card-demoted-border: var(--grey-650);
   --color-card-outline-border: var(--grey-600);
 
   /* Text */

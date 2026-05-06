@@ -10,15 +10,33 @@ importers:
 
   app:
     dependencies:
+      '@acko/accordion':
+        specifier: workspace:*
+        version: link:../packages/accordion
+      '@acko/alert':
+        specifier: workspace:*
+        version: link:../packages/alert
       '@acko/avatar':
         specifier: workspace:*
         version: link:../packages/avatar
       '@acko/badge':
         specifier: workspace:*
         version: link:../packages/badge
+      '@acko/breadcrumb':
+        specifier: workspace:*
+        version: link:../packages/breadcrumb
       '@acko/button':
         specifier: workspace:*
         version: link:../packages/button
+      '@acko/calendar':
+        specifier: workspace:*
+        version: link:../packages/calendar
+      '@acko/card':
+        specifier: workspace:*
+        version: link:../packages/card
+      '@acko/checkbox':
+        specifier: workspace:*
+        version: link:../packages/checkbox
       '@acko/css':
         specifier: workspace:*
         version: link:../packages/css
@@ -62,6 +80,50 @@ importers:
       vite:
         specifier: ^5.4.11
         version: 5.4.21(lightningcss@1.32.0)
+
+  packages/accordion:
+    dependencies:
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      react:
+        specifier: '>=18'
+        version: 19.2.5
+      react-dom:
+        specifier: '>=18'
+        version: 19.2.5(react@19.2.5)
+    devDependencies:
+      '@acko/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+      '@types/react':
+        specifier: ^19.0.0
+        version: 19.2.14
+      typescript:
+        specifier: ~5.7.0
+        version: 5.7.3
+
+  packages/alert:
+    dependencies:
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      react:
+        specifier: '>=18'
+        version: 19.2.5
+      react-dom:
+        specifier: '>=18'
+        version: 19.2.5(react@19.2.5)
+    devDependencies:
+      '@acko/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+      '@types/react':
+        specifier: ^19.0.0
+        version: 19.2.14
+      typescript:
+        specifier: ~5.7.0
+        version: 5.7.3
 
   packages/avatar:
     dependencies:
@@ -107,7 +169,92 @@ importers:
         specifier: ~5.7.0
         version: 5.7.3
 
+  packages/breadcrumb:
+    dependencies:
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      react:
+        specifier: '>=18'
+        version: 19.2.5
+      react-dom:
+        specifier: '>=18'
+        version: 19.2.5(react@19.2.5)
+    devDependencies:
+      '@acko/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+      '@types/react':
+        specifier: ^19.0.0
+        version: 19.2.14
+      typescript:
+        specifier: ~5.7.0
+        version: 5.7.3
+
   packages/button:
+    dependencies:
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      react:
+        specifier: '>=18'
+        version: 19.2.5
+      react-dom:
+        specifier: '>=18'
+        version: 19.2.5(react@19.2.5)
+    devDependencies:
+      '@acko/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+      '@types/react':
+        specifier: ^19.0.0
+        version: 19.2.14
+      typescript:
+        specifier: ~5.7.0
+        version: 5.7.3
+
+  packages/calendar:
+    dependencies:
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      react:
+        specifier: '>=18'
+        version: 19.2.5
+      react-dom:
+        specifier: '>=18'
+        version: 19.2.5(react@19.2.5)
+    devDependencies:
+      '@acko/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+      '@types/react':
+        specifier: ^19.0.0
+        version: 19.2.14
+      typescript:
+        specifier: ~5.7.0
+        version: 5.7.3
+
+  packages/card:
+    dependencies:
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      react:
+        specifier: '>=18'
+        version: 19.2.5
+    devDependencies:
+      '@acko/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+      '@types/react':
+        specifier: ^19.0.0
+        version: 19.2.14
+      typescript:
+        specifier: ~5.7.0
+        version: 5.7.3
+
+  packages/checkbox:
     dependencies:
       clsx:
         specifier: ^2.1.1

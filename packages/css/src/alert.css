@@ -1,0 +1,117 @@
+/* ============================================================
+   Alert — @acko/css/alert.css
+   Import per-component:  @import "@acko/css/alert.css"
+   ============================================================ */
+
+@keyframes acko-alert-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Base --- */
+
+.acko-alert {
+  @apply relative flex w-full items-center shrink-0;
+  gap: 12px;
+  padding: 12px;
+  border-radius: var(--radius-3xl, 16px);
+  border-width: 1px;
+  border-style: solid;
+}
+
+.acko-alert-slide-up {
+  animation: acko-alert-slide-up 300ms var(--ease-out-cubic, cubic-bezier(0.215, 0.61, 0.355, 1)) both;
+}
+
+/* --- Icon --- */
+
+.acko-alert-icon {
+  @apply inline-flex shrink-0 items-center justify-center;
+  width: 20px;
+  height: 20px;
+  color: inherit;
+}
+
+.acko-alert-icon svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+/* --- Content column --- */
+
+.acko-alert-content {
+  @apply flex min-w-0 flex-1 flex-col;
+  gap: 0;
+}
+
+.acko-alert-title {
+  @apply min-w-0 truncate font-semibold;
+  font-size: var(--font-body-sm-size, 14px);
+  line-height: var(--font-body-sm-line, 20px);
+  color: inherit;
+}
+
+.acko-alert-body {
+  @apply min-w-0 truncate;
+  font-size: var(--font-caption-size, 12px);
+  line-height: var(--font-caption-line, 16px);
+  font-weight: 400;
+  color: var(--color-text-default);
+}
+
+/* --- Dismiss --- */
+
+.acko-alert-dismiss {
+  @apply inline-flex shrink-0 cursor-pointer items-center justify-center border-0 bg-transparent p-0;
+  width: 20px;
+  height: 20px;
+  line-height: 0;
+  color: inherit;
+  opacity: 0.7;
+  transition: opacity 150ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .acko-alert-dismiss:hover {
+    opacity: 1;
+  }
+}
+
+.acko-alert-dismiss svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+/* --- Variants (icon + title inherit; body uses color-text-default) --- */
+
+.acko-alert-info {
+  background-color: var(--color-info-subtle);
+  border-color: var(--color-info-border);
+  color: var(--color-info-text);
+}
+
+.acko-alert-success {
+  background-color: var(--color-success-subtle);
+  border-color: var(--color-success-border);
+  color: var(--color-success-text);
+}
+
+.acko-alert-warning {
+  background-color: var(--color-warning-subtle);
+  border-color: var(--color-warning-border);
+  color: var(--color-warning-text);
+}
+
+.acko-alert-error {
+  background-color: var(--color-error-subtle);
+  border-color: var(--color-error-border);
+  color: var(--color-error-text);
+}

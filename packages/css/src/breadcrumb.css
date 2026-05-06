@@ -1,0 +1,88 @@
+/* ============================================================
+   Breadcrumb — @acko/css/breadcrumb.css
+   Import per-component:  @import "@acko/css/breadcrumb.css"
+   ============================================================ */
+
+.acko-breadcrumb {
+  @apply w-full;
+}
+
+.acko-breadcrumb-list {
+  @apply m-0 flex list-none flex-row flex-wrap items-center p-0;
+  gap: 4px;
+}
+
+.acko-breadcrumb-item {
+  @apply inline-flex items-center;
+}
+
+.acko-breadcrumb-link {
+  @apply inline-flex items-center gap-4 border-0 bg-transparent no-underline;
+  font-size: var(--font-body-sm-size, 14px);
+  line-height: var(--font-body-sm-line, 20px);
+  font-weight: 400;
+  color: var(--color-breadcrumb-link);
+  cursor: pointer;
+  transition: color 150ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .acko-breadcrumb-link:hover {
+    color: var(--color-breadcrumb-link-hover);
+    text-decoration: underline;
+  }
+}
+
+.acko-breadcrumb-text {
+  @apply inline-flex items-center gap-4;
+  font-size: var(--font-body-sm-size, 14px);
+  line-height: var(--font-body-sm-line, 20px);
+  font-weight: 400;
+  color: var(--color-breadcrumb-text);
+}
+
+.acko-breadcrumb-current {
+  @apply inline-flex items-center gap-4;
+  font-size: var(--font-body-sm-size, 14px);
+  line-height: var(--font-body-sm-line, 20px);
+  font-weight: var(--font-label-lg-weight, 500);
+  color: var(--color-breadcrumb-current);
+}
+
+.acko-breadcrumb-icon {
+  @apply inline-flex shrink-0 items-center justify-center;
+}
+
+.acko-breadcrumb-separator-item {
+  @apply inline-flex items-center;
+  margin-left: 0;
+  margin-right: 0;
+  color: var(--color-breadcrumb-separator);
+}
+
+.acko-breadcrumb-separator-icon {
+  @apply inline-flex items-center justify-center;
+}
+
+.acko-breadcrumb-separator-icon svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+.acko-breadcrumb-ellipsis {
+  @apply inline-flex cursor-pointer items-center justify-center border-0;
+  padding: 4px 8px;
+  border-radius: var(--radius-full, 9999px);
+  font-size: var(--font-body-sm-size, 14px);
+  line-height: 1;
+  color: var(--color-breadcrumb-link);
+  background-color: transparent;
+  transition: background-color 150ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .acko-breadcrumb-ellipsis:hover {
+    background-color: var(--color-surface-raised-hover);
+  }
+}

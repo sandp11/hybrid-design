@@ -4,11 +4,74 @@
 
 ## index
 
-| name    | status | react-package  | flutter-export | depends-on | used-by |
-|---------|--------|----------------|----------------|------------|---------|
-| button  | stable | @acko/button   | DsButton       | —          | —       |
-| badge   | draft  | @acko/badge    | DsBadge        | —          | —       |
-| avatar  | draft  | @acko/avatar   | DsAvatar       | —          | —       |
+| name      | status | react-package   | flutter-export | depends-on | used-by |
+|-----------|--------|-----------------|----------------|------------|---------|
+| accordion | draft  | @acko/accordion | DsAccordion    | —          | —       |
+| alert     | draft  | @acko/alert     | DsAlert        | —          | —       |
+| button   | stable | @acko/button   | DsButton       | —          | —       |
+| badge    | draft  | @acko/badge    | DsBadge        | —          | —       |
+| breadcrumb | draft | @acko/breadcrumb | DsBreadcrumb | —          | —       |
+| avatar   | draft  | @acko/avatar   | DsAvatar       | —          | —       |
+| checkbox | draft  | @acko/checkbox | DsCheckbox     | —          | —       |
+| calendar | draft  | @acko/calendar | DsCalendar     | —          | —       |
+| card     | draft  | @acko/card     | DsCard         | —          | —       |
+
+---
+
+## accordion
+
+status:          draft
+path:            specs/components/accordion/
+react-package:   @acko/accordion
+flutter-export:  DsAccordion
+variants:        type-single, type-multiple
+sizes:           —
+states:          collapsed, expanded, hover-trigger, disabled-item
+tokens-used:
+  color:
+    - color-text-default
+    - color-text-secondary
+    - color-text-disabled
+    - color-primary
+    - color-border-subtle
+  typography:
+    - font-body-md (16px / 24px, weight 500) — trigger
+    - font-body-sm (14px / 20px, weight 400) — content
+  motion:
+    - ease-out-quad — 200ms max-height content + chevron rotate
+    - ease — 150ms trigger color (hover)
+depends-on:      —
+used-by:         —
+last-modified:   2026-05-06
+modified-by:     migrate-agent
+
+---
+
+## alert
+
+status:          draft
+path:            specs/components/alert/
+react-package:   @acko/alert
+flutter-export:  DsAlert
+variants:        info, success, warning, error
+tokens-used:
+  color:
+    - color-info-subtle, color-info-border, color-info-text
+    - color-success-subtle, color-success-border, color-success-text
+    - color-warning-subtle, color-warning-border, color-warning-text
+    - color-error-subtle, color-error-border, color-error-text
+    - color-text-default
+  radius:
+    - radius-3xl
+  motion:
+    - ease-out-cubic — 300ms entrance translateY + opacity (acko-alert-slide-up)
+  typography:
+    - font-body-sm (14px/20px, weight 600) — title
+    - font-caption (12px/16px) — body
+depends-on:      —
+used-by:         —
+last-modified:   2026-05-06
+modified-by:     migrate-agent
 
 ---
 
@@ -80,6 +143,34 @@ modified-by:     migrate-agent
 
 ---
 
+## breadcrumb
+
+status:          draft
+path:            specs/components/breadcrumb/
+react-package:   @acko/breadcrumb
+flutter-export:  DsBreadcrumb
+variants:        —
+sizes:           —
+states:          link-default, link-hover, current, ellipsis-hover, collapsed trail
+tokens-used:
+  color:
+    - color-breadcrumb-link, color-breadcrumb-link-hover, color-breadcrumb-current
+    - color-breadcrumb-text, color-breadcrumb-separator
+    - color-surface-raised-hover
+  radius:
+    - radius-full — ellipsis control
+  typography:
+    - font-body-sm (14px / 20px) — links and plain crumbs
+    - font-label-lg weight (500) — current crumb
+  motion:
+    - ease — 150ms link color / ellipsis surface
+depends-on:      —
+used-by:         —
+last-modified:   2026-05-06
+modified-by:     migrate-agent
+
+---
+
 ## avatar
 
 status:          draft
@@ -103,6 +194,114 @@ tokens-used:
     - font-heading-md (20px) — xl initials + md icon
   motion:
     - opacity 200ms ease — image load fade (image-load-fade equivalence entry)
+depends-on:      —
+used-by:         —
+last-modified:   2026-05-06
+modified-by:     migrate-agent
+
+---
+
+## checkbox
+
+status:          draft
+path:            specs/components/checkbox/
+react-package:   @acko/checkbox
+flutter-export:  DsCheckbox, DsCheckboxRow, DsCheckboxGroup
+sizes:           sm (16px box), md (20px box), lg (24px box) — atom only; row is responsive
+states:          unchecked, checked, indeterminate, hover-unchecked, hover-checked, focused, disabled-unchecked, disabled-checked, error, active
+tokens-used:
+  color:
+    - color-control-border-selector
+    - color-card-bg
+    - color-primary, color-primary-hover, color-primary-muted, color-primary-subtle, color-primary-ring, color-on-primary
+    - color-border-subtle, color-border
+    - color-surface-raised, color-surface-ghost-hover
+    - color-disabled-border, color-disabled-bg, color-disabled-text
+    - color-error
+    - color-text-default, color-text-secondary
+  radius:
+    - radius-sm, radius-md, radius-lg
+  typography:
+    - font-body-sm (14px) — sm label
+    - font-body-md (16px) — md label + row desktop
+    - font-body-lg (18px) — lg label + row mobile
+    - font-caption (12px) — description
+    - font-label-lg (14px w500) — group label
+  motion:
+    - 300ms spring — check bounce + icon pop
+    - 300ms ease-out — stroke-dashoffset checkmark draw
+    - 300ms — error shake (acko-checkbox-shake)
+    - 150ms ease — box color transition
+depends-on:      —
+used-by:         —
+last-modified:   2026-05-06
+modified-by:     migrate-agent
+
+---
+
+## calendar
+
+status:          draft
+path:            specs/components/calendar/
+react-package:   @acko/calendar
+flutter-export:  DsCalendar, DsDateRange
+variants:        single, range, multi
+sizes:           —
+states:          trigger-default, trigger-hover, trigger-open, trigger-placeholder, panel-enter, day-selected, day-range-start, day-range-middle, day-range-end, day-today, day-outside, day-disabled, picker-selected, picker-current
+tokens-used:
+  color:
+    - color-card-bg, color-card-border
+    - color-input-bg, color-input-border, color-input-hover-border, color-input-focus-border, color-input-focus-ring
+    - color-primary-ring
+    - color-text-primary, color-text-secondary, color-text-disabled
+    - color-cal-today-text, color-cal-selected-bg, color-cal-selected-text
+    - color-cal-range-bg, color-cal-range-text, color-cal-cell-hover-bg
+    - color-surface-raised, color-border — dark panel override
+  radius:
+    - radius-lg — trigger, header label, nav
+    - radius-4xl — panel
+    - radius-full — day + picker cells
+  shadow:
+    - shadow-md — panel
+  motion:
+    - ease-out-cubic — 150ms dropdown panel enter (acko-cal-enter)
+  layout:
+    - z-dropdown — dropdown panel stacking
+  typography:
+    - font-body-sm — trigger, day numerals, picker cells
+    - font-body-md — header label
+    - font-label-sm — weekday row
+depends-on:      —
+used-by:         —
+last-modified:   2026-05-06
+modified-by:     migrate-agent
+
+---
+
+## card
+
+status:          draft
+path:            specs/components/card/
+react-package:   @acko/card
+flutter-export:  DsCard, DsCardHeader, DsCardContent, DsCardFooter, DsCardInset
+variants:        default, secondary, elevated, outline, demoted
+sizes:           padding none | sm | md | lg — responsive shell inset; outer + nested radius responsive
+states:          —
+tokens-used:
+  color:
+    - color-card-bg, color-card-border
+    - color-card-secondary-bg, color-card-secondary-border
+    - color-card-elevated-bg
+    - color-card-demoted-bg, color-card-demoted-border
+    - color-card-outline-border
+    - color-border-subtle — header/footer dividers
+  radius:
+    - radius-5xl, radius-6xl — outer shell (via radius-card-outer)
+    - radius-2xl, radius-3xl — nested inset (via radius-card-nested)
+  layout:
+    - card-content-gutter — responsive gutter + padding scale
+  shadow:
+    - shadow-lg — elevated variant
 depends-on:      —
 used-by:         —
 last-modified:   2026-05-06

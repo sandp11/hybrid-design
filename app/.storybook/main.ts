@@ -21,9 +21,15 @@ const config: StorybookConfig = {
       plugins: [tailwindcss()],
       resolve: {
         alias: {
+          "@acko/alert": resolve(configDir, "../../packages/alert/src"),
           "@acko/avatar": resolve(configDir, "../../packages/avatar/src"),
           "@acko/badge": resolve(configDir, "../../packages/badge/src"),
           "@acko/button": resolve(configDir, "../../packages/button/src"),
+          "@acko/checkbox": resolve(configDir, "../../packages/checkbox/src"),
+          "@acko/accordion": resolve(configDir, "../../packages/accordion/src"),
+          "@acko/calendar": resolve(configDir, "../../packages/calendar/src"),
+          "@acko/card": resolve(configDir, "../../packages/card/src"),
+          "@acko/breadcrumb": resolve(configDir, "../../packages/breadcrumb/src"),
         },
       },
     });

@@ -1,0 +1,26 @@
+/* ============================================================
+   Dropdown — multi-select menu overrides for CheckboxRow
+   Import after checkbox.css when building Dropdown variant="multi"
+   @import "@acko/css/dropdown.css"
+   ============================================================ */
+
+/* Desktop multi-select panel: hide row separators (hover distinguishes rows). */
+@media (min-width: 768px) {
+  .acko-dropdown-menu-multi .acko-cb-row::after {
+    display: none;
+  }
+
+  /* Align rows with single-select options: horizontal inset + rounded corners */
+  .acko-dropdown-menu-multi .acko-cb-row {
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: var(--radius-lg);
+  }
+
+  /* Match single-select option hover — overrides page-level row ghost-hover */
+  @media (hover: hover) and (pointer: fine) {
+    .acko-dropdown-menu-multi .acko-cb-row:hover {
+      background-color: var(--color-primary-subtle);
+    }
+  }
+}

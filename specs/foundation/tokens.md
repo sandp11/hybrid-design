@@ -181,11 +181,12 @@ Components use ONLY these tokens. See `themes/acko-light.md` and `themes/acko-da
 
 ### Borders
 
-| token               | light                | dark                 |
-|---------------------|----------------------|----------------------|
-| color-border        | grey-300 #B7B7B8     | grey-600 #242324     |
-| color-border-strong | grey-450 #605F63     | grey-550 #333333     |
-| color-border-subtle | grey-200 #E0E0E1     | grey-650 #19191A     |
+| token                    | light                | dark                 |
+|--------------------------|----------------------|----------------------|
+| color-border             | grey-300 #B7B7B8     | grey-600 #242324     |
+| color-border-strong      | grey-450 #605F63     | grey-550 #333333     |
+| color-border-subtle      | grey-200 #E0E0E1     | grey-650 #19191A     |
+| color-control-border     | grey-300 #B7B7B8     | grey-500 #474649     |
 
 ### Disabled
 

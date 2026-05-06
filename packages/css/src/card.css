@@ -1,0 +1,85 @@
+/* ============================================================
+   Card — @acko/css/card.css
+   Import per-component:  @import "@acko/css/card.css"
+   ============================================================ */
+
+/* --- Root shell --- */
+
+.acko-card {
+  @apply relative box-border w-full;
+  border-radius: var(--radius-card-outer);
+}
+
+/* --- Variants (surface only — geometry shared) --- */
+
+.acko-card-default {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+}
+
+.acko-card-secondary {
+  background-color: var(--color-card-secondary-bg);
+  border: 1px solid var(--color-card-secondary-border);
+}
+
+.acko-card-elevated {
+  background-color: var(--color-card-elevated-bg);
+  border: none;
+  box-shadow: var(--shadow-lg);
+}
+
+.acko-card-outline {
+  background-color: transparent;
+  border: 1px solid var(--color-card-outline-border);
+}
+
+.acko-card-demoted {
+  background-color: var(--color-card-demoted-bg);
+  border: 1px solid var(--color-card-demoted-border);
+}
+
+/* --- Padding (canonical gutter from `--card-content-gutter`) --- */
+
+.acko-card-pad-none {
+  padding: 0;
+}
+
+.acko-card-pad-sm {
+  padding: calc(var(--card-content-gutter) - 4px);
+}
+
+.acko-card-pad-md {
+  padding: var(--card-content-gutter);
+}
+
+.acko-card-pad-lg {
+  padding: calc(var(--card-content-gutter) + 8px);
+}
+
+/* --- Sub-regions --- */
+
+.acko-card-header {
+  @apply flex items-start;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.acko-card-content {
+  display: block;
+  padding: 20px 0;
+}
+
+.acko-card-footer {
+  @apply flex flex-row items-center justify-end;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.acko-card-inset {
+  padding: var(--card-content-gutter);
+  border-radius: var(--radius-card-nested);
+  border: 1px solid var(--color-card-demoted-border);
+  background-color: var(--color-card-demoted-bg);
+}

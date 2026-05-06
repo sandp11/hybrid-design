@@ -7,9 +7,15 @@
     "build-storybook": "storybook build -o storybook-static"
   },
   "dependencies": {
+    "@acko/alert": "workspace:*",
     "@acko/avatar": "workspace:*",
     "@acko/badge": "workspace:*",
     "@acko/button": "workspace:*",
+    "@acko/checkbox": "workspace:*",
+    "@acko/accordion": "workspace:*",
+    "@acko/calendar": "workspace:*",
+    "@acko/card": "workspace:*",
+    "@acko/breadcrumb": "workspace:*",
     "@acko/css": "workspace:*",
     "@acko/tokens": "workspace:*",
     "react": "^19.0.0",

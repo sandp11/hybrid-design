@@ -81,8 +81,12 @@ abstract class DsTokens {
   // ─── Cards (Light defaults) ──────────────────────────────────────────
   static const Color colorCardBg        = Color(0xFFFBFBFB); // grey-50
   static const Color colorCardBorder    = Color(0xFFFFFFFF); // grey-white
+  static const Color colorCardSecondaryBg     = Color(0xFFF5F5F5); // grey-100
+  static const Color colorCardSecondaryBorder  = Color(0xFFEBEBEB); // grey-150
   static const Color colorCardElevatedBg= Color(0xFFFFFFFF); // grey-white
   static const Color colorCardDemotedBg = Color(0xFFEBEBEB); // grey-150
+  static const Color colorCardDemotedBorder = Color(0xFFE0E0E1); // grey-200
+  static const Color colorCardOutlineBorder  = Color(0xFFE0E0E1); // grey-200
 
   // ─── Border Radius ───────────────────────────────────────────────────
   static const double radiusSm     = 4.0;
@@ -92,10 +96,16 @@ abstract class DsTokens {
   static const double radius2xl    = 12.0;
   static const double radius3xl    = 16.0;
   static const double radius4xl    = 20.0;
+  static const double radius5xl    = 24.0;
+  static const double radius6xl    = 32.0;
   static const double radiusFull   = 9999.0;
   static const double radiusInsetSm = 8.0;
   static const double radiusInsetMd = 4.0;
   static const double radiusInsetLg = 0.0;
+
+  static const double cardBreakpointWidth     = 769.0;
+  static const double cardContentGutterNarrow = 12.0;
+  static const double cardContentGutterWide   = 16.0;
 
   // ─── Motion ──────────────────────────────────────────────────────────
   // No duration tokens — use inline Duration values:
