@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:intl/intl.dart';
 
 import '../../foundation/tokens.dart';
 import 'ds_calendar_theme.dart';
@@ -593,7 +594,9 @@ class _DsCalendarState extends State<DsCalendar> {
                       minimumSize: Size(0, theme.pickerCellHeight),
                     ),
                     child: Text(
-                      loc.shortMonthNames[mi],
+                      DateFormat.MMM(
+                        Localizations.localeOf(context).toString(),
+                      ).format(DateTime(2000, mi + 1, 1)),
                       style: theme.pickerTextStyle,
                     ),
                   );

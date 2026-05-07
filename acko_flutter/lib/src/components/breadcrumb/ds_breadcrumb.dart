@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'ds_breadcrumb_theme.dart';
 
@@ -206,23 +207,24 @@ class _CrumbCellState extends State<_CrumbCell> {
     if (item.href != null) {
       final uri = Uri.tryParse(item.href!);
       if (uri != null && uri.hasScheme) {
-        // UX REVIEW: high parity-risk — verify Link behavior vs React <a> across platforms.
+        // Uses url_launcher so breadcrumbs work on Flutter SDKs without the widgets.Link API.
         return MouseRegion(
           onEnter: (_) {
             if (_finePointer) setState(() => _hover = true);
           },
           onExit: (_) => setState(() => _hover = false),
-          child: Link(
-            uri: uri,
-            builder: (context, followLink) {
-              return InkWell(
-                onTap: followLink,
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [...rowChildren, labelWidget],
-                ),
-              );
-            },
+          child: Semantics(
+            link: true,
+            label: item.label,
+            child: InkWell(
+              onTap: () {
+                launchUrl(uri, mode: LaunchMode.platformDefault);
+              },
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [...rowChildren, labelWidget],
+              ),
+            ),
           ),
         );
       }
