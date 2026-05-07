@@ -608,15 +608,16 @@ class DrawerPreviewSection extends StatelessWidget {
                 color: Theme.of(dialogContext).extension<DsThemeExtension>()?.colorTextDefault,
               ),
         ),
-        footer: Wrap(
-          spacing: 8,
-          alignment: WrapAlignment.end,
+        footer: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             DsButton(
               label: 'Close',
               variant: DsButtonVariant.secondary,
               onPressed: () => Navigator.of(dialogContext).pop(),
             ),
+            const SizedBox(width: 12),
             DsButton(
               label: 'Apply',
               variant: DsButtonVariant.primary,
@@ -690,15 +691,16 @@ class DialogPreviewSection extends StatelessWidget {
                 color: Theme.of(dialogContext).extension<DsThemeExtension>()?.colorTextDefault,
               ),
         ),
-        footer: Wrap(
-          spacing: 8,
-          alignment: WrapAlignment.end,
+        footer: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             DsButton(
               label: 'Cancel',
               variant: DsButtonVariant.secondary,
               onPressed: () => Navigator.of(dialogContext).pop(),
             ),
+            const SizedBox(width: 12),
             DsButton(
               label: 'Confirm',
               variant: DsButtonVariant.primary,
