@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import '../../foundation/tokens.dart';
 
 enum DsAvatarSize  { xs, sm, md, lg, xl }
 enum DsAvatarShape { circle, square }
@@ -59,8 +60,8 @@ class DsAvatarTheme extends ThemeExtension<DsAvatarTheme> {
     sizeMd: 40.0,
     sizeLg: 48.0,
     sizeXl: 64.0,
-    initialsBackground: Color(0xFFEAEAFD), // color-primary-subtle light
-    initialsColor:      Color(0xFF6841E6), // color-primary light
+    initialsBackground: DsTokens.colorPrimarySubtle,
+    initialsColor:      DsTokens.colorPrimary,
     initialsXsFontSize: 10.0,
     initialsSmFontSize: 12.0,
     initialsMdFontSize: 14.0,
@@ -71,7 +72,7 @@ class DsAvatarTheme extends ThemeExtension<DsAvatarTheme> {
     iconMdSize: 20.0,
     iconLgSize: 24.0,
     iconXlSize: 32.0,
-    squareBorderRadius: BorderRadius.all(Radius.circular(8)),
+    squareBorderRadius: BorderRadius.all(Radius.circular(DsTokens.radiusLg)),
   );
 
   // ─── Dark defaults ────────────────────────────────────────────────────────────
@@ -82,8 +83,8 @@ class DsAvatarTheme extends ThemeExtension<DsAvatarTheme> {
     sizeMd: 40.0,
     sizeLg: 48.0,
     sizeXl: 64.0,
-    initialsBackground: Color(0xFF3E2290), // color-primary-subtle dark
-    initialsColor:      Color(0xFF7A62F0), // color-primary dark
+    initialsBackground: Color(0xFF2B1678), // color-primary-subtle dark — purple900
+    initialsColor:      Color(0xFF795DEE), // color-primary dark — purple500
     initialsXsFontSize: 10.0,
     initialsSmFontSize: 12.0,
     initialsMdFontSize: 14.0,

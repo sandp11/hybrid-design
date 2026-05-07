@@ -62,15 +62,15 @@ class DsAccordionTheme extends ThemeExtension<DsAccordionTheme> {
     triggerFontSize: 16,
     triggerLineHeight: 24,
     triggerFontWeight: FontWeight.w500,
-    triggerColor: Color(0xFFF5F5F5),
-    triggerHoverColor: Color(0xFF7A62F0),
-    triggerDisabledColor: Color(0xFF605F63),
+    triggerColor: DsTokens.colorTextDefaultDark,
+    triggerHoverColor: Color(0xFF795DEE),   // purple500
+    triggerDisabledColor: Color(0xFF969696), // grey450
     contentFontSize: 14,
     contentLineHeight: 20,
-    contentColor: Color(0xFF8F8E92),
+    contentColor: DsTokens.colorTextSecondaryDark,
     contentPaddingBottom: 16,
     chevronSize: 18,
-    borderColor: Color(0xFF242324),
+    borderColor: Color(0xFF6C6C6C), // grey600 — colorBorder dark
     expandDuration: Duration(milliseconds: 200),
     triggerColorDuration: Duration(milliseconds: 150),
   );

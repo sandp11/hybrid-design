@@ -15,7 +15,7 @@
 .acko-drawer-root {
   @apply fixed inset-0 pointer-events-none;
   visibility: hidden;
-  z-index: var(--z-modal);
+  z-index: var(--zModal);
 }
 
 .acko-drawer-open {
@@ -27,9 +27,9 @@
 
 .acko-drawer-backdrop {
   @apply absolute inset-0;
-  background-color: var(--color-surface-overlay);
+  background-color: var(--colorSurfaceOverlay);
   opacity: 0;
-  transition: opacity 250ms var(--ease-out-cubic);
+  transition: opacity 250ms var(--easeOutCubic);
 }
 
 .acko-drawer-open .acko-drawer-backdrop {
@@ -40,9 +40,9 @@
 
 .acko-drawer {
   @apply absolute flex flex-col overflow-hidden;
-  background-color: var(--color-surface-raised);
-  box-shadow: var(--shadow-modal);
-  transition: transform 300ms var(--ease-out-quart);
+  background-color: var(--colorSurfaceRaised);
+  box-shadow: var(--shadowModal);
+  transition: transform 300ms var(--easeOutQuart);
 }
 
 .acko-drawer-open .acko-drawer {
@@ -55,28 +55,28 @@
 .acko-drawer-right {
   @apply right-0 top-0 h-full;
   transform: translateX(100%);
-  border-radius: var(--radius-4xl) 0 0 var(--radius-4xl);
+  border-radius: var(--radius4xl) 0 0 var(--radius4xl);
 }
 
 /* Left — slides from left, radius on right corners only */
 .acko-drawer-left {
   @apply left-0 top-0 h-full;
   transform: translateX(-100%);
-  border-radius: 0 var(--radius-4xl) var(--radius-4xl) 0;
+  border-radius: 0 var(--radius4xl) var(--radius4xl) 0;
 }
 
 /* Bottom — slides from bottom, radius on top corners only */
 .acko-drawer-bottom {
   @apply bottom-0 left-0 w-full;
   transform: translateY(100%);
-  border-radius: var(--radius-4xl) var(--radius-4xl) 0 0;
+  border-radius: var(--radius4xl) var(--radius4xl) 0 0;
 }
 
 /* Top — slides from top, radius on bottom corners only */
 .acko-drawer-top {
   @apply top-0 left-0 w-full;
   transform: translateY(-100%);
-  border-radius: 0 0 var(--radius-4xl) var(--radius-4xl);
+  border-radius: 0 0 var(--radius4xl) var(--radius4xl);
 }
 
 /* ── Size variants — left / right (width) ───────────────────── */
@@ -111,7 +111,7 @@
 
 .acko-drawer-header {
   @apply flex shrink-0 items-start gap-12 p-20;
-  border-bottom: 1px solid var(--color-border-subtle);
+  border-bottom: 1px solid var(--colorBorderSubtle);
 }
 
 /* ── Heading (title + description stack) ────────────────────── */
@@ -124,19 +124,19 @@
 
 .acko-drawer-title {
   @apply m-0;
-  font-size: var(--font-body-lg-size);
-  line-height: var(--font-body-lg-line);
+  font-size: var(--fontBodyLgSize);
+  line-height: var(--fontBodyLgLine);
   font-weight: 600;
-  color: var(--color-text-default);
+  color: var(--colorTextDefault);
 }
 
 /* ── Description ────────────────────────────────────────────── */
 
 .acko-drawer-description {
   @apply m-0;
-  font-size: var(--font-body-sm-size);
-  line-height: var(--font-body-sm-line);
-  color: var(--color-text-secondary);
+  font-size: var(--fontBodySmSize);
+  line-height: var(--fontBodySmLine);
+  color: var(--colorTextSecondary);
 }
 
 /* ── Close button ───────────────────────────────────────────── */
@@ -145,26 +145,26 @@
   @apply inline-flex shrink-0 cursor-pointer items-center justify-center rounded-full border-0 bg-transparent p-0;
   width: 32px;
   height: 32px;
-  color: var(--color-text-secondary);
+  color: var(--colorTextSecondary);
   transition: background-color 150ms ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .acko-drawer-close:hover {
-    background-color: var(--color-surface-ghost-hover);
+    background-color: var(--colorSurfaceGhostHover);
   }
 }
 
 .acko-drawer-close:focus-visible {
   outline: none;
-  box-shadow: var(--shadow-focus-ring);
+  box-shadow: var(--shadowFocusRing);
 }
 
 /* ── Body ───────────────────────────────────────────────────── */
 
 .acko-drawer-body {
   @apply flex-1 overflow-y-auto p-20;
-  color: var(--color-text-default);
+  color: var(--colorTextDefault);
 }
 
 /* ── Footer ─────────────────────────────────────────────────── */
@@ -172,5 +172,5 @@
 .acko-drawer-footer {
   @apply flex shrink-0 items-center justify-end gap-12;
   padding: 16px 20px;
-  border-top: 1px solid var(--color-border-subtle);
+  border-top: 1px solid var(--colorBorderSubtle);
 }

@@ -1,48 +1,71 @@
+---
+description: Border radius tokens, responsive card geometry, and nested radius rule (camelCase CSS vars)
+---
+
 # Border Radius Tokens
 
-## Scale
+## Documentation scope
 
-| token            | value   | use case                                          | tailwind            |
-|------------------|---------|---------------------------------------------------|---------------------|
-| radius-sm        | 4px     | Nested insets                                     | `rounded`           |
-| radius-md        | 6px     | Checkboxes md/lg                                  | `rounded-md`        |
-| radius-lg        | 8px     | Options, table cells                              | `rounded-lg`        |
-| radius-xl        | 10px    | Tooltip                                           | `rounded-xl`        |
-| radius-2xl       | 12px    | —                                                 | `rounded-2xl`       |
-| radius-3xl       | 16px    | —                                                 | `rounded-[16px]`    |
-| radius-4xl       | 20px    | Cards, dialogs, drawers, toasts, dropdown menus   | `rounded-[20px]`    |
-| radius-full      | 9999px  | Buttons, inputs, pills                            | `rounded-full`      |
+**Portable across platforms:** Token **names**, **pixel** radii, **role** mapping (pill for interactive, 4xl for non-card surfaces, nested-radius math).
 
-**`radius-4xl` (20px)** is the standard for surface containers: cards, dialogs, drawers, toasts, dropdown menus, calendar panels.
+**Web-specific:** Tailwind utility column (`rounded-full`, etc.). CSS variables use **camelCase** (e.g. `--radiusSm`, `--radiusCardOuter`).
 
-## Nested Radius Rule
+## Core radius scale
 
-When a rectangular element is nested inside a rounded container:
+| Token | Value | Use Case | Tailwind |
+|-------|-------|----------|----------|
+| `--radiusSm` | 4px | Nested insets | `rounded` |
+| `--radiusMd` | 6px | Checkboxes md/lg | `rounded-md` |
+| `--radiusLg` | 8px | Options, table cells | `rounded-lg` |
+| `--radiusXl` | 10px | Tooltip | `rounded-xl` |
+| `--radius2xl` | 12px | Nested surfaces (narrow) | `rounded-2xl` |
+| `--radius3xl` | 16px | Nested surfaces (wide) | `rounded-[16px]` |
+| `--radius4xl` | 20px | Dialogs, drawers, toasts, dropdown menus, calendar panels | `rounded-[20px]` |
+| `--radius5xl` | 24px | Card outer (narrow viewport) | `rounded-[24px]` |
+| `--radius6xl` | 32px | Card outer (wide viewport) | `rounded-[32px]` |
+| `--radiusFull` | 9999px | Buttons, inputs, pills | `rounded-full` |
+
+**`--radius4xl` (20px)** is the standard for **non-card** surface containers (dialogs, drawers, toasts, dropdowns, calendar).
+
+## Card geometry (responsive)
+
+Card surfaces use **dedicated responsive tokens**. Geometry is global for card variants — only fill, border, and shadow differ by variant.
+
+| Viewport | Range | Outer radius | Content gutter | Nested card radius | Token (outer) | Token (nested) |
+|----------|-------|--------------|----------------|-------------------|---------------|----------------|
+| Narrow | 320–768px | **24px** | 12px | **12px** | `--radiusCardOuter` → `--radius5xl` | `--radiusCardNested` → `--radius2xl` |
+| Wide | 769px+ | **32px** | 16px | **16px** | `--radiusCardOuter` → `--radius6xl` | `--radiusCardNested` → `--radius3xl` |
+
+`--radiusCardOuter`, `--radiusCardNested`, and `--cardContentGutter` remap at the **769px** breakpoint in `packages/tokens/src/tokens.css`. Components should consume these tokens rather than duplicating breakpoint logic.
+
+CTAs inside cards remain **`--radiusFull`** at every breakpoint.
+
+## Nested radius rule
+
+When a rectangular element nests inside a rounded container:
 
 ```
 inner radius = outer radius − padding
 ```
 
-Use `radius-inset-*` tokens when a child element fills the container edge-to-edge inside a `radius-4xl` (20px) card:
+For **cards**, prefer **`--radiusCardNested`** over manual math — it tracks the responsive outer radius.
 
-| token           | value | when                                                     |
-|-----------------|-------|----------------------------------------------------------|
-| radius-inset-sm | 8px   | Inner elements in `padding="sm"` (12px) cards → 20−12   |
-| radius-inset-md | 4px   | Inner elements in `padding="md"` (16px) cards → 20−16   |
-| radius-inset-lg | 0px   | Inner elements in `padding="lg"` (24px) cards → 20−24   |
+### Legacy inset tokens (20px outer reference)
 
-**Applies to:** Icon wrapper boxes, image thumbnails, inset panels (CardInset).
-**Exempt:** Buttons, badges, avatars — they have their own intentional pill/circular shape.
+When a **non-card** 20px-radius surface (`--radius4xl`) wraps inset content, use **`--radiusInsetSm`**, **`--radiusInsetMd`**, **`--radiusInsetLg`** (see `tokens.css`) — derived from 20px − padding.
 
-## Platform Mapping
+| Token | Effective | When |
+|-------|-----------|------|
+| `--radiusInsetSm` | 8px (`--radiusLg`) | 12px inner padding |
+| `--radiusInsetMd` | 4px (`--radiusSm`) | 16px inner padding |
+| `--radiusInsetLg` | 0px | 24px inner padding |
 
-| token       | react / css                      | flutter                                   |
-|-------------|----------------------------------|-------------------------------------------|
-| radius-full | border-radius: 9999px            | BorderRadius.circular(9999)               |
-| radius-4xl  | border-radius: 20px              | BorderRadius.circular(20)                 |
-| radius-3xl  | border-radius: 16px              | BorderRadius.circular(16)                 |
-| radius-lg   | border-radius: 8px               | BorderRadius.circular(8)                  |
-| radius-md   | border-radius: 6px               | BorderRadius.circular(6)                  |
-| radius-sm   | border-radius: 4px               | BorderRadius.circular(4)                  |
+### Applies to
+
+- Icon wrappers, thumbnails, inset panels (non-card or legacy)
+
+### Exempt
+
+- Buttons, badges, avatars — intentional pill/circular shapes
 
 Radius tokens are **theme-agnostic**.

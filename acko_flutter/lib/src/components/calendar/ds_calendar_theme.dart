@@ -109,18 +109,18 @@ class DsCalendarTheme extends ThemeExtension<DsCalendarTheme> {
     triggerBackground: Color(0xFFFFFFFF),
     triggerBorderColor: Color(0xFFEBEBEB),
     triggerBorderWidth: 1,
-    triggerHoverBorderColor: Color(0xFFE0E0E1),
-    triggerOpenBorderColor: Color(0xFFD9D8FC),
-    triggerFocusRingColor: Color(0xFFD9D8FC),
+    triggerHoverBorderColor: Color(0xFFDCDCDC),   // grey200
+    triggerOpenBorderColor: Color(0xFFC1BDFC),    // purple200
+    triggerFocusRingColor: Color(0xFFC1BDFC),     // purple200
     triggerFocusRingSpread: 2,
     triggerPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
     triggerTextStyle: TextStyle(
       fontSize: 14,
       height: 20 / 14,
       fontWeight: FontWeight.w400,
-      color: Color(0xFF0A0A0A),
+      color: Color(0xFF343434),                   // grey800
     ),
-    placeholderColor: Color(0xFF605F63),
+    placeholderColor: Color(0xFF969696),           // grey450
     panelWidth: 340,
     panelPadding: EdgeInsets.all(16),
     panelBorderRadius: BorderRadius.all(Radius.circular(DsTokens.radius4xl)),
@@ -133,7 +133,7 @@ class DsCalendarTheme extends ThemeExtension<DsCalendarTheme> {
       fontSize: 16,
       height: 24 / 16,
       fontWeight: FontWeight.w600,
-      color: Color(0xFF0A0A0A),
+      color: Color(0xFF343434),                   // grey800
     ),
     navButtonSize: 36,
     weekdayTextStyle: TextStyle(
@@ -141,34 +141,34 @@ class DsCalendarTheme extends ThemeExtension<DsCalendarTheme> {
       height: 14 / 11,
       letterSpacing: 0.3,
       fontWeight: FontWeight.w500,
-      color: Color(0xFF605F63),
+      color: Color(0xFF969696),                   // grey450
     ),
     dayCellHeight: 40,
     dayTextStyle: TextStyle(
       fontSize: 14,
       height: 20 / 14,
       fontWeight: FontWeight.w400,
-      color: Color(0xFF0A0A0A),
+      color: Color(0xFF343434),                   // grey800
     ),
     pickerCellHeight: 48,
     pickerTextStyle: TextStyle(
       fontSize: 14,
       height: 20 / 14,
       fontWeight: FontWeight.w500,
-      color: Color(0xFF0A0A0A),
+      color: Color(0xFF343434),                   // grey800
     ),
-    primaryTextColor: Color(0xFF0A0A0A),
-    secondaryTextColor: Color(0xFF605F63),
-    disabledTextColor: Color(0xFFB7B7B8),
+    primaryTextColor: Color(0xFF343434),           // grey800
+    secondaryTextColor: Color(0xFF969696),         // grey450
+    disabledTextColor: Color(0xFFC0C0C0),          // grey300
     todayColor: DsTokens.colorPrimary,
     daySelectedBackground: DsTokens.colorPrimary,
     daySelectedForeground: DsTokens.colorOnPrimary,
-    rangeBandBackground: Color(0xFFF5F3FF),
-    rangeBandForeground: Color(0xFF582FD2),
+    rangeBandBackground: Color(0xFFF3F3FF),        // purple50
+    rangeBandForeground: Color(0xFF491FD4),        // purple700
     cellHoverBackground: Color(0xFFF5F5F5),
     focusRingColor: DsTokens.colorPrimaryRing,
     focusRingSpread: 3,
-    iconColor: Color(0xFF605F63),
+    iconColor: Color(0xFF969696),                  // grey450
   );
 
   static const defaults = light;

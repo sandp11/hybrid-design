@@ -20,13 +20,13 @@
   @apply relative flex w-full items-center shrink-0;
   gap: 12px;
   padding: 12px;
-  border-radius: var(--radius-3xl, 16px);
+  border-radius: var(--radius3xl, 16px);
   border-width: 1px;
   border-style: solid;
 }
 
 .acko-alert-slide-up {
-  animation: acko-alert-slide-up 300ms var(--ease-out-cubic, cubic-bezier(0.215, 0.61, 0.355, 1)) both;
+  animation: acko-alert-slide-up 300ms var(--easeOutCubic, cubic-bezier(0.215, 0.61, 0.355, 1)) both;
 }
 
 /* --- Icon --- */
@@ -53,17 +53,17 @@
 
 .acko-alert-title {
   @apply min-w-0 truncate font-semibold;
-  font-size: var(--font-body-sm-size, 14px);
-  line-height: var(--font-body-sm-line, 20px);
+  font-size: var(--fontBodySmSize, 14px);
+  line-height: var(--fontBodySmLine, 20px);
   color: inherit;
 }
 
 .acko-alert-body {
   @apply min-w-0 truncate;
-  font-size: var(--font-caption-size, 12px);
-  line-height: var(--font-caption-line, 16px);
+  font-size: var(--fontCaptionSize, 12px);
+  line-height: var(--fontCaptionLine, 16px);
   font-weight: 400;
-  color: var(--color-text-default);
+  color: var(--colorTextDefault);
 }
 
 /* --- Dismiss --- */
@@ -93,25 +93,25 @@
 /* --- Variants (icon + title inherit; body uses color-text-default) --- */
 
 .acko-alert-info {
-  background-color: var(--color-info-subtle);
-  border-color: var(--color-info-border);
-  color: var(--color-info-text);
+  background-color: var(--colorInfoSubtle);
+  border-color: var(--colorInfoBorder);
+  color: var(--colorInfoText);
 }
 
 .acko-alert-success {
-  background-color: var(--color-success-subtle);
-  border-color: var(--color-success-border);
-  color: var(--color-success-text);
+  background-color: var(--colorSuccessSubtle);
+  border-color: var(--colorSuccessBorder);
+  color: var(--colorSuccessText);
 }
 
 .acko-alert-warning {
-  background-color: var(--color-warning-subtle);
-  border-color: var(--color-warning-border);
-  color: var(--color-warning-text);
+  background-color: var(--colorWarningSubtle);
+  border-color: var(--colorWarningBorder);
+  color: var(--colorWarningText);
 }
 
 .acko-alert-error {
-  background-color: var(--color-error-subtle);
-  border-color: var(--color-error-border);
-  color: var(--color-error-text);
+  background-color: var(--colorErrorSubtle);
+  border-color: var(--colorErrorBorder);
+  color: var(--colorErrorText);
 }

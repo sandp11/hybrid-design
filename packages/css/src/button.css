@@ -20,7 +20,7 @@
   
   .acko-btn:focus-visible {
     outline: none;
-    box-shadow: var(--shadow-focus-ring);
+    box-shadow: var(--shadowFocusRing);
   }
   
   .acko-btn:active:not(:disabled) {
@@ -60,45 +60,45 @@
   /* --- Variants --- */
   
   .acko-btn-primary {
-    background-color: var(--color-primary);
-    color: var(--color-on-primary);
-    box-shadow: var(--shadow-btn-inner);
+    background-color: var(--colorPrimary);
+    color: var(--colorOnPrimary);
+    box-shadow: var(--shadowBtnInner);
   }
   
   .acko-btn-secondary {
-    background-color: var(--color-btn-secondary-bg);
-    color: var(--color-btn-secondary-text);
-    box-shadow: inset 0 0 0 1px var(--color-btn-secondary-border);
+    background-color: var(--colorBtnSecondaryBg);
+    color: var(--colorBtnSecondaryText);
+    box-shadow: inset 0 0 0 1px var(--colorBtnSecondaryBorder);
   }
   
   .acko-btn-secondary:focus-visible {
     box-shadow:
-      inset 0 0 0 1px var(--color-btn-secondary-border),
-      var(--shadow-focus-ring);
+      inset 0 0 0 1px var(--colorBtnSecondaryBorder),
+      var(--shadowFocusRing);
   }
   
   .acko-btn-inverted {
-    background-color: var(--color-btn-inverted-bg);
-    color: var(--color-btn-inverted-text);
+    background-color: var(--colorBtnInvertedBg);
+    color: var(--colorBtnInvertedText);
   }
   
   .acko-btn-ghost {
     @apply bg-transparent;
-    color: var(--color-btn-ghost-color);
+    color: var(--colorBtnGhostColor);
   }
   
   .acko-btn-link {
     @apply bg-transparent px-0;
-    color: var(--color-btn-link-color);
+    color: var(--colorBtnLinkColor);
   }
   
   .acko-btn-danger {
-    background-color: var(--color-btn-danger-bg);
-    color: var(--color-btn-danger-text);
+    background-color: var(--colorBtnDangerBg);
+    color: var(--colorBtnDangerText);
   }
   
   .acko-btn-danger:focus-visible {
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-error) 20%, transparent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--colorError) 20%, transparent);
   }
   
   /* --- Hover (pointer devices only) --- */
@@ -106,16 +106,16 @@
   @media (hover: hover) and (pointer: fine) {
     .acko-btn-primary:hover:not(:disabled) {
       background-image: linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08));
-      background-color: var(--color-primary);
+      background-color: var(--colorPrimary);
       box-shadow:
-        var(--shadow-btn-inner),
-        var(--shadow-btn-hover);
+        var(--shadowBtnInner),
+        var(--shadowBtnHover);
     }
   
     .acko-btn-secondary:hover:not(:disabled) {
-      background-color: var(--color-btn-secondary-bg);
+      background-color: var(--colorBtnSecondaryBg);
       filter: brightness(0.96);
-      box-shadow: inset 0 0 0 1px var(--color-btn-secondary-border);
+      box-shadow: inset 0 0 0 1px var(--colorBtnSecondaryBorder);
     }
   
     .acko-btn-inverted:hover:not(:disabled) {
@@ -123,7 +123,7 @@
     }
   
     .acko-btn-ghost:hover:not(:disabled) {
-      background-color: var(--color-btn-ghost-hover-bg);
+      background-color: var(--colorBtnGhostHoverBg);
     }
   
     .acko-btn-link:hover:not(:disabled) {
@@ -140,8 +140,8 @@
   .acko-btn-disabled,
   .acko-btn:disabled {
     @apply cursor-not-allowed;
-    background-color: var(--color-btn-disabled-bg) !important;
-    color: var(--color-btn-disabled-text) !important;
+    background-color: var(--colorBtnDisabledBg) !important;
+    color: var(--colorBtnDisabledText) !important;
     box-shadow: none !important;
     opacity: 1;
     filter: none;
@@ -162,40 +162,40 @@
      ============================================================ */
   
   [data-theme="dark"] .acko-btn-primary {
-    background-color: var(--color-primary);
-    color: var(--color-on-primary);
-    box-shadow: var(--shadow-btn-inner);
+    background-color: var(--colorPrimary);
+    color: var(--colorOnPrimary);
+    box-shadow: var(--shadowBtnInner);
   }
   
   [data-theme="dark"] .acko-btn-secondary {
-    background-color: var(--color-btn-secondary-bg);
-    color: var(--color-btn-secondary-text);
-    box-shadow: inset 0 0 0 1px var(--color-btn-secondary-border);
+    background-color: var(--colorBtnSecondaryBg);
+    color: var(--colorBtnSecondaryText);
+    box-shadow: inset 0 0 0 1px var(--colorBtnSecondaryBorder);
   }
   
   [data-theme="dark"] .acko-btn-inverted {
-    background-color: var(--color-btn-inverted-bg);
-    color: var(--color-btn-inverted-text);
+    background-color: var(--colorBtnInvertedBg);
+    color: var(--colorBtnInvertedText);
   }
   
   [data-theme="dark"] .acko-btn-ghost {
     @apply bg-transparent;
-    color: var(--color-btn-ghost-color);
+    color: var(--colorBtnGhostColor);
   }
   
   [data-theme="dark"] .acko-btn-link {
     @apply bg-transparent;
-    color: var(--color-btn-link-color);
+    color: var(--colorBtnLinkColor);
   }
   
   [data-theme="dark"] .acko-btn-danger {
-    background-color: var(--color-btn-danger-bg);
-    color: var(--color-btn-danger-text);
+    background-color: var(--colorBtnDangerBg);
+    color: var(--colorBtnDangerText);
   }
   
   [data-theme="dark"] .acko-btn:disabled {
-    background-color: var(--color-btn-disabled-bg) !important;
-    color: var(--color-btn-disabled-text) !important;
+    background-color: var(--colorBtnDisabledBg) !important;
+    color: var(--colorBtnDisabledText) !important;
     box-shadow: none !important;
     cursor: not-allowed;
     opacity: 1;
@@ -204,11 +204,11 @@
   
   @media (hover: hover) and (pointer: fine) {
     [data-theme="dark"] .acko-btn-primary:hover:not(:disabled) {
-      background-color: var(--color-btn-primary-hover-bg);
+      background-color: var(--colorBtnPrimaryHoverBg);
       background-image: none;
       box-shadow:
-        var(--shadow-btn-inner),
-        var(--shadow-btn-hover);
+        var(--shadowBtnInner),
+        var(--shadowBtnHover);
     }
   
     [data-theme="dark"] .acko-btn-secondary:hover:not(:disabled) {
@@ -220,7 +220,7 @@
     }
   
     [data-theme="dark"] .acko-btn-ghost:hover:not(:disabled) {
-      background-color: var(--color-btn-ghost-hover-bg);
+      background-color: var(--colorBtnGhostHoverBg);
     }
   
     [data-theme="dark"] .acko-btn-link:hover:not(:disabled) {
@@ -265,12 +265,12 @@
   .acko-btn-dot:nth-child(2) { animation-delay: 0.15s; }
   .acko-btn-dot:nth-child(3) { animation-delay: 0.3s; }
   
-  .acko-btn-primary .acko-btn-dots { color: var(--color-on-primary); }
-  .acko-btn-secondary .acko-btn-dots { color: var(--color-btn-secondary-text); }
-  .acko-btn-inverted .acko-btn-dots { color: var(--color-btn-inverted-text); }
-  .acko-btn-ghost .acko-btn-dots { color: var(--color-btn-ghost-color); }
-  .acko-btn-link .acko-btn-dots { color: var(--color-btn-link-color); }
-  .acko-btn-danger .acko-btn-dots { color: var(--color-btn-danger-text); }
+  .acko-btn-primary .acko-btn-dots { color: var(--colorOnPrimary); }
+  .acko-btn-secondary .acko-btn-dots { color: var(--colorBtnSecondaryText); }
+  .acko-btn-inverted .acko-btn-dots { color: var(--colorBtnInvertedText); }
+  .acko-btn-ghost .acko-btn-dots { color: var(--colorBtnGhostColor); }
+  .acko-btn-link .acko-btn-dots { color: var(--colorBtnLinkColor); }
+  .acko-btn-danger .acko-btn-dots { color: var(--colorBtnDangerText); }
   
   @keyframes acko-dot-wave {
     0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }

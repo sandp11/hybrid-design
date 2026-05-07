@@ -14,13 +14,13 @@
   .acko-dropdown-menu-multi .acko-cb-row {
     padding-left: 12px;
     padding-right: 12px;
-    border-radius: var(--radius-lg);
+    border-radius: var(--radiusLg);
   }
 
   /* Match single-select option hover — overrides page-level row ghost-hover */
   @media (hover: hover) and (pointer: fine) {
     .acko-dropdown-menu-multi .acko-cb-row:hover {
-      background-color: var(--color-primary-subtle);
+      background-color: var(--colorPrimarySubtle);
     }
   }
 }

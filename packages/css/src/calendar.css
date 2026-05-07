@@ -34,14 +34,14 @@
 
 .acko-cal-trigger {
   @apply inline-flex w-full cursor-pointer select-none items-center justify-between gap-8 border border-solid;
-  background-color: var(--color-input-bg);
-  border-color: var(--color-input-border);
-  border-radius: var(--radius-lg);
+  background-color: var(--colorInputBg);
+  border-color: var(--colorInputBorder);
+  border-radius: var(--radiusLg);
   padding: 12px 16px;
-  font-size: var(--font-body-sm-size);
-  line-height: var(--font-body-sm-line);
-  font-weight: var(--font-body-sm-weight);
-  color: var(--color-text-primary);
+  font-size: var(--fontBodySmSize);
+  line-height: var(--fontBodySmLine);
+  font-weight: var(--fontBodySmWeight);
+  color: var(--colorTextPrimary);
   transition:
     border-color 150ms ease,
     box-shadow 150ms ease;
@@ -49,22 +49,22 @@
 
 @media (hover: hover) and (pointer: fine) {
   .acko-cal-trigger:hover {
-    border-color: var(--color-input-hover-border);
+    border-color: var(--colorInputHoverBorder);
   }
 }
 
 .acko-cal-trigger-open {
-  border-color: var(--color-input-focus-border);
-  box-shadow: 0 0 0 2px var(--color-input-focus-ring);
+  border-color: var(--colorInputFocusBorder);
+  box-shadow: 0 0 0 2px var(--colorInputFocusRing);
 }
 
 .acko-cal-trigger-placeholder {
-  color: var(--color-text-secondary);
+  color: var(--colorTextSecondary);
 }
 
 .acko-cal-trigger-icon {
   @apply inline-flex shrink-0 items-center;
-  color: var(--color-text-secondary);
+  color: var(--colorTextSecondary);
 }
 
 .acko-cal-trigger-icon svg,
@@ -77,16 +77,16 @@
 .acko-cal-panel {
   width: 340px;
   max-width: 100%;
-  border-radius: var(--radius-4xl);
-  border: 1px solid var(--color-card-border);
-  background-color: var(--color-card-bg);
-  box-shadow: var(--shadow-md);
+  border-radius: var(--radius4xl);
+  border: 1px solid var(--colorCardBorder);
+  background-color: var(--colorCardBg);
+  box-shadow: var(--shadowMd);
   padding: 16px;
 }
 
 [data-theme="dark"] .acko-cal-panel {
-  background-color: var(--color-surface-raised);
-  border-color: var(--color-border);
+  background-color: var(--colorSurfaceRaised);
+  border-color: var(--colorBorder);
 }
 
 .acko-cal-panel-dropdown {
@@ -94,9 +94,9 @@
   /* Wrapper is inline-block = trigger width; max-width:100% on .acko-cal-panel would crush the grid */
   width: 340px;
   max-width: min(340px, calc(100vw - 24px));
-  z-index: var(--z-dropdown);
+  z-index: var(--zDropdown);
   transform-origin: top center;
-  animation: acko-cal-enter 150ms var(--ease-out-cubic) both;
+  animation: acko-cal-enter 150ms var(--easeOutCubic) both;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -116,42 +116,42 @@
 .acko-cal-header-label {
   @apply cursor-pointer select-none border-0 bg-transparent px-8 py-4 text-center font-semibold;
   flex: 1 1 auto;
-  font-size: var(--font-body-md-size);
-  line-height: var(--font-body-md-line);
-  color: var(--color-text-primary);
-  border-radius: var(--radius-lg);
+  font-size: var(--fontBodyMdSize);
+  line-height: var(--fontBodyMdLine);
+  color: var(--colorTextPrimary);
+  border-radius: var(--radiusLg);
   transition: background-color 150ms ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .acko-cal-header-label:hover {
-    background-color: var(--color-cal-cell-hover-bg);
+    background-color: var(--colorCalCellHoverBg);
   }
 }
 
 .acko-cal-header-label:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px var(--color-primary-ring);
+  box-shadow: 0 0 0 3px var(--colorPrimaryRing);
 }
 
 .acko-cal-nav-btn {
   @apply inline-flex shrink-0 cursor-pointer items-center justify-center border-0 bg-transparent p-0;
   width: 36px;
   height: 36px;
-  border-radius: var(--radius-lg);
-  color: var(--color-text-primary);
+  border-radius: var(--radiusLg);
+  color: var(--colorTextPrimary);
   transition: background-color 150ms ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .acko-cal-nav-btn:hover {
-    background-color: var(--color-cal-cell-hover-bg);
+    background-color: var(--colorCalCellHoverBg);
   }
 }
 
 .acko-cal-nav-btn:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px var(--color-primary-ring);
+  box-shadow: 0 0 0 3px var(--colorPrimaryRing);
 }
 
 /* --- Month matrix: one grid so weekday labels and day cells share column tracks.
@@ -168,20 +168,20 @@
 
 .acko-cal-weekday {
   @apply min-w-0 text-center uppercase;
-  font-size: var(--font-label-sm-size);
-  line-height: var(--font-label-sm-line);
-  letter-spacing: var(--font-label-sm-spacing);
-  font-weight: var(--font-label-sm-weight);
-  color: var(--color-text-secondary);
+  font-size: var(--fontLabelSmSize);
+  line-height: var(--fontLabelSmLine);
+  letter-spacing: var(--fontLabelSmSpacing);
+  font-weight: var(--fontLabelSmWeight);
+  color: var(--colorTextSecondary);
 }
 
 /* Box model via utilities; no min-w-0 so cells fill grid tracks naturally. */
 .acko-cal-day {
   @apply relative box-border flex m-0 w-full h-40 cursor-pointer items-center justify-center border-0 p-0 tabular-nums leading-none;
-  font-size: var(--font-body-sm-size);
-  font-weight: var(--font-body-sm-weight);
-  border-radius: var(--radius-full);
-  color: var(--color-text-primary);
+  font-size: var(--fontBodySmSize);
+  font-weight: var(--fontBodySmWeight);
+  border-radius: var(--radiusFull);
+  color: var(--colorTextPrimary);
   background-color: transparent;
   transition:
     background-color 150ms ease,
@@ -190,55 +190,55 @@
 
 @media (hover: hover) and (pointer: fine) {
   .acko-cal-day:not(.acko-cal-day-disabled):not(:disabled):hover {
-    background-color: var(--color-cal-cell-hover-bg);
+    background-color: var(--colorCalCellHoverBg);
   }
 }
 
 /* Outline focus avoids stacking a second box-shadow on filled selection (hairline/clipping artifacts). */
 .acko-cal-day:focus-visible {
   @apply z-[1] outline outline-2 outline-offset-2;
-  outline-color: var(--color-primary-ring);
+  outline-color: var(--colorPrimaryRing);
 }
 
 .acko-cal-today:not(.acko-cal-selected) {
-  color: var(--color-cal-today-text);
+  color: var(--colorCalTodayText);
   font-weight: 700;
 }
 
 .acko-cal-selected {
-  background-color: var(--color-cal-selected-bg);
-  color: var(--color-cal-selected-text);
+  background-color: var(--colorCalSelectedBg);
+  color: var(--colorCalSelectedText);
   font-weight: 600;
 }
 
 .acko-cal-selected.acko-cal-today {
-  color: var(--color-cal-selected-text);
+  color: var(--colorCalSelectedText);
   font-weight: 600;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .acko-cal-selected:hover {
-    background-color: var(--color-cal-selected-bg);
-    color: var(--color-cal-selected-text);
+    background-color: var(--colorCalSelectedBg);
+    color: var(--colorCalSelectedText);
   }
 }
 
 .acko-cal-range-middle {
   @apply rounded-none font-medium;
-  background-color: var(--color-cal-range-bg);
-  color: var(--color-cal-range-text);
+  background-color: var(--colorCalRangeBg);
+  color: var(--colorCalRangeText);
 }
 
 .acko-cal-range-start {
   @apply rounded-l-full rounded-r-none font-semibold;
-  background-color: var(--color-cal-selected-bg);
-  color: var(--color-cal-selected-text);
+  background-color: var(--colorCalSelectedBg);
+  color: var(--colorCalSelectedText);
 }
 
 .acko-cal-range-end {
   @apply rounded-r-full rounded-l-none font-semibold;
-  background-color: var(--color-cal-selected-bg);
-  color: var(--color-cal-selected-text);
+  background-color: var(--colorCalSelectedBg);
+  color: var(--colorCalSelectedText);
 }
 
 .acko-cal-range-start.acko-cal-range-end {
@@ -246,13 +246,13 @@
 }
 
 .acko-cal-outside {
-  color: var(--color-text-disabled);
+  color: var(--colorTextDisabled);
 }
 
 .acko-cal-day-disabled,
 .acko-cal-day:disabled {
   @apply cursor-not-allowed;
-  color: var(--color-text-secondary);
+  color: var(--colorTextSecondary);
 }
 
 .acko-cal-day-disabled:hover,
@@ -269,9 +269,9 @@
 
 .acko-cal-picker-cell {
   @apply h-48 cursor-pointer border-0 rounded-full font-medium;
-  font-size: var(--font-body-sm-size);
-  line-height: var(--font-body-sm-line);
-  color: var(--color-text-primary);
+  font-size: var(--fontBodySmSize);
+  line-height: var(--fontBodySmLine);
+  color: var(--colorTextPrimary);
   background-color: transparent;
   transition:
     background-color 150ms ease,
@@ -281,27 +281,27 @@
 
 @media (hover: hover) and (pointer: fine) {
   .acko-cal-picker-cell:hover:not(:disabled) {
-    background-color: var(--color-cal-cell-hover-bg);
+    background-color: var(--colorCalCellHoverBg);
   }
 }
 
 .acko-cal-picker-cell:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px var(--color-primary-ring);
+  box-shadow: 0 0 0 3px var(--colorPrimaryRing);
 }
 
 .acko-cal-picker-cell-selected {
-  background-color: var(--color-cal-selected-bg);
-  color: var(--color-cal-selected-text);
+  background-color: var(--colorCalSelectedBg);
+  color: var(--colorCalSelectedText);
   font-weight: 700;
 }
 
 .acko-cal-picker-cell-current:not(.acko-cal-picker-cell-selected) {
-  color: var(--color-cal-today-text);
+  color: var(--colorCalTodayText);
   font-weight: 700;
 }
 
 .acko-cal-picker-cell:disabled {
   @apply cursor-not-allowed;
-  color: var(--color-text-secondary);
+  color: var(--colorTextSecondary);
 }

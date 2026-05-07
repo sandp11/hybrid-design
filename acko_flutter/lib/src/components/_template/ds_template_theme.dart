@@ -15,7 +15,7 @@ class DsTemplateTheme extends ThemeExtension<DsTemplateTheme> {
 
   static const defaults = DsTemplateTheme(
     primaryBackground: DsTokens.colorPrimary,
-    disabledBackground: DsTokens.colorSurfaceSubtle,
+    disabledBackground: DsTokens.colorDisabledBg,
     disabledOpacity: 0.4,
   );
 

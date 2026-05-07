@@ -7,53 +7,53 @@
 
 .acko-card {
   @apply relative box-border w-full;
-  border-radius: var(--radius-card-outer);
+  border-radius: var(--radiusCardOuter);
 }
 
 /* --- Variants (surface only — geometry shared) --- */
 
 .acko-card-default {
-  background-color: var(--color-card-bg);
-  border: 1px solid var(--color-card-border);
+  background-color: var(--colorCardBg);
+  border: 1px solid var(--colorCardBorder);
 }
 
 .acko-card-secondary {
-  background-color: var(--color-card-secondary-bg);
-  border: 1px solid var(--color-card-secondary-border);
+  background-color: var(--colorCardSecondaryBg);
+  border: 1px solid var(--colorCardSecondaryBorder);
 }
 
 .acko-card-elevated {
-  background-color: var(--color-card-elevated-bg);
+  background-color: var(--colorCardElevatedBg);
   border: none;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadowLg);
 }
 
 .acko-card-outline {
   background-color: transparent;
-  border: 1px solid var(--color-card-outline-border);
+  border: 1px solid var(--colorCardOutlineBorder);
 }
 
 .acko-card-demoted {
-  background-color: var(--color-card-demoted-bg);
-  border: 1px solid var(--color-card-demoted-border);
+  background-color: var(--colorCardDemotedBg);
+  border: 1px solid var(--colorCardDemotedBorder);
 }
 
-/* --- Padding (canonical gutter from `--card-content-gutter`) --- */
+/* --- Padding (canonical gutter from `--cardContentGutter`) --- */
 
 .acko-card-pad-none {
   padding: 0;
 }
 
 .acko-card-pad-sm {
-  padding: calc(var(--card-content-gutter) - 4px);
+  padding: calc(var(--cardContentGutter) - 4px);
 }
 
 .acko-card-pad-md {
-  padding: var(--card-content-gutter);
+  padding: var(--cardContentGutter);
 }
 
 .acko-card-pad-lg {
-  padding: calc(var(--card-content-gutter) + 8px);
+  padding: calc(var(--cardContentGutter) + 8px);
 }
 
 /* --- Sub-regions --- */
@@ -62,7 +62,7 @@
   @apply flex items-start;
   gap: 12px;
   padding-bottom: 16px;
-  border-bottom: 1px solid var(--color-border-subtle);
+  border-bottom: 1px solid var(--colorBorderSubtle);
 }
 
 .acko-card-content {
@@ -74,12 +74,12 @@
   @apply flex flex-row items-center justify-end;
   gap: 12px;
   padding-top: 16px;
-  border-top: 1px solid var(--color-border-subtle);
+  border-top: 1px solid var(--colorBorderSubtle);
 }
 
 .acko-card-inset {
-  padding: var(--card-content-gutter);
-  border-radius: var(--radius-card-nested);
-  border: 1px solid var(--color-card-demoted-border);
-  background-color: var(--color-card-demoted-bg);
+  padding: var(--cardContentGutter);
+  border-radius: var(--radiusCardNested);
+  border: 1px solid var(--colorCardDemotedBorder);
+  background-color: var(--colorCardDemotedBg);
 }

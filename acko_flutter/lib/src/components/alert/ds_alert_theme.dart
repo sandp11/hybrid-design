@@ -75,27 +75,26 @@ class DsAlertTheme extends ThemeExtension<DsAlertTheme> {
     borderRadius: BorderRadius.all(Radius.circular(DsTokens.radius3xl)),
   );
 
-  /// Dark palette values aligned with `tokens.css` `[data-theme="dark"]` semantics.
   static const dark = DsAlertTheme(
     info: DsAlertPalette(
-      background: Color(0xFF241362),
-      border: Color(0xFF4E29BB),
-      accent: Color(0xFF9B8FF6),
+      background: DsTokens.colorInfoSubtleDark,
+      border: DsTokens.colorInfoBorderDark,
+      accent: DsTokens.colorInfoTextDark,
     ),
     success: DsAlertPalette(
-      background: Color(0xFF052E16),
-      border: Color(0xFF166534),
-      accent: Color(0xFF4ADE80),
+      background: DsTokens.colorSuccessSubtleDark,
+      border: DsTokens.colorSuccessBorderDark,
+      accent: DsTokens.colorSuccessTextDark,
     ),
     warning: DsAlertPalette(
-      background: Color(0xFF300212),
-      border: Color(0xFF8D4301),
-      accent: Color(0xFFFFA85C),
+      background: DsTokens.colorWarningSubtleDark,
+      border: DsTokens.colorWarningBorderDark,
+      accent: DsTokens.colorWarningTextDark,
     ),
     error: DsAlertPalette(
-      background: Color(0xFF450A0A),
-      border: Color(0xFF991B1B),
-      accent: Color(0xFFF87171),
+      background: DsTokens.colorErrorSubtleDark,
+      border: DsTokens.colorErrorBorderDark,
+      accent: DsTokens.colorErrorTextDark,
     ),
     padding: EdgeInsets.all(12),
     gap: 12,

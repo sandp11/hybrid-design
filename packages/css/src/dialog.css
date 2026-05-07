@@ -34,9 +34,9 @@
 
 .acko-dialog-backdrop {
   @apply fixed inset-0 cursor-default;
-  background-color: var(--color-surface-overlay);
-  z-index: var(--z-modal);
-  animation: acko-dialog-backdrop-in 200ms var(--ease-out-cubic) both;
+  background-color: var(--colorSurfaceOverlay);
+  z-index: var(--zModal);
+  animation: acko-dialog-backdrop-in 200ms var(--easeOutCubic) both;
 }
 
 /* --- Panel --- */
@@ -44,11 +44,11 @@
 .acko-dialog {
   @apply fixed left-1/2 top-1/2 flex w-full -translate-x-1/2 -translate-y-1/2 flex-col overflow-hidden;
   max-width: 540px;
-  background-color: var(--color-surface-raised);
-  border-radius: var(--radius-4xl);
-  box-shadow: var(--shadow-lg);
-  z-index: var(--z-modal);
-  animation: acko-dialog-in 250ms var(--ease-out-quart) both;
+  background-color: var(--colorSurfaceRaised);
+  border-radius: var(--radius4xl);
+  box-shadow: var(--shadowLg);
+  z-index: var(--zModal);
+  animation: acko-dialog-in 250ms var(--easeOutQuart) both;
 }
 
 /* Size variants */
@@ -73,19 +73,19 @@
 
 .acko-dialog-title {
   @apply m-0 flex-1;
-  font-size: var(--font-body-lg-size);
-  line-height: var(--font-body-lg-line);
+  font-size: var(--fontBodyLgSize);
+  line-height: var(--fontBodyLgLine);
   font-weight: 600;
-  color: var(--color-text-default);
+  color: var(--colorTextDefault);
 }
 
 /* --- Description --- */
 
 .acko-dialog-description {
   @apply m-0 shrink-0 px-24 pb-16;
-  font-size: var(--font-body-sm-size);
-  line-height: var(--font-body-sm-line);
-  color: var(--color-text-secondary);
+  font-size: var(--fontBodySmSize);
+  line-height: var(--fontBodySmLine);
+  color: var(--colorTextSecondary);
 }
 
 /* --- Close button --- */
@@ -94,19 +94,19 @@
   @apply inline-flex shrink-0 cursor-pointer items-center justify-center rounded-full border-0 bg-transparent p-0;
   width: 32px;
   height: 32px;
-  color: var(--color-text-secondary);
+  color: var(--colorTextSecondary);
   transition: background-color 150ms ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .acko-dialog-close:hover {
-    background-color: var(--color-surface-ghost-hover);
+    background-color: var(--colorSurfaceGhostHover);
   }
 }
 
 .acko-dialog-close:focus-visible {
   outline: none;
-  box-shadow: var(--shadow-focus-ring);
+  box-shadow: var(--shadowFocusRing);
 }
 
 /* --- Body --- */
@@ -119,5 +119,5 @@
 
 .acko-dialog-footer {
   @apply flex shrink-0 items-center justify-end gap-12 px-24 pb-24 pt-16;
-  border-top: 1px solid var(--color-border-subtle);
+  border-top: 1px solid var(--colorBorderSubtle);
 }

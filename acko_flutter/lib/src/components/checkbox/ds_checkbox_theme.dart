@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import '../../foundation/tokens.dart';
 
 enum DsCheckboxSize { sm, md, lg }
 
@@ -140,9 +141,9 @@ class DsCheckboxTheme extends ThemeExtension<DsCheckboxTheme> {
     boxSizeSm: 16.0,
     boxSizeMd: 20.0,
     boxSizeLg: 24.0,
-    borderRadiusSm: BorderRadius.all(Radius.circular(4)),
-    borderRadiusMd: BorderRadius.all(Radius.circular(6)),
-    borderRadiusLg: BorderRadius.all(Radius.circular(6)),
+    borderRadiusSm: BorderRadius.all(Radius.circular(DsTokens.radiusSm)),
+    borderRadiusMd: BorderRadius.all(Radius.circular(DsTokens.radiusMd)),
+    borderRadiusLg: BorderRadius.all(Radius.circular(DsTokens.radiusMd)),
 
     iconSizeSm: 10.0,
     iconSizeMd: 12.0,
@@ -152,41 +153,41 @@ class DsCheckboxTheme extends ThemeExtension<DsCheckboxTheme> {
     labelFontSizeMd: 16.0,
     labelFontSizeLg: 18.0,
 
-    borderUnchecked:          Color(0xFFE0E0E1), // color-control-border-selector light (grey-200)
-    bgUnchecked:              Color(0xFFFBFBFB), // color-card-bg light
-    borderChecked:            Color(0xFF6841E6), // color-primary light
-    bgChecked:                Color(0xFF6841E6),
-    borderHoverUnchecked:     Color(0xFF9B8FF6), // color-primary-muted light
-    bgHoverUnchecked:         Color(0xFFEAEAFD), // color-primary-subtle light
-    borderHoverChecked:       Color(0xFF582FD2), // color-primary-hover light
-    bgHoverChecked:           Color(0xFF582FD2),
-    borderDisabledUnchecked:  Color(0xFFE0E0E1), // color-border-subtle light
-    bgDisabledUnchecked:      Color(0xFFF5F5F5), // color-surface-raised light
-    borderDisabledChecked:    Color(0xFFE0E0E1), // color-disabled-border light
-    bgDisabledChecked:        Color(0xFFEBEBEB), // color-disabled-bg light
-    borderError:              Color(0xFFDC2626), // color-error
-    bgError:                  Color(0xFFFBFBFB), // color-card-bg light
+    borderUnchecked:          DsTokens.colorBorder,         // grey300
+    bgUnchecked:              Colors.transparent,
+    borderChecked:            DsTokens.colorPrimary,
+    bgChecked:                DsTokens.colorPrimary,
+    borderHoverUnchecked:     DsTokens.colorBorderStrong,   // grey450
+    bgHoverUnchecked:         DsTokens.colorCardBg,         // grey50
+    borderHoverChecked:       DsTokens.colorPrimaryHover,
+    bgHoverChecked:           DsTokens.colorPrimaryHover,
+    borderDisabledUnchecked:  DsTokens.colorReadonlyBorder, // grey250
+    bgDisabledUnchecked:      DsTokens.colorDisabledBg,     // grey150
+    borderDisabledChecked:    DsTokens.colorDisabledText,   // grey350
+    bgDisabledChecked:        DsTokens.colorDisabledText,   // grey350
+    borderError:              DsTokens.colorError,
+    bgError:                  DsTokens.colorCardBg,
 
-    iconColor:         Color(0xFFFFFFFF), // color-on-primary
-    iconColorDisabled: Color(0xFF8F8E92), // color-disabled-text light
-    focusRingColor:    Color(0xFFD9D8FC), // color-primary-ring light
+    iconColor:         DsTokens.colorOnPrimary,
+    iconColorDisabled: DsTokens.colorDisabledText,
+    focusRingColor:    DsTokens.colorPrimaryRing,
 
-    labelColor:       Color(0xFF141414), // color-text-default light
-    descriptionColor: Color(0xFF605F63), // color-text-secondary light
+    labelColor:       DsTokens.colorTextDefault,
+    descriptionColor: DsTokens.colorTextSecondary,
 
     rowMinHeightDesktop:          44.0,
     rowMinHeightMobile:           52.0,
     rowPaddingVerticalDesktop:    12.0,
     rowPaddingVerticalMobile:     16.0,
     rowGap:                       12.0,
-    rowHoverBg:                   Color(0x0A000000), // color-surface-ghost-hover light
+    rowHoverBg:                   DsTokens.colorSurfaceGhostHover,
     rowLabelFontSizeDesktop:      16.0,
     rowLabelFontSizeMobile:       18.0,
     rowDescriptionFontSize:       12.0,
 
-    separatorColor:          Color(0xFFB7B7B8), // color-border light
+    separatorColor:          DsTokens.colorBorder,
     groupLabelFontSize:      14.0,
-    groupLabelColor:         Color(0xFF141414), // color-text-default light
+    groupLabelColor:         DsTokens.colorTextDefault,
     groupLabelMarginBottom:  8.0,
     atomGap:                 12.0,
     desktopBreakpoint:       768.0,
@@ -198,9 +199,9 @@ class DsCheckboxTheme extends ThemeExtension<DsCheckboxTheme> {
     boxSizeSm: 16.0,
     boxSizeMd: 20.0,
     boxSizeLg: 24.0,
-    borderRadiusSm: BorderRadius.all(Radius.circular(4)),
-    borderRadiusMd: BorderRadius.all(Radius.circular(6)),
-    borderRadiusLg: BorderRadius.all(Radius.circular(6)),
+    borderRadiusSm: BorderRadius.all(Radius.circular(DsTokens.radiusSm)),
+    borderRadiusMd: BorderRadius.all(Radius.circular(DsTokens.radiusMd)),
+    borderRadiusLg: BorderRadius.all(Radius.circular(DsTokens.radiusMd)),
 
     iconSizeSm: 10.0,
     iconSizeMd: 12.0,
@@ -210,41 +211,41 @@ class DsCheckboxTheme extends ThemeExtension<DsCheckboxTheme> {
     labelFontSizeMd: 16.0,
     labelFontSizeLg: 18.0,
 
-    borderUnchecked:          Color(0xFF474649), // color-control-border-selector dark (grey-500)
-    bgUnchecked:              Color(0xFF19191A), // color-card-bg dark
-    borderChecked:            Color(0xFF7A62F0), // color-primary dark
-    bgChecked:                Color(0xFF7A62F0),
-    borderHoverUnchecked:     Color(0xFF6841E6), // color-primary-muted dark
-    bgHoverUnchecked:         Color(0xFF3E2290), // color-primary-subtle dark
-    borderHoverChecked:       Color(0xFF9B8FF6), // color-primary-hover dark
-    bgHoverChecked:           Color(0xFF9B8FF6),
-    borderDisabledUnchecked:  Color(0xFF19191A), // color-border-subtle dark
-    bgDisabledUnchecked:      Color(0xFF141414), // color-surface-raised dark
-    borderDisabledChecked:    Color(0xFF242324), // color-disabled-border dark
-    bgDisabledChecked:        Color(0xFF242324), // color-disabled-bg dark
-    borderError:              Color(0xFFDC2626),
-    bgError:                  Color(0xFF19191A), // color-card-bg dark
+    borderUnchecked:          Color(0xFF7A7A7A),     // grey550
+    bgUnchecked:              Colors.transparent,
+    borderChecked:            Color(0xFF795DEE),     // purple500 — colorPrimary dark
+    bgChecked:                Color(0xFF795DEE),
+    borderHoverUnchecked:     Color(0xFF888888),     // grey500
+    bgHoverUnchecked:         Color(0xFF505050),     // grey700
+    borderHoverChecked:       Color(0xFF8E7CF4),     // purple400 — colorPrimaryHover dark
+    bgHoverChecked:           Color(0xFF8E7CF4),
+    borderDisabledUnchecked:  Color(0xFF6C6C6C),     // grey600
+    bgDisabledUnchecked:      DsTokens.colorSurfaceRaisedDark, // grey700
+    borderDisabledChecked:    Color(0xFF7A7A7A),     // grey550
+    bgDisabledChecked:        Color(0xFF7A7A7A),     // grey550
+    borderError:              DsTokens.colorError,
+    bgError:                  Colors.transparent,
 
-    iconColor:         Color(0xFFFFFFFF),
-    iconColorDisabled: Color(0xFF605F63), // color-disabled-text dark
-    focusRingColor:    Color(0xFF4E29BB), // color-primary-ring dark
+    iconColor:         DsTokens.colorOnPrimary,
+    iconColorDisabled: Color(0xFF969696),             // grey450 — colorDisabledText dark
+    focusRingColor:    Color(0xFF3A1BA5),             // purple800 — colorPrimaryRing dark
 
-    labelColor:       Color(0xFFF5F5F5), // color-text-default dark
-    descriptionColor: Color(0xFF8F8E92), // color-text-secondary dark
+    labelColor:       DsTokens.colorTextDefaultDark,
+    descriptionColor: DsTokens.colorTextSecondaryDark,
 
     rowMinHeightDesktop:          44.0,
     rowMinHeightMobile:           52.0,
     rowPaddingVerticalDesktop:    12.0,
     rowPaddingVerticalMobile:     16.0,
     rowGap:                       12.0,
-    rowHoverBg:                   Color(0x0DFFFFFF), // color-surface-ghost-hover dark
+    rowHoverBg:                   DsTokens.colorSurfaceGhostHoverDark,
     rowLabelFontSizeDesktop:      16.0,
     rowLabelFontSizeMobile:       18.0,
     rowDescriptionFontSize:       12.0,
 
-    separatorColor:          Color(0xFF242324), // color-border dark
+    separatorColor:          Color(0xFF6C6C6C), // grey600 — colorBorder dark
     groupLabelFontSize:      14.0,
-    groupLabelColor:         Color(0xFFF5F5F5),
+    groupLabelColor:         DsTokens.colorTextDefaultDark,
     groupLabelMarginBottom:  8.0,
     atomGap:                 12.0,
     desktopBreakpoint:       768.0,

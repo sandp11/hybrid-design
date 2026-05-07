@@ -10,7 +10,7 @@
 .acko-accordion-item {
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-bottom-color: var(--color-border-subtle);
+  border-bottom-color: var(--colorBorderSubtle);
 }
 
 .acko-accordion-item:last-child {
@@ -19,19 +19,19 @@
 
 .acko-accordion-item-disabled .acko-accordion-trigger {
   @apply cursor-not-allowed;
-  color: var(--color-text-disabled);
+  color: var(--colorTextDisabled);
 }
 
 .acko-accordion-item-disabled .acko-accordion-chevron {
-  color: var(--color-text-disabled);
+  color: var(--colorTextDisabled);
 }
 
 .acko-accordion-trigger {
   @apply flex w-full cursor-pointer items-center gap-16 border-0 bg-transparent text-left;
-  font-size: var(--font-body-md-size, 16px);
-  line-height: var(--font-body-md-line, 24px);
+  font-size: var(--fontBodyMdSize, 16px);
+  line-height: var(--fontBodyMdLine, 24px);
   font-weight: 500;
-  color: var(--color-text-default);
+  color: var(--colorTextDefault);
   padding-top: 12px;
   padding-bottom: 12px;
   transition: color 150ms ease;
@@ -39,10 +39,10 @@
 
 @media (hover: hover) and (pointer: fine) {
   .acko-accordion-item:not(.acko-accordion-item-disabled) .acko-accordion-trigger:hover {
-    color: var(--color-primary);
+    color: var(--colorPrimary);
   }
   .acko-accordion-item:not(.acko-accordion-item-disabled) .acko-accordion-trigger:hover .acko-accordion-chevron {
-    color: var(--color-primary);
+    color: var(--colorPrimary);
   }
 }
 
@@ -55,7 +55,7 @@
   width: 18px;
   height: 18px;
   color: currentColor;
-  transition: transform 200ms var(--ease-out-quad, cubic-bezier(0.25, 0.46, 0.45, 0.94));
+  transition: transform 200ms var(--easeOutQuad, cubic-bezier(0.25, 0.46, 0.45, 0.94));
 }
 
 .acko-accordion-chevron svg {
@@ -70,7 +70,7 @@
 
 .acko-accordion-content-wrapper {
   overflow: hidden;
-  transition: max-height 200ms var(--ease-out-quad, cubic-bezier(0.25, 0.46, 0.45, 0.94));
+  transition: max-height 200ms var(--easeOutQuad, cubic-bezier(0.25, 0.46, 0.45, 0.94));
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -81,9 +81,9 @@
 }
 
 .acko-accordion-content {
-  font-size: var(--font-body-sm-size, 14px);
-  line-height: var(--font-body-sm-line, 20px);
+  font-size: var(--fontBodySmSize, 14px);
+  line-height: var(--fontBodySmLine, 20px);
   font-weight: 400;
-  color: var(--color-text-secondary);
+  color: var(--colorTextSecondary);
   padding-bottom: 16px;
 }

@@ -251,7 +251,7 @@ class _DsDialogCloseButtonState extends State<_DsDialogCloseButton> {
                 // Focus ring: 3px outer ring using color-primary-ring
                 border: _focused
                     ? Border.all(
-                        color: const Color(0xFFD9D8FC), // color-primary-ring light
+                        color: const Color(0xFFC1BDFC), // color-primary-ring — purple200
                         width: 3,
                       )
                     : null,

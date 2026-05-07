@@ -15,8 +15,8 @@
 
 .acko-checkbox-box {
   @apply flex items-center justify-center shrink-0;
-  border: 1.5px solid var(--color-control-border-selector);
-  background-color: var(--color-card-bg);
+  border: 1.5px solid var(--colorControlBorderSelector);
+  background-color: var(--colorCardBg);
   transition:
     border-color 150ms ease,
     background-color 150ms ease,
@@ -25,7 +25,7 @@
 
 .acko-checkbox-icon {
   @apply block;
-  color: var(--color-on-primary);
+  color: var(--colorOnPrimary);
   width: 100%;
   height: 100%;
 }
@@ -45,24 +45,24 @@
 }
 
 .acko-checkbox-label {
-  color: var(--color-text-default);
+  color: var(--colorTextDefault);
 }
 
 .acko-checkbox-description {
-  font-size: var(--font-caption-size, 12px);
-  color: var(--color-text-secondary);
+  font-size: var(--fontCaptionSize, 12px);
+  color: var(--colorTextSecondary);
 }
 
 /* ─── Atom sizes ───────────────────────────────────────────────────────────── */
 
 .acko-checkbox-sm .acko-checkbox-box { @apply w-16 h-16 rounded-sm; }
-.acko-checkbox-sm .acko-checkbox-label { font-size: var(--font-body-sm-size, 14px); }
+.acko-checkbox-sm .acko-checkbox-label { font-size: var(--fontBodySmSize, 14px); }
 
 .acko-checkbox-md .acko-checkbox-box { @apply w-20 h-20 rounded-md; }
-.acko-checkbox-md .acko-checkbox-label { font-size: var(--font-body-md-size, 16px); }
+.acko-checkbox-md .acko-checkbox-label { font-size: var(--fontBodyMdSize, 16px); }
 
 .acko-checkbox-lg .acko-checkbox-box { @apply w-24 h-24 rounded-md; }
-.acko-checkbox-lg .acko-checkbox-label { font-size: var(--font-body-lg-size, 18px); }
+.acko-checkbox-lg .acko-checkbox-label { font-size: var(--fontBodyLgSize, 18px); }
 
 /* Icon sizing per atom size */
 .acko-checkbox-sm .acko-checkbox-icon { @apply w-10 h-10; }
@@ -73,50 +73,50 @@
 
 .acko-checkbox-checked .acko-checkbox-box,
 .acko-checkbox-indeterminate .acko-checkbox-box {
-  border-color: var(--color-primary);
-  background-color: var(--color-primary);
+  border-color: var(--colorPrimary);
+  background-color: var(--colorPrimary);
 }
 
 .acko-checkbox-error .acko-checkbox-box {
-  border-color: var(--color-error);
-  background-color: var(--color-card-bg);
+  border-color: var(--colorError);
+  background-color: var(--colorCardBg);
 }
 .acko-checkbox-error .acko-checkbox-icon {
-  color: var(--color-error);
+  color: var(--colorError);
 }
 
 .acko-checkbox-disabled {
   @apply cursor-not-allowed;
 }
 .acko-checkbox-disabled .acko-checkbox-box {
-  border-color: var(--color-border-subtle);
-  background-color: var(--color-surface-raised);
+  border-color: var(--colorBorderSubtle);
+  background-color: var(--colorSurfaceRaised);
 }
 .acko-checkbox-disabled.acko-checkbox-checked .acko-checkbox-box,
 .acko-checkbox-disabled.acko-checkbox-indeterminate .acko-checkbox-box {
-  border-color: var(--color-disabled-border);
-  background-color: var(--color-disabled-bg);
+  border-color: var(--colorDisabledBorder);
+  background-color: var(--colorDisabledBg);
 }
 .acko-checkbox-disabled .acko-checkbox-icon {
-  color: var(--color-disabled-text);
+  color: var(--colorDisabledText);
 }
 
 /* Focus ring — triggered when native input receives keyboard focus */
 .acko-checkbox-native:focus-visible ~ .acko-checkbox-box {
-  box-shadow: 0 0 0 3px var(--color-primary-ring);
-  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--colorPrimaryRing);
+  border-color: var(--colorPrimary);
 }
 
 /* Hover — pointer devices only */
 @media (hover: hover) and (pointer: fine) {
   .acko-checkbox:not(.acko-checkbox-disabled):hover .acko-checkbox-box {
-    border-color: var(--color-primary-muted);
-    background-color: var(--color-primary-subtle);
+    border-color: var(--colorPrimaryMuted);
+    background-color: var(--colorPrimarySubtle);
   }
   .acko-checkbox-checked:not(.acko-checkbox-disabled):hover .acko-checkbox-box,
   .acko-checkbox-indeterminate:not(.acko-checkbox-disabled):hover .acko-checkbox-box {
-    border-color: var(--color-primary-hover);
-    background-color: var(--color-primary-hover);
+    border-color: var(--colorPrimaryHover);
+    background-color: var(--colorPrimaryHover);
   }
 }
 
@@ -187,7 +187,7 @@
   content: '';
   @apply absolute bottom-0 left-0 right-0;
   height: 1px;
-  background-color: var(--color-border);
+  background-color: var(--colorBorder);
 }
 .acko-cb-row:last-child::after {
   display: none;
@@ -198,43 +198,43 @@
 }
 
 .acko-cb-row-label {
-  color: var(--color-text-default);
-  font-size: var(--font-body-lg-size, 18px);
+  color: var(--colorTextDefault);
+  font-size: var(--fontBodyLgSize, 18px);
 }
 
 @media (min-width: 768px) {
   .acko-cb-row-label {
-    font-size: var(--font-body-md-size, 16px);
+    font-size: var(--fontBodyMdSize, 16px);
   }
 }
 
 .acko-cb-row-description {
-  font-size: var(--font-caption-size, 12px);
-  color: var(--color-text-secondary);
+  font-size: var(--fontCaptionSize, 12px);
+  color: var(--colorTextSecondary);
 }
 
 /* Row checked / indeterminate states */
 .acko-cb-row-checked .acko-checkbox-box,
 .acko-cb-row-indeterminate .acko-checkbox-box {
-  border-color: var(--color-primary);
-  background-color: var(--color-primary);
+  border-color: var(--colorPrimary);
+  background-color: var(--colorPrimary);
 }
 
 .acko-cb-row-error .acko-checkbox-box {
-  border-color: var(--color-error);
-  background-color: var(--color-card-bg);
+  border-color: var(--colorError);
+  background-color: var(--colorCardBg);
 }
 
 /* Row hover — desktop only */
 @media (hover: hover) and (pointer: fine) {
   .acko-cb-row:hover {
-    background-color: var(--color-surface-ghost-hover);
+    background-color: var(--colorSurfaceGhostHover);
   }
 }
 
 /* Row active — mobile tap */
 .acko-cb-row:active {
-  background-color: var(--color-surface-ghost-hover);
+  background-color: var(--colorSurfaceGhostHover);
 }
 
 /* ─── CheckboxGroup ────────────────────────────────────────────────────────── */
@@ -245,7 +245,7 @@
 
 .acko-cb-list-label {
   @apply block mb-8;
-  font-size: var(--font-label-lg-size, 14px);
-  font-weight: var(--font-label-lg-weight, 500);
-  color: var(--color-text-default);
+  font-size: var(--fontLabelLgSize, 14px);
+  font-weight: var(--fontLabelLgWeight, 500);
+  color: var(--colorTextDefault);
 }

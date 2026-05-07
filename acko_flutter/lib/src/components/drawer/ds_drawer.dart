@@ -339,7 +339,7 @@ class _DsDrawerCloseButtonState extends State<_DsDrawerCloseButton> {
                     : Colors.transparent,
                 border: _focused
                     ? Border.all(
-                        color: const Color(0xFFD9D8FC), // color-primary-ring light
+                        color: const Color(0xFFC1BDFC), // color-primary-ring — purple200
                         width: 3,
                       )
                     : null,

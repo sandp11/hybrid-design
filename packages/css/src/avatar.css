@@ -33,22 +33,22 @@
 
 .acko-avatar-initials {
   @apply flex items-center justify-center w-full h-full font-medium;
-  background-color: var(--color-primary-subtle);
-  color: var(--color-primary);
+  background-color: var(--colorPrimarySubtle);
+  color: var(--colorPrimary);
 }
 
-.acko-avatar-initials-xs { font-size: var(--font-10-size, 10px); }
-.acko-avatar-initials-sm { font-size: var(--font-12-size, 12px); }
-.acko-avatar-initials-md { font-size: var(--font-14-size, 14px); }
-.acko-avatar-initials-lg { font-size: var(--font-16-size, 16px); }
-.acko-avatar-initials-xl { font-size: var(--font-20-size, 20px); }
+.acko-avatar-initials-xs { font-size: 10px; }
+.acko-avatar-initials-sm { font-size: var(--fontCaptionSize, 12px); }
+.acko-avatar-initials-md { font-size: var(--fontBodySmSize, 14px); }
+.acko-avatar-initials-lg { font-size: var(--fontBodyMdSize, 16px); }
+.acko-avatar-initials-xl { font-size: var(--fontHeadingMdSize, 20px); }
 
 /* --- Fallback icon layer --- */
 
 .acko-avatar-fallback {
   @apply flex items-center justify-center w-full h-full;
-  background-color: var(--color-primary-subtle);
-  color: var(--color-primary);
+  background-color: var(--colorPrimarySubtle);
+  color: var(--colorPrimary);
 }
 
 .acko-avatar-fallback-xs svg { @apply w-12 h-12; }

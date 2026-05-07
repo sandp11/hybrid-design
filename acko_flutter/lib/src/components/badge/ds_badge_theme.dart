@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import '../../foundation/tokens.dart';
 
 enum DsBadgeVariant     { solid, outline, dot }
 enum DsBadgeColor       { purple, green, blue, orange, pink, gray }
@@ -104,10 +105,10 @@ class DsBadgeTheme extends ThemeExtension<DsBadgeTheme> {
 
   static const light = DsBadgeTheme(
     purple: DsBadgeColorSet(
-      gradientFrom: Color(0xFFD9D8FC), // purple-200
-      gradientTo:   Color(0xFFEAEAFD), // purple-100
-      border:       Color(0xFFD9D8FC), // purple-200
-      text:         Color(0xFF4E29BB), // purple-800
+      gradientFrom: Color(0xFFC1BDFC), // purple-200
+      gradientTo:   Color(0xFFE1E0FE), // purple-100
+      border:       Color(0xFFC1BDFC), // purple-200
+      text:         Color(0xFF3A1BA5), // purple-800
       outlineColor: Color(0xFF6841E6), // purple-600
     ),
     green: DsBadgeColorSet(
@@ -139,16 +140,16 @@ class DsBadgeTheme extends ThemeExtension<DsBadgeTheme> {
       outlineColor: Color(0xFFDC2626), // red-600
     ),
     gray: DsBadgeColorSet(
-      gradientFrom: Color(0xFFE0E0E1), // grey-200
+      gradientFrom: Color(0xFFDCDCDC), // grey-200
       gradientTo:   Color(0xFFF5F5F5), // grey-100
-      border:       Color(0xFFE0E0E1), // grey-200
-      text:         Color(0xFF242324), // grey-600
-      outlineColor: Color(0xFF242324), // grey-600
+      border:       Color(0xFFDCDCDC), // grey-200
+      text:         Color(0xFF6C6C6C), // grey-600
+      outlineColor: Color(0xFF6C6C6C), // grey-600
     ),
     counterPurple: DsCounterBadgeColorSet(
-      gradientFrom: Color(0xFF7A62F0), // purple-500
-      gradientTo:   Color(0xFF9B8FF6), // purple-400
-      border:       Color(0xFF7A62F0), // purple-500
+      gradientFrom: Color(0xFF795DEE), // purple-500
+      gradientTo:   Color(0xFF8E7CF4), // purple-400
+      border:       Color(0xFF795DEE), // purple-500
     ),
     counterPink: DsCounterBadgeColorSet(
       gradientFrom: Color(0xFFEF4444), // red-500
@@ -160,7 +161,7 @@ class DsBadgeTheme extends ThemeExtension<DsBadgeTheme> {
       gradientTo:   Color(0xFF60A5FA), // blue-400
       border:       Color(0xFF3B82F6), // blue-500
     ),
-    counterText:      Color(0xFFFFFFFF), // color-on-primary
+    counterText:      DsTokens.colorOnPrimary,
     padding:          EdgeInsets.symmetric(horizontal: 8, vertical: 6),
     gap:              4.0,
     dotSize:          6.0,
@@ -168,7 +169,7 @@ class DsBadgeTheme extends ThemeExtension<DsBadgeTheme> {
     mobileTextSize:   12.0,
     desktopTextSize:  14.0,
     desktopBreakpoint: 768.0,
-    borderRadius:     BorderRadius.all(Radius.circular(9999)),
+    borderRadius:     BorderRadius.all(Radius.circular(DsTokens.radiusFull)),
     counterPadding:   EdgeInsets.symmetric(horizontal: 6, vertical: 2),
     counterMinWidth:  20.0,
   );
@@ -179,10 +180,10 @@ class DsBadgeTheme extends ThemeExtension<DsBadgeTheme> {
   static const dark = DsBadgeTheme(
     purple: DsBadgeColorSet(
       gradientFrom: Color(0xE6241362), // purple-950 @ 90%
-      gradientTo:   Color(0xE63E2290), // purple-900 @ 90%
-      border:       Color(0xFF3E2290), // purple-900
-      text:         Color(0xFFD9D8FC), // purple-200
-      outlineColor: Color(0xFF9B8FF6), // purple-400
+      gradientTo:   Color(0xE62B1678), // purple-900 @ 90%
+      border:       Color(0xFF2B1678), // purple-900
+      text:         Color(0xFFC1BDFC), // purple-200
+      outlineColor: Color(0xFF8E7CF4), // purple-400
     ),
     green: DsBadgeColorSet(
       gradientFrom: Color(0xE6132E05), // lime-950 @ 90%
@@ -213,16 +214,16 @@ class DsBadgeTheme extends ThemeExtension<DsBadgeTheme> {
       outlineColor: Color(0xFFDC2626), // red-600
     ),
     gray: DsBadgeColorSet(
-      gradientFrom: Color(0xE60A0A0A), // grey-800 @ 90%
-      gradientTo:   Color(0xE6141414), // grey-700 @ 90%
-      border:       Color(0xFF242324), // grey-600
-      text:         Color(0xFFE0E0E1), // grey-200
-      outlineColor: Color(0xFF474649), // grey-500
+      gradientFrom: Color(0xE6343434), // grey-800 @ 90%
+      gradientTo:   Color(0xE6505050), // grey-700 @ 90%
+      border:       Color(0xFF6C6C6C), // grey-600
+      text:         Color(0xFFDCDCDC), // grey-200
+      outlineColor: Color(0xFF888888), // grey-500
     ),
     counterPurple: DsCounterBadgeColorSet(
       gradientFrom: Color(0xE6241362), // purple-950 @ 90%
-      gradientTo:   Color(0xE63E2290), // purple-900 @ 90%
-      border:       Color(0xFF3E2290), // purple-900
+      gradientTo:   Color(0xE62B1678), // purple-900 @ 90%
+      border:       Color(0xFF2B1678), // purple-900
     ),
     counterPink: DsCounterBadgeColorSet(
       gradientFrom: Color(0xE6450A0A), // red-950 @ 90%
@@ -234,7 +235,7 @@ class DsBadgeTheme extends ThemeExtension<DsBadgeTheme> {
       gradientTo:   Color(0xE61E3A8A), // blue-900 @ 90%
       border:       Color(0xFF1E3A8A), // blue-900
     ),
-    counterText:      Color(0xFFFFFFFF),
+    counterText:      DsTokens.colorOnPrimary,
     padding:          EdgeInsets.symmetric(horizontal: 8, vertical: 6),
     gap:              4.0,
     dotSize:          6.0,
@@ -242,7 +243,7 @@ class DsBadgeTheme extends ThemeExtension<DsBadgeTheme> {
     mobileTextSize:   12.0,
     desktopTextSize:  14.0,
     desktopBreakpoint: 768.0,
-    borderRadius:     BorderRadius.all(Radius.circular(9999)),
+    borderRadius:     BorderRadius.all(Radius.circular(DsTokens.radiusFull)),
     counterPadding:   EdgeInsets.symmetric(horizontal: 6, vertical: 2),
     counterMinWidth:  20.0,
   );
