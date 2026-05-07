@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'ds_breadcrumb_theme.dart';
@@ -7,11 +6,13 @@ import 'ds_breadcrumb_theme.dart';
 class DsBreadcrumbItem {
   const DsBreadcrumbItem({
     required this.label,
+    this.onTap,
     this.href,
     this.icon,
   });
 
   final String label;
+  final VoidCallback? onTap;
   final String? href;
   final Widget? icon;
 }
@@ -147,13 +148,6 @@ class _CrumbCell extends StatefulWidget {
 }
 
 class _CrumbCellState extends State<_CrumbCell> {
-  bool _hover = false;
-
-  bool get _finePointer {
-    if (kIsWeb) return true;
-    return defaultTargetPlatform != TargetPlatform.iOS &&
-        defaultTargetPlatform != TargetPlatform.android;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -192,51 +186,31 @@ class _CrumbCellState extends State<_CrumbCell> {
       );
     }
 
+    final isLink = item.onTap != null;
     final textStyle = baseStyle.copyWith(
-      color: item.href != null
-          ? (_hover && _finePointer ? t.linkHoverColor : t.linkColor)
-          : t.textColor,
-      decoration: item.href != null && _hover && _finePointer
-          ? TextDecoration.underline
-          : TextDecoration.none,
+      color: isLink ? t.linkColor : t.textColor,
+      decoration: TextDecoration.none,
     );
 
     final labelWidget = Text(item.label, style: textStyle);
 
-    if (item.href != null) {
-      final uri = Uri.tryParse(item.href!);
-      if (uri != null && uri.hasScheme) {
-        // UX REVIEW: high parity-risk — verify Link behavior vs React <a> across platforms.
-        return MouseRegion(
-          onEnter: (_) {
-            if (_finePointer) setState(() => _hover = true);
-          },
-          onExit: (_) => setState(() => _hover = false),
-          child: Link(
-            uri: uri,
-            builder: (context, followLink) {
-              return InkWell(
-                onTap: followLink,
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [...rowChildren, labelWidget],
-                ),
-              );
-            },
-          ),
-        );
-      }
+    rowChildren.add(labelWidget);
+
+    final row = Row(mainAxisSize: MainAxisSize.min, children: rowChildren);
+
+    if (isLink) {
+      return GestureDetector(
+        onTap: item.onTap,
+        child: row,
+      );
     }
 
-    rowChildren.add(labelWidget);
-    return Row(mainAxisSize: MainAxisSize.min, children: rowChildren);
+    return row;
   }
 
   Color _iconColor(DsBreadcrumbTheme t, DsBreadcrumbItem item) {
     if (widget.isCurrent) return t.currentColor;
-    if (item.href != null) {
-      return _hover && _finePointer ? t.linkHoverColor : t.linkColor;
-    }
+    if (item.onTap != null) return t.linkColor;
     return t.textColor;
   }
 }
@@ -255,42 +229,22 @@ class _EllipsisChip extends StatefulWidget {
 }
 
 class _EllipsisChipState extends State<_EllipsisChip> {
-  bool _hover = false;
-
-  bool get _finePointer {
-    if (kIsWeb) return true;
-    return defaultTargetPlatform != TargetPlatform.iOS &&
-        defaultTargetPlatform != TargetPlatform.android;
-  }
-
   @override
   Widget build(BuildContext context) {
     final t = widget.theme;
-    // UX REVIEW: high parity-risk — hover only on desktop Flutter, verify against React render.
-    return MouseRegion(
-      onEnter: (_) {
-        if (_finePointer) setState(() => _hover = true);
-      },
-      onExit: (_) => setState(() => _hover = false),
-      child: Material(
-        color: _hover && _finePointer ? t.ellipsisHoverBg : Colors.transparent,
-        borderRadius: BorderRadius.circular(9999),
-        child: InkWell(
-          onTap: widget.onPressed,
-          borderRadius: BorderRadius.circular(9999),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-            child: Semantics(
-              button: true,
-              label: 'Show more breadcrumb items',
-              child: Text(
-                '…',
-                style: TextStyle(
-                  fontFamily: 'Euclid Circular B',
-                  fontSize: t.linkFontSize,
-                  color: t.linkColor,
-                ),
-              ),
+    return GestureDetector(
+      onTap: widget.onPressed,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+        child: Semantics(
+          button: true,
+          label: 'Show more breadcrumb items',
+          child: Text(
+            '…',
+            style: TextStyle(
+              fontFamily: 'Euclid Circular B',
+              fontSize: t.linkFontSize,
+              color: t.linkColor,
             ),
           ),
         ),

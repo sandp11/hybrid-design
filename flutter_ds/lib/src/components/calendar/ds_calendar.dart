@@ -5,6 +5,11 @@ import 'package:flutter/services.dart';
 import '../../foundation/tokens.dart';
 import 'ds_calendar_theme.dart';
 
+const _kShortMonths = [
+  'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+];
+
 enum _PanelView { days, months, years }
 
 enum _RangePhase { idle, needEnd }
@@ -593,7 +598,7 @@ class _DsCalendarState extends State<DsCalendar> {
                       minimumSize: Size(0, theme.pickerCellHeight),
                     ),
                     child: Text(
-                      loc.shortMonthNames[mi],
+                      _kShortMonths[mi],
                       style: theme.pickerTextStyle,
                     ),
                   );
