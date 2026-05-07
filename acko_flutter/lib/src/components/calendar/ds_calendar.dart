@@ -1,10 +1,16 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:intl/intl.dart';
 
 import '../../foundation/tokens.dart';
 import 'ds_calendar_theme.dart';
+
+/// Short month labels for the month-picker grid (English). Matches common DS defaults;
+/// use app-level localization if you need full locale coverage.
+const _kPickerShortMonthsEn = <String>[
+  'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+];
 
 enum _PanelView { days, months, years }
 
@@ -594,9 +600,7 @@ class _DsCalendarState extends State<DsCalendar> {
                       minimumSize: Size(0, theme.pickerCellHeight),
                     ),
                     child: Text(
-                      DateFormat.MMM(
-                        Localizations.localeOf(context).toString(),
-                      ).format(DateTime(2000, mi + 1, 1)),
+                      _kPickerShortMonthsEn[mi],
                       style: theme.pickerTextStyle,
                     ),
                   );

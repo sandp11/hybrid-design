@@ -1,5 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:acko_flutter/acko_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+Future<void> openDsBreadcrumbUri(BuildContext context, Uri uri) async {
+  if (uri.scheme == 'http' || uri.scheme == 'https') {
+    await launchUrl(uri, mode: LaunchMode.platformDefault);
+    return;
+  }
+  if (!context.mounted) return;
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text('Breadcrumb link: $uri')),
+  );
+}
 
 void main() {
   runApp(const FlutterDsPreviewApp());
@@ -502,7 +514,7 @@ class BreadcrumbPreviewSection extends StatelessWidget {
   final TextStyle? labelStyle;
 
   static List<DsBreadcrumbItem> _manyItems() => [
-        const DsBreadcrumbItem(label: 'Home', href: '/'),
+        const DsBreadcrumbItem(label: 'Home', href: 'https://flutter.dev'),
         const DsBreadcrumbItem(label: 'Level 1', href: '/l1'),
         const DsBreadcrumbItem(label: 'Level 2', href: '/l2'),
         const DsBreadcrumbItem(label: 'Level 3', href: '/l3'),
@@ -520,10 +532,15 @@ class BreadcrumbPreviewSection extends StatelessWidget {
         Text('Standard trail', style: labelStyle),
         const SizedBox(height: 8),
         DsBreadcrumb(
+          onLinkTap: (uri) => openDsBreadcrumbUri(context, uri),
           items: const [
             DsBreadcrumbItem(label: 'Home', href: '/'),
             DsBreadcrumbItem(label: 'Insurance', href: '/insurance'),
             DsBreadcrumbItem(label: 'Motor', href: '/motor'),
+            DsBreadcrumbItem(
+              label: 'Docs',
+              href: 'https://docs.flutter.dev',
+            ),
             DsBreadcrumbItem(label: 'Renewal'),
           ],
         ),
@@ -541,6 +558,7 @@ class BreadcrumbPreviewSection extends StatelessWidget {
         Text('With icon', style: labelStyle),
         const SizedBox(height: 8),
         DsBreadcrumb(
+          onLinkTap: (uri) => openDsBreadcrumbUri(context, uri),
           items: [
             DsBreadcrumbItem(
               label: 'Home',
@@ -555,6 +573,7 @@ class BreadcrumbPreviewSection extends StatelessWidget {
         Text('Collapsed (maxItems: 4)', style: labelStyle),
         const SizedBox(height: 8),
         DsBreadcrumb(
+          onLinkTap: (uri) => openDsBreadcrumbUri(context, uri),
           items: _manyItems(),
           maxItems: 4,
         ),

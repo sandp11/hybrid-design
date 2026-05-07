@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import 'ds_breadcrumb_theme.dart';
 
@@ -18,17 +17,25 @@ class DsBreadcrumbItem {
 }
 
 /// Horizontal breadcrumb trail — pairs with [DsBreadcrumbTheme] on [ThemeData.extensions].
+///
+/// When an item has [DsBreadcrumbItem.href] with a scheme (`https:`, `mailto:`, …), set
+/// [onLinkTap] to handle navigation (e.g. `url_launcher.launchUrl`). Without [onLinkTap],
+/// crumbs still use link styling for URIs but are not tappable.
 class DsBreadcrumb extends StatefulWidget {
   const DsBreadcrumb({
     super.key,
     required this.items,
     this.separator,
     this.maxItems,
+    this.onLinkTap,
   });
 
   final List<DsBreadcrumbItem> items;
   final Widget? separator;
   final int? maxItems;
+
+  /// Called when a crumb with a valid `href` that includes a URI scheme is activated.
+  final void Function(Uri uri)? onLinkTap;
 
   @override
   State<DsBreadcrumb> createState() => _DsBreadcrumbState();
@@ -97,6 +104,7 @@ class _DsBreadcrumbState extends State<DsBreadcrumb> {
             item: widget.items[idx],
             isCurrent: idx == widget.items.length - 1,
             theme: theme,
+            onLinkTap: widget.onLinkTap,
           ),
         );
       }
@@ -137,11 +145,13 @@ class _CrumbCell extends StatefulWidget {
     required this.item,
     required this.isCurrent,
     required this.theme,
+    this.onLinkTap,
   });
 
   final DsBreadcrumbItem item;
   final bool isCurrent;
   final DsBreadcrumbTheme theme;
+  final void Function(Uri uri)? onLinkTap;
 
   @override
   State<_CrumbCell> createState() => _CrumbCellState();
@@ -206,8 +216,9 @@ class _CrumbCellState extends State<_CrumbCell> {
 
     if (item.href != null) {
       final uri = Uri.tryParse(item.href!);
-      if (uri != null && uri.hasScheme) {
-        // Uses url_launcher so breadcrumbs work on Flutter SDKs without the widgets.Link API.
+      if (uri != null &&
+          uri.hasScheme &&
+          widget.onLinkTap != null) {
         return MouseRegion(
           onEnter: (_) {
             if (_finePointer) setState(() => _hover = true);
@@ -217,9 +228,7 @@ class _CrumbCellState extends State<_CrumbCell> {
             link: true,
             label: item.label,
             child: InkWell(
-              onTap: () {
-                launchUrl(uri, mode: LaunchMode.platformDefault);
-              },
+              onTap: () => widget.onLinkTap!(uri),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [...rowChildren, labelWidget],
