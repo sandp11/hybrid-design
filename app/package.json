@@ -12,6 +12,8 @@
     "@acko/badge": "workspace:*",
     "@acko/button": "workspace:*",
     "@acko/checkbox": "workspace:*",
+    "@acko/dialog": "workspace:*",
+    "@acko/drawer": "workspace:*",
     "@acko/accordion": "workspace:*",
     "@acko/calendar": "workspace:*",
     "@acko/card": "workspace:*",

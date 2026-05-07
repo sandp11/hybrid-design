@@ -115,8 +115,8 @@ Set last-modified to today's date, modified-by: migrate-agent.
 
 ## Step 10 — Generate platform code
 Generate the React package at packages/[name]/ following .claude/prompts/generate-react.md.
-Generate the Flutter widget at flutter_ds/lib/src/components/[name]/ following .claude/prompts/generate-flutter.md.
-Append two export lines to flutter_ds/lib/flutter_ds.dart.
+Generate the Flutter widget at acko_flutter/lib/src/components/[name]/ following .claude/prompts/generate-flutter.md.
+Append two export lines to acko_flutter/lib/acko_flutter.dart.
 
 ## Step 11 — Confirm completion
 Say: "[ComponentName] migrated. style.md, react.md, flutter.md written. @acko/[name] and Ds[Name] generated. Status: draft in registry."

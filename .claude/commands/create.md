@@ -55,8 +55,8 @@ Update the index table at the top of registry.md to include the new row.
 
 ## Step 9 — Generate platform code
 Generate the React package at packages/[name]/ following .claude/prompts/generate-react.md.
-Generate the Flutter widget at flutter_ds/lib/src/components/[name]/ following .claude/prompts/generate-flutter.md.
-Append two export lines to flutter_ds/lib/flutter_ds.dart.
+Generate the Flutter widget at acko_flutter/lib/src/components/[name]/ following .claude/prompts/generate-flutter.md.
+Append two export lines to acko_flutter/lib/acko_flutter.dart.
 
 ## Step 10 — Confirm completion
 Say: "[ComponentName] created. Spec files written. @acko/[name] and Ds[Name] generated. Status: draft in registry."

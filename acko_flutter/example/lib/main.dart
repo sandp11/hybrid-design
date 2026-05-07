@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ds/flutter_ds.dart';
+import 'package:acko_flutter/acko_flutter.dart';
 
 void main() {
   runApp(const FlutterDsPreviewApp());
@@ -18,7 +18,7 @@ class _FlutterDsPreviewAppState extends State<FlutterDsPreviewApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'flutter_ds — Components',
+      title: 'acko_flutter — Components',
       debugShowCheckedModeBanner: false,
       themeMode: _mode,
       theme: _lightTheme(),
@@ -57,6 +57,8 @@ class _FlutterDsPreviewAppState extends State<FlutterDsPreviewApp> {
         DsBreadcrumbTheme.light,
         DsCalendarTheme.defaults,
         DsCardTheme.defaults,
+        DsDialogTheme.light,
+        DsDrawerTheme.light,
       ],
     );
   }
@@ -84,6 +86,8 @@ class _FlutterDsPreviewAppState extends State<FlutterDsPreviewApp> {
         DsBreadcrumbTheme.dark,
         DsCalendarTheme.defaults,
         DsCardTheme.defaults,
+        DsDialogTheme.dark,
+        DsDrawerTheme.dark,
       ],
     );
   }
@@ -388,6 +392,18 @@ class ComponentsPreviewPage extends StatelessWidget {
           const SizedBox(height: 12),
           CardPreviewSection(labelStyle: labelStyle),
 
+          // ── Dialog (modal) ───────────────────────────────────────────────
+          const SizedBox(height: 32),
+          Text('Dialog', style: titleStyle),
+          const SizedBox(height: 12),
+          DialogPreviewSection(labelStyle: labelStyle),
+
+          // ── Drawer ───────────────────────────────────────────────────────
+          const SizedBox(height: 32),
+          Text('Drawer', style: titleStyle),
+          const SizedBox(height: 12),
+          DrawerPreviewSection(labelStyle: labelStyle),
+
           // ── Calendar ─────────────────────────────────────────────────────
           const SizedBox(height: 32),
           Text('Calendar', style: titleStyle),
@@ -541,6 +557,158 @@ class BreadcrumbPreviewSection extends StatelessWidget {
         DsBreadcrumb(
           items: _manyItems(),
           maxItems: 4,
+        ),
+      ],
+    );
+  }
+}
+
+/// Drawer previews — [showDsDrawer] per side + size ramp (matches Storybook).
+class DrawerPreviewSection extends StatelessWidget {
+  const DrawerPreviewSection({super.key, required this.labelStyle});
+
+  final TextStyle? labelStyle;
+
+  void _openDrawer(
+    BuildContext context, {
+    required DsDrawerSide side,
+    DsDrawerSize size = DsDrawerSize.md,
+  }) {
+    showDsDrawer<void>(
+      context: context,
+      side: side,
+      size: size,
+      builder: (dialogContext) => DsDrawer(
+        side: side,
+        size: size,
+        title: 'Drawer (${side.name} · ${size.name})',
+        description: 'Slide-in panel — backdrop tap closes when dismissible.',
+        body: Text(
+          'Use for navigation rails, filters, or supplemental tasks without leaving the page.',
+          style: Theme.of(dialogContext).textTheme.bodyMedium?.copyWith(
+                color: Theme.of(dialogContext).extension<DsThemeExtension>()?.colorTextDefault,
+              ),
+        ),
+        footer: Wrap(
+          spacing: 8,
+          alignment: WrapAlignment.end,
+          children: [
+            DsButton(
+              label: 'Close',
+              variant: DsButtonVariant.secondary,
+              onPressed: () => Navigator.of(dialogContext).pop(),
+            ),
+            DsButton(
+              label: 'Apply',
+              variant: DsButtonVariant.primary,
+              onPressed: () => Navigator.of(dialogContext).pop(),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text('Edges · showDsDrawer', style: labelStyle),
+        const SizedBox(height: 8),
+        Wrap(
+          spacing: 12,
+          runSpacing: 12,
+          children: [
+            for (final s in DsDrawerSide.values)
+              DsButton(
+                label: s.name,
+                variant: DsButtonVariant.secondary,
+                onPressed: () => _openDrawer(context, side: s),
+              ),
+          ],
+        ),
+        const SizedBox(height: 20),
+        Text('Widths (right · sm → full)', style: labelStyle),
+        const SizedBox(height: 8),
+        Wrap(
+          spacing: 12,
+          runSpacing: 12,
+          children: [
+            for (final z in DsDrawerSize.values)
+              DsButton(
+                label: z.name,
+                variant: DsButtonVariant.secondary,
+                onPressed: () => _openDrawer(
+                  context,
+                  side: DsDrawerSide.right,
+                  size: z,
+                ),
+              ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+/// Dialog previews — [showDsDialog] with size ramp (matches React Storybook).
+class DialogPreviewSection extends StatelessWidget {
+  const DialogPreviewSection({super.key, required this.labelStyle});
+
+  final TextStyle? labelStyle;
+
+  void _openDialog(BuildContext context, DsDialogSize size) {
+    showDsDialog<void>(
+      context: context,
+      builder: (dialogContext) => DsDialog(
+        size: size,
+        title: 'Dialog (${size.name})',
+        description: 'Design-system modal — backdrop, elevation, and entrance motion.',
+        body: Text(
+          'Body slot accepts any widget tree. Long content scrolls inside the panel.',
+          style: Theme.of(dialogContext).textTheme.bodyMedium?.copyWith(
+                color: Theme.of(dialogContext).extension<DsThemeExtension>()?.colorTextDefault,
+              ),
+        ),
+        footer: Wrap(
+          spacing: 8,
+          alignment: WrapAlignment.end,
+          children: [
+            DsButton(
+              label: 'Cancel',
+              variant: DsButtonVariant.secondary,
+              onPressed: () => Navigator.of(dialogContext).pop(),
+            ),
+            DsButton(
+              label: 'Confirm',
+              variant: DsButtonVariant.primary,
+              onPressed: () => Navigator.of(dialogContext).pop(),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text('Sizes · showDsDialog', style: labelStyle),
+        const SizedBox(height: 8),
+        Wrap(
+          spacing: 12,
+          runSpacing: 12,
+          children: [
+            for (final s in DsDialogSize.values)
+              DsButton(
+                label: s.name,
+                variant: DsButtonVariant.secondary,
+                onPressed: () => _openDialog(context, s),
+              ),
+          ],
         ),
       ],
     );

@@ -1,0 +1,123 @@
+/* ============================================================
+   Dialog — @acko/css/dialog.css
+   Import per-component:  @import "@acko/css/dialog.css"
+   ============================================================ */
+
+/* --- Keyframes --- */
+
+@keyframes acko-dialog-backdrop-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes acko-dialog-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .acko-dialog-backdrop,
+  .acko-dialog {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* --- Backdrop --- */
+
+.acko-dialog-backdrop {
+  @apply fixed inset-0 cursor-default;
+  background-color: var(--color-surface-overlay);
+  z-index: var(--z-modal);
+  animation: acko-dialog-backdrop-in 200ms var(--ease-out-cubic) both;
+}
+
+/* --- Panel --- */
+
+.acko-dialog {
+  @apply fixed left-1/2 top-1/2 flex w-full -translate-x-1/2 -translate-y-1/2 flex-col overflow-hidden;
+  max-width: 540px;
+  background-color: var(--color-surface-raised);
+  border-radius: var(--radius-4xl);
+  box-shadow: var(--shadow-lg);
+  z-index: var(--z-modal);
+  animation: acko-dialog-in 250ms var(--ease-out-quart) both;
+}
+
+/* Size variants */
+
+.acko-dialog-sm { max-width: 360px; }
+.acko-dialog-md { max-width: 480px; }
+.acko-dialog-lg { max-width: 600px; }
+.acko-dialog-xl { max-width: 760px; }
+
+.acko-dialog-full {
+  @apply max-w-full rounded-none;
+  width: 100%;
+}
+
+/* --- Header --- */
+
+.acko-dialog-header {
+  @apply flex shrink-0 items-center justify-between gap-12 px-24 pb-8 pt-24;
+}
+
+/* --- Title --- */
+
+.acko-dialog-title {
+  @apply m-0 flex-1;
+  font-size: var(--font-body-lg-size);
+  line-height: var(--font-body-lg-line);
+  font-weight: 600;
+  color: var(--color-text-default);
+}
+
+/* --- Description --- */
+
+.acko-dialog-description {
+  @apply m-0 shrink-0 px-24 pb-16;
+  font-size: var(--font-body-sm-size);
+  line-height: var(--font-body-sm-line);
+  color: var(--color-text-secondary);
+}
+
+/* --- Close button --- */
+
+.acko-dialog-close {
+  @apply inline-flex shrink-0 cursor-pointer items-center justify-center rounded-full border-0 bg-transparent p-0;
+  width: 32px;
+  height: 32px;
+  color: var(--color-text-secondary);
+  transition: background-color 150ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .acko-dialog-close:hover {
+    background-color: var(--color-surface-ghost-hover);
+  }
+}
+
+.acko-dialog-close:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus-ring);
+}
+
+/* --- Body --- */
+
+.acko-dialog-body {
+  @apply flex-1 overflow-y-auto px-24 py-16;
+}
+
+/* --- Footer --- */
+
+.acko-dialog-footer {
+  @apply flex shrink-0 items-center justify-end gap-12 px-24 pb-24 pt-16;
+  border-top: 1px solid var(--color-border-subtle);
+}

@@ -15,6 +15,8 @@
 | checkbox | draft  | @acko/checkbox | DsCheckbox     | —          | —       |
 | calendar | draft  | @acko/calendar | DsCalendar     | —          | —       |
 | card     | draft  | @acko/card     | DsCard         | —          | —       |
+| dialog   | draft  | @acko/dialog   | DsDialog       | —          | —       |
+| drawer   | draft  | @acko/drawer   | DsDrawer       | —          | —       |
 
 ---
 
@@ -274,6 +276,84 @@ tokens-used:
 depends-on:      —
 used-by:         —
 last-modified:   2026-05-06
+modified-by:     migrate-agent
+
+---
+
+## dialog
+
+status:          draft
+path:            specs/components/dialog/
+react-package:   @acko/dialog
+flutter-export:  DsDialog
+variants:        —
+sizes:           sm (360px), md (480px), lg (600px), xl (760px), full (100%)
+states:          open (backdrop + panel enter animation), closed (not rendered), focus (close button + children)
+tokens-used:
+  color:
+    - color-surface-overlay — backdrop
+    - color-surface-raised — panel background
+    - color-surface-ghost-hover — close button hover
+    - color-text-default — title
+    - color-text-secondary — description, close icon
+    - color-border-subtle — footer top divider
+    - color-primary-ring — focus ring
+  radius:
+    - radius-4xl — panel (all sizes except full)
+    - radius-full — close button
+  shadow:
+    - shadow-lg — panel elevation
+    - shadow-focus-ring — close button focus
+  layout:
+    - z-modal — backdrop + panel stacking
+  motion:
+    - ease-out-cubic — 200ms backdrop opacity enter
+    - ease-out-quart — 250ms panel opacity + scale(0.95→1) + translateY(8px→0) enter
+  typography:
+    - font-body-lg weight 600 — title
+    - font-body-sm — description
+depends-on:      —
+used-by:         —
+last-modified:   2026-05-07
+modified-by:     migrate-agent
+
+---
+
+## drawer
+
+status:          draft
+path:            specs/components/drawer/
+react-package:   @acko/drawer
+flutter-export:  DsDrawer
+variants:        side: left, right (default), bottom, top
+sizes:           sm, md (default), lg, full — width (left/right) or max-height (bottom/top)
+states:          closed (visibility:hidden), open (slide-in + backdrop), close-button-hover, close-button-focus
+tokens-used:
+  color:
+    - color-surface-overlay — backdrop
+    - color-surface-raised — panel background
+    - color-surface-ghost-hover — close button hover
+    - color-text-default — title, body
+    - color-text-secondary — description, close icon
+    - color-border-subtle — header bottom + footer top dividers
+    - color-primary-ring — focus ring
+  radius:
+    - radius-4xl — interior panel corners (per-side, two corners only)
+    - radius-full — close button
+  shadow:
+    - shadow-modal — panel elevation (→ shadow-xl)
+    - shadow-focus-ring — close button focus
+  layout:
+    - z-modal — root-shell stacking
+  motion:
+    - ease-out-cubic — 250ms backdrop opacity
+    - ease-out-quart — 300ms panel transform slide
+  typography:
+    - font-body-lg weight 600 — title
+    - font-body-sm — description
+depends-on:      —
+used-by:         —
+last-modified:   2026-05-07
 modified-by:     migrate-agent
 
 ---

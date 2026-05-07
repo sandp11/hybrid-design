@@ -1,0 +1,176 @@
+/* ============================================================
+   Drawer — @acko/css/drawer.css
+   Import per-component:  @import "@acko/css/drawer.css"
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .acko-drawer-backdrop,
+  .acko-drawer {
+    transition: none !important;
+  }
+}
+
+/* ── Root shell ─────────────────────────────────────────────── */
+
+.acko-drawer-root {
+  @apply fixed inset-0 pointer-events-none;
+  visibility: hidden;
+  z-index: var(--z-modal);
+}
+
+.acko-drawer-open {
+  @apply pointer-events-auto;
+  visibility: visible;
+}
+
+/* ── Backdrop ───────────────────────────────────────────────── */
+
+.acko-drawer-backdrop {
+  @apply absolute inset-0;
+  background-color: var(--color-surface-overlay);
+  opacity: 0;
+  transition: opacity 250ms var(--ease-out-cubic);
+}
+
+.acko-drawer-open .acko-drawer-backdrop {
+  opacity: 1;
+}
+
+/* ── Panel base ─────────────────────────────────────────────── */
+
+.acko-drawer {
+  @apply absolute flex flex-col overflow-hidden;
+  background-color: var(--color-surface-raised);
+  box-shadow: var(--shadow-modal);
+  transition: transform 300ms var(--ease-out-quart);
+}
+
+.acko-drawer-open .acko-drawer {
+  transform: translate(0);
+}
+
+/* ── Side variants ──────────────────────────────────────────── */
+
+/* Right — slides from right, radius on left corners only */
+.acko-drawer-right {
+  @apply right-0 top-0 h-full;
+  transform: translateX(100%);
+  border-radius: var(--radius-4xl) 0 0 var(--radius-4xl);
+}
+
+/* Left — slides from left, radius on right corners only */
+.acko-drawer-left {
+  @apply left-0 top-0 h-full;
+  transform: translateX(-100%);
+  border-radius: 0 var(--radius-4xl) var(--radius-4xl) 0;
+}
+
+/* Bottom — slides from bottom, radius on top corners only */
+.acko-drawer-bottom {
+  @apply bottom-0 left-0 w-full;
+  transform: translateY(100%);
+  border-radius: var(--radius-4xl) var(--radius-4xl) 0 0;
+}
+
+/* Top — slides from top, radius on bottom corners only */
+.acko-drawer-top {
+  @apply top-0 left-0 w-full;
+  transform: translateY(-100%);
+  border-radius: 0 0 var(--radius-4xl) var(--radius-4xl);
+}
+
+/* ── Size variants — left / right (width) ───────────────────── */
+
+.acko-drawer-right.acko-drawer-size-sm,
+.acko-drawer-left.acko-drawer-size-sm  { width: 280px; }
+
+.acko-drawer-right.acko-drawer-size-md,
+.acko-drawer-left.acko-drawer-size-md  { width: 380px; }
+
+.acko-drawer-right.acko-drawer-size-lg,
+.acko-drawer-left.acko-drawer-size-lg  { width: 520px; }
+
+.acko-drawer-right.acko-drawer-size-full,
+.acko-drawer-left.acko-drawer-size-full { width: 100%; }
+
+/* ── Size variants — bottom / top (max-height) ──────────────── */
+
+.acko-drawer-bottom.acko-drawer-size-sm,
+.acko-drawer-top.acko-drawer-size-sm   { max-height: 30vh; }
+
+.acko-drawer-bottom.acko-drawer-size-md,
+.acko-drawer-top.acko-drawer-size-md   { max-height: 50vh; }
+
+.acko-drawer-bottom.acko-drawer-size-lg,
+.acko-drawer-top.acko-drawer-size-lg   { max-height: 75vh; }
+
+.acko-drawer-bottom.acko-drawer-size-full,
+.acko-drawer-top.acko-drawer-size-full { max-height: 100vh; }
+
+/* ── Header ─────────────────────────────────────────────────── */
+
+.acko-drawer-header {
+  @apply flex shrink-0 items-start gap-12 p-20;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+/* ── Heading (title + description stack) ────────────────────── */
+
+.acko-drawer-heading {
+  @apply flex flex-1 flex-col gap-4;
+}
+
+/* ── Title ──────────────────────────────────────────────────── */
+
+.acko-drawer-title {
+  @apply m-0;
+  font-size: var(--font-body-lg-size);
+  line-height: var(--font-body-lg-line);
+  font-weight: 600;
+  color: var(--color-text-default);
+}
+
+/* ── Description ────────────────────────────────────────────── */
+
+.acko-drawer-description {
+  @apply m-0;
+  font-size: var(--font-body-sm-size);
+  line-height: var(--font-body-sm-line);
+  color: var(--color-text-secondary);
+}
+
+/* ── Close button ───────────────────────────────────────────── */
+
+.acko-drawer-close {
+  @apply inline-flex shrink-0 cursor-pointer items-center justify-center rounded-full border-0 bg-transparent p-0;
+  width: 32px;
+  height: 32px;
+  color: var(--color-text-secondary);
+  transition: background-color 150ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .acko-drawer-close:hover {
+    background-color: var(--color-surface-ghost-hover);
+  }
+}
+
+.acko-drawer-close:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus-ring);
+}
+
+/* ── Body ───────────────────────────────────────────────────── */
+
+.acko-drawer-body {
+  @apply flex-1 overflow-y-auto p-20;
+  color: var(--color-text-default);
+}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+
+.acko-drawer-footer {
+  @apply flex shrink-0 items-center justify-end gap-12;
+  padding: 16px 20px;
+  border-top: 1px solid var(--color-border-subtle);
+}

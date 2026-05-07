@@ -30,6 +30,8 @@ const config: StorybookConfig = {
           "@acko/calendar": resolve(configDir, "../../packages/calendar/src"),
           "@acko/card": resolve(configDir, "../../packages/card/src"),
           "@acko/breadcrumb": resolve(configDir, "../../packages/breadcrumb/src"),
+          "@acko/dialog": resolve(configDir, "../../packages/dialog/src"),
+          "@acko/drawer": resolve(configDir, "../../packages/drawer/src"),
         },
       },
     });

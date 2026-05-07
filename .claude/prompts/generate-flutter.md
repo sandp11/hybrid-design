@@ -3,12 +3,12 @@
 Follow these rules exactly when generating a Flutter widget.
 
 ## Files to create
-flutter_ds/lib/src/components/[name]/
+acko_flutter/lib/src/components/[name]/
   ds_[name].dart
   ds_[name]_theme.dart
 
 ## Files to update
-flutter_ds/lib/flutter_ds.dart — append two export lines
+acko_flutter/lib/acko_flutter.dart — append two export lines
 
 ## ds_[name].dart rules
 - Class name must be Ds[ComponentName] — always Ds prefix, always PascalCase.
@@ -40,7 +40,7 @@ flutter_ds/lib/flutter_ds.dart — append two export lines
     double fields: lerpDouble from dart:ui
     Duration fields: do not lerp, return the end value directly
 
-## flutter_ds/lib/flutter_ds.dart
+## acko_flutter/lib/acko_flutter.dart
 Append these two lines after the comment // Components — append new exports below this line:
 export 'src/components/[name]/ds_[name].dart';
 export 'src/components/[name]/ds_[name]_theme.dart';

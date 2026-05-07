@@ -40,6 +40,12 @@ importers:
       '@acko/css':
         specifier: workspace:*
         version: link:../packages/css
+      '@acko/dialog':
+        specifier: workspace:*
+        version: link:../packages/dialog
+      '@acko/drawer':
+        specifier: workspace:*
+        version: link:../packages/drawer
       '@acko/tokens':
         specifier: workspace:*
         version: link:../packages/tokens
@@ -281,6 +287,56 @@ importers:
       '@acko/tokens':
         specifier: workspace:*
         version: link:../tokens
+
+  packages/dialog:
+    dependencies:
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      react:
+        specifier: '>=18'
+        version: 19.2.5
+      react-dom:
+        specifier: '>=18'
+        version: 19.2.5(react@19.2.5)
+    devDependencies:
+      '@acko/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+      '@types/react':
+        specifier: ^19.0.0
+        version: 19.2.14
+      '@types/react-dom':
+        specifier: ^19.0.0
+        version: 19.2.3(@types/react@19.2.14)
+      typescript:
+        specifier: ~5.7.0
+        version: 5.7.3
+
+  packages/drawer:
+    dependencies:
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      react:
+        specifier: '>=18'
+        version: 19.2.5
+      react-dom:
+        specifier: '>=18'
+        version: 19.2.5(react@19.2.5)
+    devDependencies:
+      '@acko/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+      '@types/react':
+        specifier: ^19.0.0
+        version: 19.2.14
+      '@types/react-dom':
+        specifier: ^19.0.0
+        version: 19.2.3(@types/react@19.2.14)
+      typescript:
+        specifier: ~5.7.0
+        version: 5.7.3
 
   packages/tokens: {}
 

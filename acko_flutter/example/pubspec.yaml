@@ -1,5 +1,5 @@
-name: flutter_ds_example
-description: Preview app for the flutter_ds design system package.
+name: acko_flutter_example
+description: Preview app for the acko_flutter design system package.
 publish_to: none
 version: 0.1.0
 
@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_ds:
+  acko_flutter:
     path: ..
 
 dev_dependencies:

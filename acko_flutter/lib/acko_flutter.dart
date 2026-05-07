@@ -1,7 +1,7 @@
 // Design System — barrel export
 // Agents append new component export lines here. Do not reorder existing lines.
 
-library flutter_ds;
+library acko_flutter;
 
 // Foundation
 export 'src/foundation/tokens.dart';
@@ -27,3 +27,7 @@ export 'src/components/calendar/ds_calendar.dart';
 export 'src/components/calendar/ds_calendar_theme.dart';
 export 'src/components/card/ds_card.dart';
 export 'src/components/card/ds_card_theme.dart';
+export 'src/components/dialog/ds_dialog.dart';
+export 'src/components/dialog/ds_dialog_theme.dart';
+export 'src/components/drawer/ds_drawer.dart';
+export 'src/components/drawer/ds_drawer_theme.dart';
