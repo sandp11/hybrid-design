@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../foundation/primitives.dart';
 import '../../../../src/foundation/tokens.dart';
 
 /// Theme extension for DsDrawer.
@@ -33,8 +34,7 @@ class DsDrawerTheme extends ThemeExtension<DsDrawerTheme> {
     backdropColor: DsTokens.colorSurfaceOverlay,
     panelColor: DsTokens.colorSurfaceRaised,
     panelShadow: BoxShadow(
-      // shadow-modal → shadow-xl: 0 4px 24px rgba(0,0,0,0.10)
-      color: Color(0x1A000000),
+      color: DsPrimitives.blackA2,
       blurRadius: 24,
       offset: Offset(0, 4),
     ),
@@ -62,7 +62,7 @@ class DsDrawerTheme extends ThemeExtension<DsDrawerTheme> {
     backdropColor: DsTokens.colorSurfaceOverlayDark,
     panelColor: DsTokens.colorSurfaceRaisedDark,
     panelShadow: BoxShadow(
-      color: Color(0x33000000),
+      color: DsPrimitives.blackA4,
       blurRadius: 24,
       offset: Offset(0, 4),
     ),

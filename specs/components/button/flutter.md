@@ -5,7 +5,7 @@
 ## export
 
 class-name: DsButton
-file: lib/src/components/button/ds_button.dart
+file: lib/src/components/button/acko_button.dart
 theme-class: DsButtonTheme
 theme-file: lib/src/components/button/ds_button_theme.dart
 

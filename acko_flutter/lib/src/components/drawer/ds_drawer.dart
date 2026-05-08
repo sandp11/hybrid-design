@@ -2,6 +2,7 @@ import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../../foundation/primitives.dart';
 import 'ds_drawer_theme.dart';
 
 /// Which viewport edge the drawer panel anchors to.
@@ -340,7 +341,7 @@ class _DsDrawerCloseButtonState extends State<_DsDrawerCloseButton> {
                     : Colors.transparent,
                 border: _focused
                     ? Border.all(
-                        color: const Color(0xFFC1BDFC), // color-primary-ring — purple200
+                        color: DsPrimitives.purple200,
                         width: 3,
                       )
                     : null,

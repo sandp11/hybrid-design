@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../foundation/primitives.dart';
 import '../../../../src/foundation/tokens.dart';
 
 /// Theme extension for DsDialog.
@@ -32,8 +33,7 @@ class DsDialogTheme extends ThemeExtension<DsDialogTheme> {
     panelColor: DsTokens.colorSurfaceRaised,
     panelRadius: BorderRadius.all(Radius.circular(20)), // radius-4xl
     panelShadow: BoxShadow(
-      // shadow-lg: 0px 2px 16px 4px rgba(0,0,0,0.04)
-      color: Color(0x0A000000),
+      color: DsPrimitives.blackA04,
       blurRadius: 16,
       spreadRadius: 4,
       offset: Offset(0, 2),
@@ -61,7 +61,7 @@ class DsDialogTheme extends ThemeExtension<DsDialogTheme> {
     panelColor: DsTokens.colorSurfaceRaisedDark,
     panelRadius: BorderRadius.all(Radius.circular(20)),
     panelShadow: BoxShadow(
-      color: Color(0x29000000),
+      color: Color(0x29000000), // ~16% opacity — no exact primitive match
       blurRadius: 16,
       spreadRadius: 4,
       offset: Offset(0, 2),

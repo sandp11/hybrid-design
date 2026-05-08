@@ -2,6 +2,7 @@ import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../../foundation/primitives.dart';
 import 'ds_dialog_theme.dart';
 
 /// Size options for DsDialog panel max-width.
@@ -252,7 +253,7 @@ class _DsDialogCloseButtonState extends State<_DsDialogCloseButton> {
                 // Focus ring: 3px outer ring using color-primary-ring
                 border: _focused
                     ? Border.all(
-                        color: const Color(0xFFC1BDFC), // color-primary-ring — purple200
+                        color: DsPrimitives.purple200,
                         width: 3,
                       )
                     : null,

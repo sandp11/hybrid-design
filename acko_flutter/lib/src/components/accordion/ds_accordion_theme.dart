@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+import '../../foundation/primitives.dart';
 import '../../foundation/tokens.dart';
 
 /// Theme for [DsAccordion] — register on [ThemeData.extensions].
@@ -63,14 +64,14 @@ class DsAccordionTheme extends ThemeExtension<DsAccordionTheme> {
     triggerLineHeight: 24,
     triggerFontWeight: FontWeight.w500,
     triggerColor: DsTokens.colorTextDefaultDark,
-    triggerHoverColor: Color(0xFF795DEE),   // purple500
-    triggerDisabledColor: Color(0xFF969696), // grey450
+    triggerHoverColor: DsPrimitives.purple500,
+    triggerDisabledColor: DsPrimitives.grey450,
     contentFontSize: 14,
     contentLineHeight: 20,
     contentColor: DsTokens.colorTextSecondaryDark,
     contentPaddingBottom: 16,
     chevronSize: 18,
-    borderColor: Color(0xFF6C6C6C), // grey600 — colorBorder dark
+    borderColor: DsPrimitives.grey600,
     expandDuration: Duration(milliseconds: 200),
     triggerColorDuration: Duration(milliseconds: 150),
   );

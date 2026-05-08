@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import '../../foundation/primitives.dart';
 import '../../foundation/tokens.dart';
 
 enum DsCheckboxSize { sm, md, lg }
@@ -211,24 +212,24 @@ class DsCheckboxTheme extends ThemeExtension<DsCheckboxTheme> {
     labelFontSizeMd: 16.0,
     labelFontSizeLg: 18.0,
 
-    borderUnchecked:          Color(0xFF7A7A7A),     // grey550
+    borderUnchecked:          DsPrimitives.grey550,
     bgUnchecked:              Colors.transparent,
-    borderChecked:            Color(0xFF795DEE),     // purple500 — colorPrimary dark
-    bgChecked:                Color(0xFF795DEE),
-    borderHoverUnchecked:     Color(0xFF888888),     // grey500
-    bgHoverUnchecked:         Color(0xFF505050),     // grey700
-    borderHoverChecked:       Color(0xFF8E7CF4),     // purple400 — colorPrimaryHover dark
-    bgHoverChecked:           Color(0xFF8E7CF4),
-    borderDisabledUnchecked:  Color(0xFF6C6C6C),     // grey600
-    bgDisabledUnchecked:      DsTokens.colorSurfaceRaisedDark, // grey700
-    borderDisabledChecked:    Color(0xFF7A7A7A),     // grey550
-    bgDisabledChecked:        Color(0xFF7A7A7A),     // grey550
+    borderChecked:            DsPrimitives.purple500,
+    bgChecked:                DsPrimitives.purple500,
+    borderHoverUnchecked:     DsPrimitives.grey500,
+    bgHoverUnchecked:         DsPrimitives.grey700,
+    borderHoverChecked:       DsPrimitives.purple400,
+    bgHoverChecked:           DsPrimitives.purple400,
+    borderDisabledUnchecked:  DsPrimitives.grey600,
+    bgDisabledUnchecked:      DsTokens.colorSurfaceRaisedDark,
+    borderDisabledChecked:    DsPrimitives.grey550,
+    bgDisabledChecked:        DsPrimitives.grey550,
     borderError:              DsTokens.colorError,
     bgError:                  Colors.transparent,
 
     iconColor:         DsTokens.colorOnPrimary,
-    iconColorDisabled: Color(0xFF969696),             // grey450 — colorDisabledText dark
-    focusRingColor:    Color(0xFF3A1BA5),             // purple800 — colorPrimaryRing dark
+    iconColorDisabled: DsPrimitives.grey450,
+    focusRingColor:    DsPrimitives.purple800,
 
     labelColor:       DsTokens.colorTextDefaultDark,
     descriptionColor: DsTokens.colorTextSecondaryDark,
@@ -243,7 +244,7 @@ class DsCheckboxTheme extends ThemeExtension<DsCheckboxTheme> {
     rowLabelFontSizeMobile:       18.0,
     rowDescriptionFontSize:       12.0,
 
-    separatorColor:          Color(0xFF6C6C6C), // grey600 — colorBorder dark
+    separatorColor:          DsPrimitives.grey600,
     groupLabelFontSize:      14.0,
     groupLabelColor:         DsTokens.colorTextDefaultDark,
     groupLabelMarginBottom:  8.0,

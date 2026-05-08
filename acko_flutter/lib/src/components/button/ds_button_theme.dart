@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import '../../foundation/primitives.dart';
 import '../../foundation/tokens.dart';
 
 enum DsButtonVariant { primary, secondary, inverted, ghost, link, danger }
@@ -133,11 +134,11 @@ class DsButtonTheme extends ThemeExtension<DsButtonTheme> {
     dangerFg:             DsTokens.colorBtnDangerText,
     disabledFg:           DsTokens.colorBtnDisabledText,
 
-    primaryShadowInner: const BoxShadow(
-      color: Color(0x47FFFFFF),
+    primaryShadowInner: BoxShadow(
+      color: DsPrimitives.greyWhite.withOpacity(0.28),
       blurRadius: 2,
       spreadRadius: 1,
-      offset: Offset(0, 1),
+      offset: const Offset(0, 1),
       blurStyle: BlurStyle.inner,
     ),
     focusRingColor:       DsTokens.colorPrimaryRing,

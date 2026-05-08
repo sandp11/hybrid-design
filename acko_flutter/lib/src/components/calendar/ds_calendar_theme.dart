@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+import '../../foundation/primitives.dart';
 import '../../foundation/tokens.dart';
 
 /// Inclusive date range for [DsCalendarVariant.range].
@@ -106,34 +107,34 @@ class DsCalendarTheme extends ThemeExtension<DsCalendarTheme> {
 
   /// Light defaults aligned with `tokens.css` light semantic calendar + input colors.
   static const light = DsCalendarTheme(
-    triggerBackground: Color(0xFFFFFFFF),
-    triggerBorderColor: Color(0xFFEBEBEB),
+    triggerBackground: DsPrimitives.greyWhite,
+    triggerBorderColor: DsPrimitives.grey150,
     triggerBorderWidth: 1,
-    triggerHoverBorderColor: Color(0xFFDCDCDC),   // grey200
-    triggerOpenBorderColor: Color(0xFFC1BDFC),    // purple200
-    triggerFocusRingColor: Color(0xFFC1BDFC),     // purple200
+    triggerHoverBorderColor: DsPrimitives.grey200,
+    triggerOpenBorderColor: DsPrimitives.purple200,
+    triggerFocusRingColor: DsPrimitives.purple200,
     triggerFocusRingSpread: 2,
     triggerPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
     triggerTextStyle: TextStyle(
       fontSize: 14,
       height: 20 / 14,
       fontWeight: FontWeight.w400,
-      color: Color(0xFF343434),                   // grey800
+      color: DsPrimitives.grey800,
     ),
-    placeholderColor: Color(0xFF969696),           // grey450
+    placeholderColor: DsPrimitives.grey450,
     panelWidth: 340,
     panelPadding: EdgeInsets.all(16),
     panelBorderRadius: BorderRadius.all(Radius.circular(DsTokens.radius4xl)),
-    panelBackground: Color(0xFFFBFBFB),
-    panelBorderColor: Color(0xFFFFFFFF),
-    panelShadowColor: Color(0x0F000000),
+    panelBackground: DsPrimitives.grey50,
+    panelBorderColor: DsPrimitives.greyWhite,
+    panelShadowColor: DsPrimitives.blackA3,
     panelShadowBlur: 8,
     panelShadowOffsetY: 2,
     headerTextStyle: TextStyle(
       fontSize: 16,
       height: 24 / 16,
       fontWeight: FontWeight.w600,
-      color: Color(0xFF343434),                   // grey800
+      color: DsPrimitives.grey800,
     ),
     navButtonSize: 36,
     weekdayTextStyle: TextStyle(
@@ -141,34 +142,34 @@ class DsCalendarTheme extends ThemeExtension<DsCalendarTheme> {
       height: 14 / 11,
       letterSpacing: 0.3,
       fontWeight: FontWeight.w500,
-      color: Color(0xFF969696),                   // grey450
+      color: DsPrimitives.grey450,
     ),
     dayCellHeight: 40,
     dayTextStyle: TextStyle(
       fontSize: 14,
       height: 20 / 14,
       fontWeight: FontWeight.w400,
-      color: Color(0xFF343434),                   // grey800
+      color: DsPrimitives.grey800,
     ),
     pickerCellHeight: 48,
     pickerTextStyle: TextStyle(
       fontSize: 14,
       height: 20 / 14,
       fontWeight: FontWeight.w500,
-      color: Color(0xFF343434),                   // grey800
+      color: DsPrimitives.grey800,
     ),
-    primaryTextColor: Color(0xFF343434),           // grey800
-    secondaryTextColor: Color(0xFF969696),         // grey450
-    disabledTextColor: Color(0xFFC0C0C0),          // grey300
+    primaryTextColor: DsPrimitives.grey800,
+    secondaryTextColor: DsPrimitives.grey450,
+    disabledTextColor: DsPrimitives.grey300,
     todayColor: DsTokens.colorPrimary,
     daySelectedBackground: DsTokens.colorPrimary,
     daySelectedForeground: DsTokens.colorOnPrimary,
-    rangeBandBackground: Color(0xFFF3F3FF),        // purple50
-    rangeBandForeground: Color(0xFF491FD4),        // purple700
-    cellHoverBackground: Color(0xFFF5F5F5),
+    rangeBandBackground: DsPrimitives.purple50,
+    rangeBandForeground: DsPrimitives.purple700,
+    cellHoverBackground: DsPrimitives.grey100,
     focusRingColor: DsTokens.colorPrimaryRing,
     focusRingSpread: 3,
-    iconColor: Color(0xFF969696),                  // grey450
+    iconColor: DsPrimitives.grey450,
   );
 
   static const defaults = light;

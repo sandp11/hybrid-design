@@ -2,12 +2,13 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+import '../../foundation/primitives.dart';
 import '../../foundation/tokens.dart';
 
 /// Mirrors `--shadow-lg` in `tokens.css` (light theme opacity).
 const List<BoxShadow> _kCardElevatedShadow = [
   BoxShadow(
-    color: Color(0x0A000000),
+    color: DsPrimitives.blackA04,
     offset: Offset(0, 2),
     blurRadius: 16,
     spreadRadius: 4,

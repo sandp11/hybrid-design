@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+import '../../foundation/primitives.dart';
 import '../../foundation/tokens.dart';
 
 /// Theme for [DsBreadcrumb] — register on [ThemeData.extensions].
@@ -36,10 +37,10 @@ class DsBreadcrumbTheme extends ThemeExtension<DsBreadcrumbTheme> {
 
   /// Light — aligned with `tokens.css` light breadcrumb roles.
   static const light = DsBreadcrumbTheme(
-    linkColor: Color(0xFF888888),       // grey500
+    linkColor: DsPrimitives.grey500,
     linkHoverColor: DsTokens.colorPrimary,
     currentColor: DsTokens.colorTextDefault,
-    textColor: Color(0xFFA4A4A4),       // grey400
+    textColor: DsPrimitives.grey400,
     separatorColor: DsTokens.colorBorder,
     ellipsisHoverBg: DsTokens.colorBorderSubtle,
     linkFontSize: 14,
@@ -52,10 +53,10 @@ class DsBreadcrumbTheme extends ThemeExtension<DsBreadcrumbTheme> {
   /// Dark — aligned with `tokens.css` dark breadcrumb roles.
   static const dark = DsBreadcrumbTheme(
     linkColor: DsTokens.colorTextSecondaryDark,
-    linkHoverColor: Color(0xFF8E7CF4),  // purple400
+    linkHoverColor: DsPrimitives.purple400,
     currentColor: DsTokens.colorTextDefaultDark,
-    textColor: Color(0xFFA4A4A4),       // grey400 — same as light
-    separatorColor: Color(0xFF7A7A7A),  // grey550
+    textColor: DsPrimitives.grey400,
+    separatorColor: DsPrimitives.grey550,
     ellipsisHoverBg: DsTokens.colorBorderSubtleDark,
     linkFontSize: 14,
     linkLineHeight: 20,

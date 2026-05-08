@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import '../../foundation/primitives.dart';
 import '../../foundation/tokens.dart';
 
 enum DsAvatarSize  { xs, sm, md, lg, xl }
@@ -83,8 +84,8 @@ class DsAvatarTheme extends ThemeExtension<DsAvatarTheme> {
     sizeMd: 40.0,
     sizeLg: 48.0,
     sizeXl: 64.0,
-    initialsBackground: Color(0xFF2B1678), // color-primary-subtle dark — purple900
-    initialsColor:      Color(0xFF795DEE), // color-primary dark — purple500
+    initialsBackground: DsPrimitives.purple900,
+    initialsColor:      DsPrimitives.purple500,
     initialsXsFontSize: 10.0,
     initialsSmFontSize: 12.0,
     initialsMdFontSize: 14.0,

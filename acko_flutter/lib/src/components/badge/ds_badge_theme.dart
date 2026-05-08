@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import '../../foundation/primitives.dart';
 import '../../foundation/tokens.dart';
 
 enum DsBadgeVariant     { solid, outline, dot }
@@ -105,61 +106,61 @@ class DsBadgeTheme extends ThemeExtension<DsBadgeTheme> {
 
   static const light = DsBadgeTheme(
     purple: DsBadgeColorSet(
-      gradientFrom: Color(0xFFC1BDFC), // purple-200
-      gradientTo:   Color(0xFFE1E0FE), // purple-100
-      border:       Color(0xFFC1BDFC), // purple-200
-      text:         Color(0xFF3A1BA5), // purple-800
-      outlineColor: Color(0xFF6841E6), // purple-600
+      gradientFrom: DsPrimitives.purple200,
+      gradientTo:   DsPrimitives.purple100,
+      border:       DsPrimitives.purple200,
+      text:         DsPrimitives.purple800,
+      outlineColor: DsPrimitives.purple600,
     ),
     green: DsBadgeColorSet(
-      gradientFrom: Color(0xFFCFF7BB), // lime-200
-      gradientTo:   Color(0xFFE7FCDC), // lime-100
-      border:       Color(0xFFCFF7BB), // lime-200
-      text:         Color(0xFF166534), // green-800
-      outlineColor: Color(0xFF45A316), // lime-600
+      gradientFrom: DsPrimitives.lime200,
+      gradientTo:   DsPrimitives.lime100,
+      border:       DsPrimitives.lime200,
+      text:         DsPrimitives.green800,
+      outlineColor: DsPrimitives.lime600,
     ),
     blue: DsBadgeColorSet(
-      gradientFrom: Color(0xFFBFDBFE), // blue-200
-      gradientTo:   Color(0xFFDBEAFE), // blue-100
-      border:       Color(0xFFBFDBFE), // blue-200
-      text:         Color(0xFF1E40AF), // blue-800
-      outlineColor: Color(0xFF2563EB), // blue-600
+      gradientFrom: DsPrimitives.blue200,
+      gradientTo:   DsPrimitives.blue100,
+      border:       DsPrimitives.blue200,
+      text:         DsPrimitives.blue800,
+      outlineColor: DsPrimitives.blue600,
     ),
     orange: DsBadgeColorSet(
-      gradientFrom: Color(0xFFFFCB9E), // orange-200
-      gradientTo:   Color(0xFFFFE5CC), // orange-100
-      border:       Color(0xFFFFCB9E), // orange-200
-      text:         Color(0xFF8D4301), // orange-800
-      outlineColor: Color(0xFFEB740A), // orange-600
+      gradientFrom: DsPrimitives.orange200,
+      gradientTo:   DsPrimitives.orange100,
+      border:       DsPrimitives.orange200,
+      text:         DsPrimitives.orange800,
+      outlineColor: DsPrimitives.orange600,
     ),
     pink: DsBadgeColorSet(
-      gradientFrom: Color(0xFFFECACA), // red-200
-      gradientTo:   Color(0xFFFEE2E2), // red-100
-      border:       Color(0xFFFECACA), // red-200
-      text:         Color(0xFF991B1B), // red-800
-      outlineColor: Color(0xFFDC2626), // red-600
+      gradientFrom: DsPrimitives.red200,
+      gradientTo:   DsPrimitives.red100,
+      border:       DsPrimitives.red200,
+      text:         DsPrimitives.red800,
+      outlineColor: DsPrimitives.red600,
     ),
     gray: DsBadgeColorSet(
-      gradientFrom: Color(0xFFDCDCDC), // grey-200
-      gradientTo:   Color(0xFFF5F5F5), // grey-100
-      border:       Color(0xFFDCDCDC), // grey-200
-      text:         Color(0xFF6C6C6C), // grey-600
-      outlineColor: Color(0xFF6C6C6C), // grey-600
+      gradientFrom: DsPrimitives.grey200,
+      gradientTo:   DsPrimitives.grey100,
+      border:       DsPrimitives.grey200,
+      text:         DsPrimitives.grey600,
+      outlineColor: DsPrimitives.grey600,
     ),
     counterPurple: DsCounterBadgeColorSet(
-      gradientFrom: Color(0xFF795DEE), // purple-500
-      gradientTo:   Color(0xFF8E7CF4), // purple-400
-      border:       Color(0xFF795DEE), // purple-500
+      gradientFrom: DsPrimitives.purple500,
+      gradientTo:   DsPrimitives.purple400,
+      border:       DsPrimitives.purple500,
     ),
     counterPink: DsCounterBadgeColorSet(
-      gradientFrom: Color(0xFFEF4444), // red-500
-      gradientTo:   Color(0xFFF87171), // red-400
-      border:       Color(0xFFEF4444), // red-500
+      gradientFrom: DsPrimitives.red500,
+      gradientTo:   DsPrimitives.red400,
+      border:       DsPrimitives.red500,
     ),
     counterBlue: DsCounterBadgeColorSet(
-      gradientFrom: Color(0xFF3B82F6), // blue-500
-      gradientTo:   Color(0xFF60A5FA), // blue-400
-      border:       Color(0xFF3B82F6), // blue-500
+      gradientFrom: DsPrimitives.blue500,
+      gradientTo:   DsPrimitives.blue400,
+      border:       DsPrimitives.blue500,
     ),
     counterText:      DsTokens.colorOnPrimary,
     padding:          EdgeInsets.symmetric(horizontal: 8, vertical: 6),
@@ -179,61 +180,61 @@ class DsBadgeTheme extends ThemeExtension<DsBadgeTheme> {
 
   static const dark = DsBadgeTheme(
     purple: DsBadgeColorSet(
-      gradientFrom: Color(0xE6241362), // purple-950 @ 90%
-      gradientTo:   Color(0xE62B1678), // purple-900 @ 90%
-      border:       Color(0xFF2B1678), // purple-900
-      text:         Color(0xFFC1BDFC), // purple-200
-      outlineColor: Color(0xFF8E7CF4), // purple-400
+      gradientFrom: Color(0xE6241362), // purple950 @ 90%
+      gradientTo:   Color(0xE62B1678), // purple900 @ 90%
+      border:       DsPrimitives.purple900,
+      text:         DsPrimitives.purple200,
+      outlineColor: DsPrimitives.purple400,
     ),
     green: DsBadgeColorSet(
-      gradientFrom: Color(0xE6132E05), // lime-950 @ 90%
-      gradientTo:   Color(0xE6214210), // lime-900 @ 90%
-      border:       Color(0xFF214210), // lime-900
-      text:         Color(0xFFBBF7D0), // green-200
-      outlineColor: Color(0xFF45A316), // lime-600
+      gradientFrom: Color(0xE6132E05), // lime950 @ 90%
+      gradientTo:   Color(0xE6214210), // lime900 @ 90%
+      border:       DsPrimitives.lime900,
+      text:         DsPrimitives.green200,
+      outlineColor: DsPrimitives.lime600,
     ),
     blue: DsBadgeColorSet(
-      gradientFrom: Color(0xE6172554), // blue-950 @ 90%
-      gradientTo:   Color(0xE61E3A8A), // blue-900 @ 90%
-      border:       Color(0xFF1E3A8A), // blue-900
-      text:         Color(0xFFBFDBFE), // blue-200
-      outlineColor: Color(0xFF2563EB), // blue-600
+      gradientFrom: Color(0xE6172554), // blue950 @ 90%
+      gradientTo:   Color(0xE61E3A8A), // blue900 @ 90%
+      border:       DsPrimitives.blue900,
+      text:         DsPrimitives.blue200,
+      outlineColor: DsPrimitives.blue600,
     ),
     orange: DsBadgeColorSet(
-      gradientFrom: Color(0xE6300212), // orange-950 @ 90%
-      gradientTo:   Color(0xE6521F00), // orange-900 @ 90%
-      border:       Color(0xFF521F00), // orange-900
-      text:         Color(0xFFFFCB9E), // orange-200
-      outlineColor: Color(0xFFEB740A), // orange-600
+      gradientFrom: Color(0xE6300212), // orange950 @ 90%
+      gradientTo:   Color(0xE6521F00), // orange900 @ 90%
+      border:       DsPrimitives.orange900,
+      text:         DsPrimitives.orange200,
+      outlineColor: DsPrimitives.orange600,
     ),
     pink: DsBadgeColorSet(
-      gradientFrom: Color(0xE6450A0A), // red-950 @ 90%
-      gradientTo:   Color(0xE67F1D1D), // red-900 @ 90%
-      border:       Color(0xFF7F1D1D), // red-900
-      text:         Color(0xFFFECACA), // red-200
-      outlineColor: Color(0xFFDC2626), // red-600
+      gradientFrom: Color(0xE6450A0A), // red950 @ 90%
+      gradientTo:   Color(0xE67F1D1D), // red900 @ 90%
+      border:       DsPrimitives.red900,
+      text:         DsPrimitives.red200,
+      outlineColor: DsPrimitives.red600,
     ),
     gray: DsBadgeColorSet(
-      gradientFrom: Color(0xE6343434), // grey-800 @ 90%
-      gradientTo:   Color(0xE6505050), // grey-700 @ 90%
-      border:       Color(0xFF6C6C6C), // grey-600
-      text:         Color(0xFFDCDCDC), // grey-200
-      outlineColor: Color(0xFF888888), // grey-500
+      gradientFrom: Color(0xE6343434), // grey800 @ 90%
+      gradientTo:   Color(0xE6505050), // grey700 @ 90%
+      border:       DsPrimitives.grey600,
+      text:         DsPrimitives.grey200,
+      outlineColor: DsPrimitives.grey500,
     ),
     counterPurple: DsCounterBadgeColorSet(
-      gradientFrom: Color(0xE6241362), // purple-950 @ 90%
-      gradientTo:   Color(0xE62B1678), // purple-900 @ 90%
-      border:       Color(0xFF2B1678), // purple-900
+      gradientFrom: Color(0xE6241362), // purple950 @ 90%
+      gradientTo:   Color(0xE62B1678), // purple900 @ 90%
+      border:       DsPrimitives.purple900,
     ),
     counterPink: DsCounterBadgeColorSet(
-      gradientFrom: Color(0xE6450A0A), // red-950 @ 90%
-      gradientTo:   Color(0xE67F1D1D), // red-900 @ 90%
-      border:       Color(0xFF7F1D1D), // red-900
+      gradientFrom: Color(0xE6450A0A), // red950 @ 90%
+      gradientTo:   Color(0xE67F1D1D), // red900 @ 90%
+      border:       DsPrimitives.red900,
     ),
     counterBlue: DsCounterBadgeColorSet(
-      gradientFrom: Color(0xE6172554), // blue-950 @ 90%
-      gradientTo:   Color(0xE61E3A8A), // blue-900 @ 90%
-      border:       Color(0xFF1E3A8A), // blue-900
+      gradientFrom: Color(0xE6172554), // blue950 @ 90%
+      gradientTo:   Color(0xE61E3A8A), // blue900 @ 90%
+      border:       DsPrimitives.blue900,
     ),
     counterText:      DsTokens.colorOnPrimary,
     padding:          EdgeInsets.symmetric(horizontal: 8, vertical: 6),
